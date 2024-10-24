@@ -7,13 +7,17 @@ release = "https://api.github.com/repos/emprcl/signls/releases/latest"
 
 ## Overview
 
-<div id="release"></div>
+<span id="release"></span> • 
+[source code](https://github.com/emprcl/signls) • 
+[report an issue](https://github.com/emprcl/signls/issues/new)
+
+<hr/>
 
 **Signls** (_pronounced signals_) is a non-linear MIDI sequencer designed for live performances, all within the terminal. It allows you to create complex, evolving musical patterns using a grid-based approach. You can place nodes on the grid, and these nodes can emit signals, relay them, or trigger MIDI notes. There are 9 different types of nodes to explore, each with its own unique behavior.
 
 With Signls, you can generate dynamic, generative music, meaning that the patterns evolve and change over time. It's designed to give you a powerful creative tool to build intricate sequences without being stuck in a rigid timeline or structure.
 
-TODO: insert screenshot
+![signls screenshot](https://raw.githubusercontent.com/emprcl/signls/refs/heads/main/docs/screenshot.png)
 
 **Features**
 - **Non-linear sequencing**: unlike traditional sequencers, Signls doesn't force you into a single direction. Your sequences can move and shift in multiple ways, allowing for complex and unique arrangements.
@@ -55,10 +59,6 @@ Hit `?` to see all keybindings. `esc` to quit.
 
 ### Keyboard mapping
 
-TODO:
- - insert keyboard map
- - link to key bindings reference
-
 Keys mapping is fully customizable. After running signls for the first time, a _config.json_ is created.
 You can edit all the keys inside it.
 
@@ -89,7 +89,7 @@ Key binding reference:
 
 Press the `f2` key to cycle through the available MIDI drivers and set up your preferred MIDI output.
 
-Some companion apps that receive MIDI for testing signls:
+Some companion apps that receive MIDI for testing Signls:
  - [Enfer](https://neauoire.github.io/Enfer/) ([github](https://github.com/neauoire/Enfer))
  - [QSynth](https://qsynth.sourceforge.io/)
 
@@ -135,7 +135,7 @@ You can easily manage nodes on the grid by copying, cutting, and pasting them us
 
 A key feature of each node is the direction in which it **emits** or **relays signals**. You can configure up to four directions: **up**, **down**, **left**, and **right**. To modify a node's directions, move the cursor to the desired node and press `Ctrl` + `↑` `↓` `←` `→` to add or remove directions. The way a node uses these directions (one or multiple) depends on its specific behavior.
 
-TODO: insert direction symbols reference.
+<img src="/images/signls/directions.jpg" alt="directions" width="300"/>
 
 #### Parameters
 
@@ -220,7 +220,7 @@ To load a specific grid from the bank, press `tab` to switch to the **bank view*
 
 Here is a reference guide for all the **node types** available in **Signls**. Each node has common **note parameters** (except for the Hole) like key, velocity, length, channel, and probability. Some nodes also have **extra parameters** that give them unique behavior.
 
-### **Bang**
+### <img src="/images/signls/bang.jpg" alt="bang" class="node" width="25"/> **Bang**
 - **Description:** emits a signal when the grid starts playing and relays signals on all configured directions
 - **Key binding**: `1`
 - **Extra Parameters:** none

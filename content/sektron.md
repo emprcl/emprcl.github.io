@@ -7,11 +7,17 @@ release = "https://api.github.com/repos/emprcl/sektron/releases/latest"
 
 ## Overview
 
-<div id="release"></div>
+<span id="release"></span> • 
+[source code](https://github.com/emprcl/sektron) • 
+[report an issue](https://github.com/emprcl/sektron/issues/new)
+
+<hr/>
 
 **Sektron** is a midi step sequencer, made with live performance in mind, that runs in the terminal (TUI). Its main purpose is to mimic the fun and immediacity of hardware sequencers by being entirely controllable via keyboard.
 
 It's heavily inspired by [elektron devices](https://www.elektron.se).
+
+![sektron screenshot](https://raw.githubusercontent.com/emprcl/sektron/refs/heads/main/docs/screenshot.png)
 
 
 **Features**
@@ -53,11 +59,13 @@ You can also [build it yourself](https://github.com/emprcl/sektron?tab=readme-ov
 
 Hit `?` to see all keybindings. `esc` to quit.
 
-Some companion apps that receive midi for testing Sektron:
+### MIDI
+
+**Sektron** doesn't generate sound on its own, but it works seamlessly with MIDI software or hardware. You can connect it to your favorite synthesizers, virtual instruments, or any MIDI-compatible devices for live performances or production.
+
+Some companion apps that receive MIDI for testing Sektron:
  - [Enfer](https://neauoire.github.io/Enfer/) ([github](https://github.com/neauoire/Enfer))
  - [QSynth](https://qsynth.sourceforge.io/)
-
-![sektron gif](/docs/vhs.gif)
 
 ### Keyboard mapping
 
@@ -83,7 +91,7 @@ You can select one of the default keyboard layouts available:
 
 The default key mapping looks like this:
 
-![keyboard layout](/docs/keyboard-layout.png)
+![keyboard layout](https://raw.githubusercontent.com/emprcl/sektron/refs/heads/main/docs/keyboard-layout.png)
 
 For qwerty keyboards, here's the default mapping:
 
