@@ -11,7 +11,7 @@
                         let release_name = data.name;
                         let html_url = data.html_url;
                         let release = document.querySelector('#release');
-                        release.innerHTML = `<a href='${html_url}'>signls ${release_name}</a>`;
+                        release.innerHTML = `<a href='${html_url}'>{{ page.title }} ${release_name}</a>`;
                     });
             </script>
         {% endif -%}

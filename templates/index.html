@@ -1,7 +1,10 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="description" content="emprcl - creating weird music software for the command line.">
     <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
     {% if config.extra.favicon -%}
         {% set _favicon = config.extra.favicon -%}
@@ -43,6 +46,11 @@
             {% endif -%}
 
             <div id="trees">
+                <ul class="subtree">
+                    <li class="active">
+                        <a href="/">about</a>
+                    </li>
+                </ul>
                 {% set section_ = get_section(path="_index.md") -%}
                 {% for page in section_.pages -%}
                     <ul class="subtree">

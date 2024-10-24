@@ -233,6 +233,10 @@ main {
   margin:calc(#{$baseline} / 8) 0;
   transition: overflow 0.2s ease-in-out;
   padding: 0;
+
+  &:first-of-type {
+    margin-bottom: calc(#{$baseline} / 2);
+  }
  }
 
  .tree-toggle-label {

@@ -10,7 +10,7 @@ highlight_theme = "base16-ocean-light"
 [extra]
 logo = "images/logo.png"
 release = "https://api.github.com/repos/emprcl/signls/releases/latest"
-favicon = "https://www.getzola.org/favicon.ico"
+favicon = "images/favicon.ico"
 easydocs_logo_always_clickable = false
 
 # For use with offline sites. If set to true links in the nav are generated with the full path indcluding index.html
