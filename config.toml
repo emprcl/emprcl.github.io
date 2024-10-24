@@ -9,7 +9,7 @@ highlight_theme = "base16-ocean-light"
 
 [extra]
 logo = "images/logo.png"
-release = "https://api.github.com/repos/getzola/zola/releases/latest"
+release = "https://api.github.com/repos/emprcl/signls/releases/latest"
 favicon = "https://www.getzola.org/favicon.ico"
 easydocs_logo_always_clickable = false
 

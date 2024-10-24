@@ -44,6 +44,22 @@ a {
   }
 }
 
+h1 {
+  margin-top: 0;
+}
+
+h2,
+h3,
+h4 {
+  margin-top: calc(#{$baseline}*5)
+}
+
+h2 {
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
 h2,
 h3,
 h4 {
@@ -64,6 +80,12 @@ h4 {
   }
 }
 
+article code {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
 table td, table th {
   border: 1px solid $color;
   }
@@ -76,6 +98,7 @@ pre {
   position: relative;
 
   code {
+  border: none;
   background:transparent;
 
   &::after {
@@ -125,7 +148,7 @@ nav {
   width: 20rem;
 
   img {
-    width:128px;
+    width:96px;
   }
 
   h1 {
@@ -135,14 +158,13 @@ nav {
 }
 
 #toc {
-  margin-left:calc(#{$baseline} + #{$font-size});
   padding:0;
-  margin:0 0 0 $baseline;
-  font-size: 80%;
+  margin-top: calc(#{$baseline}/2);
 
   li {
     color:$color;
-    margin-left: $font-size;
+    margin-left: calc(#{$baseline}/4);
+    margin-top: calc(#{$baseline}/4);
 
   &::before {
     display: inline-block;
@@ -150,7 +172,7 @@ nav {
   }
 
   ul {
-    padding:0;
+    padding: 0;
   }
 
 }
@@ -201,6 +223,7 @@ main {
  }
 
  #trees {
+   margin:calc(#{$baseline} / 4) 0;
   overflow-y: auto;
   height: 80%;
  }
@@ -264,19 +287,10 @@ main {
 
  .subtree li {
   list-style-type: none;
-  margin-left: $baseline;
-
 
   a {
     color:$color;
   }
-
-  &::before {
-    content: "\E7C3";
-    font-family:'FabricMDL2Icons';
-    font-size:0.75rem;
-  }
-
 }
 
 .active a {
@@ -290,6 +304,18 @@ article {
 
  img {
    max-width:100%;
+ }
+
+ #wrap {
+  max-width: 600px;
+ }
+
+ ul {
+   margin-top: calc(#{$baseline}/4);
+ }
+
+ ul > li {
+  margin-bottom: calc(#{$baseline}/4);
  }
 
 }
@@ -336,17 +362,13 @@ article {
     z-index:10;
     box-shadow: 0 2px 0 rgba(0,0,0,.1);
   }
-
-  #on_right {
-    margin-top:$baseline;
-  }
 }
 
 blockquote {
   border-left: $quote-border;
-  margin: 0;
+  margin: $baseline 0;
   background-color: $quote-bg;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 @import "fabric-icons-inline";
