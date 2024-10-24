@@ -45,6 +45,7 @@
                 <h1><a href="{{ config.base_url }}{{ _ugly_url }}">{{ config.title }}</a></h1>
             {% endif -%}
 
+            <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
             <div id="trees">
                 <ul class="subtree">
                     <li class="active">
@@ -123,6 +124,19 @@
         </div>
     </article>
 </main>
+<script type="text/javascript">
+  function burger() {
+    let x = document.querySelector("#trees");
+    let y = document.querySelector("#mobile");
 
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      y.className = "ms-Icon--GlobalNavButton";
+    } else {
+      x.style.display = "block";
+      y.className = "ms-Icon--ChromeClose";
+    }
+  }
+</script>
 </body>
 </html>

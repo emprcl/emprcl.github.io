@@ -1,6 +1,6 @@
 +++
 title = "signls"
-weight = 5
+weight = 1
 [extra]
 release = "https://api.github.com/repos/emprcl/signls/releases/latest"
 +++
