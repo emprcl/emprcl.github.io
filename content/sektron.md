@@ -1,6 +1,6 @@
 +++
 title = "sektron"
-weight = 2
+weight = 5
 [extra]
 release = "https://api.github.com/repos/emprcl/sektron/releases/latest"
 +++

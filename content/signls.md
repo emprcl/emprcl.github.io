@@ -13,9 +13,11 @@ release = "https://api.github.com/repos/emprcl/signls/releases/latest"
 
 <hr/>
 
-**Signls** (_pronounced signals_) is a non-linear MIDI sequencer designed for live performances, all within the terminal. It allows you to create complex, evolving musical patterns using a grid-based approach. You can place nodes on the grid, and these nodes can emit signals, relay them, or trigger MIDI notes. There are 9 different types of nodes to explore, each with its own unique behavior.
+**Signls** (_pronounced signals_) is a non-linear MIDI sequencer designed for music composition and live performances, all within the terminal. It allows you to create complex, evolving musical patterns using a grid-based approach. You can place nodes on the grid, and these nodes can emit signals, relay them, or trigger MIDI notes. There are 9 different types of nodes to explore, each with its own unique behavior.
 
 With Signls, you can generate dynamic, generative music, meaning that the patterns evolve and change over time. It's designed to give you a powerful creative tool to build intricate sequences without being stuck in a rigid timeline or structure.
+
+It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](https://nodalmusic.com/).
 
 ![signls screenshot](https://raw.githubusercontent.com/emprcl/signls/refs/heads/main/docs/screenshot.png)
 
@@ -24,6 +26,7 @@ With Signls, you can generate dynamic, generative music, meaning that the patter
 - **Randomize everything**: create evolving musical patterns that shift over time, adding depth and unpredictability to your compositions.
 - **Live performance**: designed to be used in real-time, making it a adequate tool for live performances where improvisation is key.
 - **Keyboard first**: Signls operates directly from your terminal, giving you control in a simple, lightweight environment, where everything is controllable via keyboard.
+- **Cross-platform**: runs on Linux, macOS, and Windows
 
 ## Installation
 
@@ -95,15 +98,31 @@ Some companion apps that receive MIDI for testing Signls:
 
 ## Workflow
 
-### UI Overview
+### User Interface
 
-TODO: insert screenshots
+<img src="/images/signls/ui_1.png" alt="UI 1" />
+
+1. **Grid**: The [grid](#grid) is where you place [nodes](#nodes). Each nodes displays its type and emit/relay directions. Signals are displayed in white.
+2. **Selection indicator**: Shows the currently selected [nodes](#nodes).
+3. **Mode indicator**: Shows the current mode - _move_, _[edit](#parameters)_ or _[bank](#bank)_.
+4. **Selector position**: Shows the current selector position.
+5. **Grid size**: Shows the current grid size. Useful to know if the grid is bigger than the current terminal window.
+6. **Tempo**: Shows the current [tempo](#timing) in bpm (_beats per minute_).
+7. **Play status**: Shows if the grid is currently playing (▶) or stopped (■). Also shows the number of 1/16 notes since it started to play.
+8. **Root key**: Shows the current [root key](#transposition).
+9. **Scale**: Shows the current [scale](#transposition).
+10. **Bank**: Shows the currently selected grid in the [bank](#bank), and the name of the bank (which is the bank filename).
+11. **MIDI device**: Shows the currently selected [MIDI device](#midi).
+12. **Control zone**: Shows either [grid](#grid) informations and parameters (_move_ mode), selected [node parameters](#parameters) (_edit_ mode) or [bank](#bank) grid slots (_bank_ mode).
+
 
 ### Grid
 
-By default, the size of the grid adapts to your terminal size. If you increase the terminal window, the grid will expand accordingly. However, if you decrease the terminal size, the grid remains unchanged to prevent the accidental loss of nodes outside the visible bounds. You can still scroll through the grid even if the terminal is smaller.
+The **grid** serves as a canvas for your sequencing, where you control the flow of MIDI signals across various [nodes](#nodes). You can **start** or **stop** the grid's underlying sequencer by pressing `space`.
 
-If you want to force the grid to resize and match the terminal (which may result in some nodes being deleted), you can press `f10` to do so manually.
+By default, the **size** of the grid adapts to your terminal size. If you **increase** the terminal window, the grid will expand accordingly. However, if you **decrease** the terminal size, the grid remains unchanged to prevent the accidental loss of nodes outside the visible bounds. You can still scroll through the grid even if the terminal is smaller.
+
+If you want to force the grid to **resize** and match the terminal (which may result in some nodes being deleted), you can press `f10` to do so manually.
 
 ### Nodes
 
@@ -112,11 +131,11 @@ If you want to force the grid to resize and match the terminal (which may result
  - they can **relay incoming signals** to up to 4 directions
  - they can **trigger MIDI messages** 
 
-To **add** nodes on the grid, move the cursor using the arrow keys and press keys `1` to `9` to choose one of the **9 available node types**.
+To **add** nodes on the grid, move the cursor using the arrow keys and press keys `1` to `9` to choose one of the **[9 available node types](#nodes-reference)**.
 
 To **remove** nodes from the grid, move the cursor using the arrow keys and press `backspace`.
 
-You can manually **trigger** a 
+You can manually **trigger** a node by using `/`.
 
 You can **mute** nodes to temporarily silence their behavior:
 - Press `m` to toggle mute on the selected nodes.
@@ -135,11 +154,9 @@ You can easily manage nodes on the grid by copying, cutting, and pasting them us
 
 A key feature of each node is the direction in which it **emits** or **relays signals**. You can configure up to four directions: **up**, **down**, **left**, and **right**. To modify a node's directions, move the cursor to the desired node and press `Ctrl` + `↑` `↓` `←` `→` to add or remove directions. The way a node uses these directions (one or multiple) depends on its specific behavior.
 
-<img src="/images/signls/directions.jpg" alt="directions" width="300"/>
+<img src="/images/signls/directions.jpg" alt="directions" class="shadow" width="300"/>
 
 #### Parameters
-
-TODO: insert parameters screenshot
 
 Each node has adjustable parameters that you can edit to modify its behavior. To enter **node editing mode**, move the cursor to the node you want to modify and press `enter`. The available parameters will appear in the control bar at the bottom. You can navigate between parameters using `←` `→` keys. To change a parameter value, press `ctrl`+`↑` to increase or `ctrl`+`↓` to decrease it.
 
@@ -152,6 +169,15 @@ Each node parameter can have up to four alternative values:
 > _We will refer to these as **Main 1**, **Main 2**, **Alt 1**, and **Alt 2** for simplicity_
 
 Each node (except "The Hole") shares **five common MIDI parameters**.
+
+<img src="/images/signls/ui_2.png" alt="UI 2" />
+
+Parameters are displayed in two parts if an alternative value (for example [randomization](#randomization)) is set:
+1. **the actual value**: here _F5_ for the key or _100_ for the velocity
+2. **the alternative value**: here _+8_ for the key or _-18_ for the velocity
+
+<br/>
+
 
 **Key**: key of the MIDI note
 - **Value Range**: A1 - G10
@@ -204,6 +230,8 @@ You can apply **randomization** to most node parameters. When editing randomizat
 
 For example, if you set the **velocity** to _80+5_, the random value will be picked between 80 and 85. If you set the velocity to _80-5_, the random value will be picked between 75 and 80. This allows for subtle variations in your sequences, adding a layer of unpredictability while keeping control over the range of changes.
 
+> _Randomized node keys will always conform to the current [scale](#transposition)._
+
 ### Bank
 
 You manage your projects using a **bank**. When you start the program, you can provide a **bank** JSON file, or if none is provided, a default file (_default.json_) will be created or loaded automatically. Each bank can store up to **32 grids**.
@@ -216,16 +244,20 @@ The grids are **saved automatically** whenever you make changes or exit the prog
 
 To load a specific grid from the bank, press `tab` to switch to the **bank view**, then use the arrow keys to select a grid slot and press `enter` to load it. This allows you to quickly swap between different configurations during live performances or while working on different projects.
 
+<img src="/images/signls/ui_3.png" alt="UI 3" />
+
+The _&#800;_ character under the grid number indicates that the grid slot is not empty.
+
 ## Nodes reference
 
-Here is a reference guide for all the **node types** available in **Signls**. Each node has common **note parameters** (except for the Hole) like key, velocity, length, channel, and probability. Some nodes also have **extra parameters** that give them unique behavior.
+Here is a reference guide for all the **node types** available in **Signls**. Each node has common [**note parameters**](#parameters) (except for the Hole) like key, velocity, length, channel, and probability. Some nodes also have **extra parameters** that give them unique behavior.
 
-### <img src="/images/signls/bang.jpg" alt="bang" class="node" width="25"/> **Bang**
+### <img src="/images/signls/bang.jpg" alt="bang" class="node shadow" width="25"/> **Bang**
 - **Description:** emits a signal when the grid starts playing and relays signals on all configured directions
 - **Key binding**: `1`
 - **Extra Parameters:** none
 
-### **Euclid**
+### <img src="/images/signls/euclid.jpg" alt="euclid" class="node shadow" width="25"/> **Euclid**
 - **Description:** emits signals based on the **euclidean rhythm algorithm**, ensuring an even distribution of steps across the grid. Relays signals on all configured directions
 - **Key binding**: `2`
 - **Extra Parameters:**
@@ -248,27 +280,27 @@ Here is a reference guide for all the **node types** available in **Signls**. Ea
 	- **Alt 1**: _unused_
 	- **Alt 2**:  _unused_
 
-### **Pass**
+### <img src="/images/signls/pass.jpg" alt="pass" class="node shadow" width="25"/> **Pass**
 - **Description:** passes signals through without affecting their direction. No direction configuration is possible
 - **Key binding**: `3`
 - **Extra Parameters:** none
 
-### **Spread**
+### <img src="/images/signls/spread.jpg" alt="spread" class="node shadow" width="25"/> **Spread**
 - **Description:** relays signals on all configured directions, distributing them evenly
 - **Key binding**: `4`
 - **Extra Parameters:** None
 
-### **Cycle**
+### <img src="/images/signls/cycle.jpg" alt="cycle" class="node shadow" width="25"/> **Cycle**
 - **Description:** relays signals in a **clockwise direction**, starting from the "up" direction, one at a time
 - **Key binding**: `5`
 - **Extra Parameters:** none
 
-### **Dice**
+### <img src="/images/signls/dice.jpg" alt="dice" class="node shadow" width="25"/> **Dice**
 - **Description:** relays signals in a randomly selected direction each time it is triggered
 - **Key binding**: `6`
 - **Extra Parameters:** none
 
-### **Toll**
+### <img src="/images/signls/toll.jpg" alt="toll" class="node shadow" width="25"/> **Toll**
 - **Description:** relays signals on all configured directions, but only after being triggered a specific number of times
 - **Key binding**: `7`
 - **Extra Parameters:**
@@ -279,12 +311,12 @@ Here is a reference guide for all the **node types** available in **Signls**. Ea
 	- **Alt 1**: _unused_
 	- **Alt 2**:  _unused_
 
-### **Zone**
+### <img src="/images/signls/zone.jpg" alt="zone" class="node shadow" width="25"/> **Zone**
 - **Description:** relays signals on all configured directions and immediately propagates the trigger to all neighboring nodes, making it ideal for triggering chords
 - **Key binding**: `8`
 - **Extra Parameters:** none
 
-### **Hole**
+### <img src="/images/signls/hole.jpg" alt="hole" class="node shadow" width="25"/> **Hole**
 - **Description:** instantly teleports the signal to a specified location on the grid without triggering any notes
 - **Key binding**: `9`
 - **Extra Parameters:**

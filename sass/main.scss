@@ -48,10 +48,13 @@ h1 {
   margin-top: 0;
 }
 
-h2,
+h2 {
+  margin-top: calc(#{$baseline}*5)
+}
+
 h3,
 h4 {
-  margin-top: calc(#{$baseline}*5)
+  margin-top: calc(#{$baseline}*3)
 }
 
 h2 {
@@ -310,6 +313,10 @@ article {
    max-width:100%;
  }
 
+ img.shadow {
+  filter: drop-shadow(5px 5px 2px);
+ }
+
  img.node {
   vertical-align: bottom;
  }
@@ -380,4 +387,3 @@ blockquote {
 }
 
 @import "fabric-icons-inline";
-@import "search";
