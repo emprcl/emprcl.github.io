@@ -1,8 +1,10 @@
 +++
 title = "sektron"
+description = "a midi step sequencer, made with live performance in mind, that runs in the terminal"
 weight = 5
 [extra]
 release = "https://api.github.com/repos/emprcl/sektron/releases/latest"
+image = "/images/sektron/screenshot.png"
 +++
 
 ## Overview

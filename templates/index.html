@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <meta name="robots" content="index, follow" />
     <meta name="language" content="en" />
-    <meta name="description" content="emprcl - creating weird music software for the command line.">
+    <meta name="description" content="{% block description %}Creating weird music software for the command line{% endblock description %}">
+    {% block opengraph %}
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:description" content="Creating weird music software for the command line">
+    <meta property="og:image" content="{{ config.base_url }}/images/logo_big.png">
+    {% endblock opengraph %}
     <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
     {% if config.extra.favicon -%}
         {% set _favicon = config.extra.favicon -%}
