@@ -250,6 +250,8 @@ To load a specific grid from the bank, press `tab` to switch to the **bank view*
 
 The _&#800;_ character under the grid number indicates that the grid slot is not empty.
 
+Like nodes, you can copy, cut and paste grids in the bank.
+
 ## Nodes reference
 
 Here is a reference guide for all the **node types** available in **Signls**. Each node has common [**note parameters**](#parameters) (except for the Hole) like key, velocity, length, channel, and probability. Some nodes also have **extra parameters** that give them unique behavior.
