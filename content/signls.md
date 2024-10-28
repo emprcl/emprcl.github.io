@@ -21,7 +21,7 @@ With Signls, you can generate dynamic, generative music, meaning that the patter
 
 It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](https://nodalmusic.com/).
 
-<iframe width="600" height="315" src="https://www.youtube-nocookie.com/embed/N2jTlwaZbgk?si=P2ymGjp82mqf9--h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe style="width:100%; aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/N2jTlwaZbgk?si=P2ymGjp82mqf9--h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Features**
 - **Non-linear sequencing**: unlike traditional sequencers, Signls doesn't force you into a single direction. Your sequences can move and shift in multiple ways, allowing for complex and unique arrangements.
