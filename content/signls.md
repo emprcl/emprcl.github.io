@@ -9,8 +9,8 @@ image = "/images/signls/screenshot.png"
 
 ## Overview
 
-<span id="release"></span> • 
-[source code](https://github.com/emprcl/signls) • 
+<span id="release"></span> •
+[source code](https://github.com/emprcl/signls) •
 [report an issue](https://github.com/emprcl/signls/issues/new)
 
 <hr/>
@@ -21,7 +21,7 @@ With Signls, you can generate dynamic, generative music, meaning that the patter
 
 It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](https://nodalmusic.com/).
 
-![signls screenshot](https://raw.githubusercontent.com/emprcl/signls/refs/heads/main/docs/screenshot.png)
+<iframe width="600" height="315" src="https://www.youtube-nocookie.com/embed/N2jTlwaZbgk?si=P2ymGjp82mqf9--h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Features**
 - **Non-linear sequencing**: unlike traditional sequencers, Signls doesn't force you into a single direction. Your sequences can move and shift in multiple ways, allowing for complex and unique arrangements.
@@ -131,7 +131,7 @@ If you want to force the grid to **resize** and match the terminal (which may re
 **Nodes** can perform three main functions based on their type:
  - they can **emit new signals**
  - they can **relay incoming signals** to up to 4 directions
- - they can **trigger MIDI messages** 
+ - they can **trigger MIDI messages**
 
 To **add** nodes on the grid, move the cursor using the arrow keys and press keys `1` to `9` to choose one of the **[9 available node types](#nodes-reference)**.
 
@@ -149,7 +149,7 @@ You can easily manage nodes on the grid by copying, cutting, and pasting them us
  - `ctrl`+`C` to **copy**,
  - `ctrl`+`X` to **cut**
  - `ctrl`+`V` to **paste**.
- 
+
  To move nodes in bulk, you can **select multiple nodes** by holding `shift` + `↑` `↓` `←` `→` to define a selection area. This makes it easy to reposition or replicate parts of your sequence.
 
 #### Emit and relay directions
