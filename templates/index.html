@@ -11,13 +11,10 @@
     <meta property="og:image" content="{{ config.base_url }}/images/logo_big.png">
     {% endblock opengraph %}
     <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
-    {% if config.extra.favicon -%}
-        {% set _favicon = config.extra.favicon -%}
-        {% if (_favicon is starting_with("http")) == false -%}
-            {% set _favicon = get_url(path=config.extra.favicon) -%}
-        {% endif -%}
-        <link rel="icon" href="{{ _favicon | safe }}">
-    {% endif -%}
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="3495e2be-776d-4d16-afef-9a5cb76bb521"></script>
