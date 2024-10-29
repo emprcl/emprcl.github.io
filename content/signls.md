@@ -227,19 +227,19 @@ Each position on the grid represents a **1/16 note**. You can adjust the **tempo
 The MIDI notes assigned to each node are fixed. However, when the **root key** or **scale** of the grid is changed, these notes are **transposed** according to the new root key and scale. This means the original note values are shifted in relation to the grid's updated musical context, allowing you to easily adjust the overall harmony without manually changing the notes on each node. The transposition happens relative to the set root and scale, providing a flexible way to experiment with different keys and tonalities.
 
 Available scales includes the chromatic scale, the 7 diatonic modes, a few pentatonic scales and a tetratonic scale:
-- chromatic
-- ionian
-- dorian
-- phrygian
-- lydian
-- mixolydian
-- aeolian
-- locrian
-- pentatonic major
-- pentatonic minor
-- hirajoshi
-- iwato
-- tetratonic
+- **chromatic**
+- **ionian**
+- **dorian**
+- **phrygian**
+- **lydian**
+- **mixolydian**
+- **aeolian**
+- **locrian**
+- **pentatonic major**
+- **pentatonic minor**
+- **hirajoshi**
+- **iwato**
+- **tetratonic**
 
 ### Randomization
 
