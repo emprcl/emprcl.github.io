@@ -92,7 +92,7 @@ Key binding reference:
 
 **Signls** doesn't generate sound on its own, but it works seamlessly with MIDI software or hardware. You can connect it to your favorite synthesizers, virtual instruments, or any MIDI-compatible devices for live performances or production.
 
-Press the `f2` key to cycle through the available MIDI drivers and set up your preferred MIDI output.
+Press the `f2` key to cycle through the available MIDI devices and set up your preferred MIDI output.
 
 Some companion apps that receive MIDI for testing Signls:
  - [Enfer](https://neauoire.github.io/Enfer/) ([github](https://github.com/neauoire/Enfer))
