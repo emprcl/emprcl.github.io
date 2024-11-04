@@ -1,28 +1,23 @@
-{% extends "index.html" %}
-
-{% block description %}{{ page.description }}{% endblock description %}
-
-{% block opengraph %}
-<meta property="og:title" content="{{ config.title }} | {{ page.title }}">
-<meta property="og:description" content="{{ page.description }}">
-<meta property="og:image" content="{{ config.base_url }}/{{ page.extra.image }}">
-{% endblock opengraph %}
-
-{% block title %} {{ config.title }} | {{ page.title }} {% endblock title %}
-    {% block content %}
-        {% if page.extra.release -%}
-            <script>
-                fetch('{{ page.extra.release | safe }}')
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((data) => {
-                        let release_name = data.name;
-                        let html_url = data.html_url;
-                        let release = document.querySelector('#release');
-                        release.innerHTML = `<a href='${html_url}'>{{ page.title }} ${release_name}</a>`;
-                    });
-            </script>
-        {% endif -%}
-        {{ page.content | safe }}
-    {% endblock content %}
+{% extends "index.html" %} {% block description %}{{ page.description }}{%
+endblock description %} {% block opengraph %}
+<meta property="og:title" content="{{ config.title }} | {{ page.title }}" />
+<meta property="og:description" content="{{ page.description }}" />
+<meta
+    property="og:image"
+    content="{{ config.base_url }}/{{ page.extra.image }}"
+/>
+{% endblock opengraph %} {% block title %} {{ page.title }}
+{% endblock title %} {% block content %} {% if page.extra.release -%}
+<script>
+    fetch("{{ page.extra.release | safe }}")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let release_name = data.name;
+            let html_url = data.html_url;
+            let release = document.querySelector("#release");
+            release.innerHTML = `<a href='${html_url}'>{{ page.title }} ${release_name}</a>`;
+        });
+</script>
+{% endif -%} {{ page.content | safe }} {% endblock content %}

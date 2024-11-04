@@ -1,5 +1,5 @@
 +++
-title = "signls"
+title = "Signls"
 description = "a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal"
 weight = 1
 [extra]
@@ -36,7 +36,9 @@ It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](htt
 
 [Download the last release](https://github.com/emprcl/signls/releases) for your platform.
 
-Then, if your terminal:
+### Linux & macOS
+
+In your terminal:
 ```sh
 # Extract files
 mkdir -p signls && tar -zxvf signls_VERSION_PLATFORM.tar.gz -C signls
@@ -44,6 +46,18 @@ mkdir -p signls && tar -zxvf signls_VERSION_PLATFORM.tar.gz -C signls
 # Run signls
 ./signls
 ```
+
+### Windows
+
+> _Signls has not been tested properly on Windows. Please [open an issue](https://github.com/emprcl/signls/issues/new) if something is not working._
+
+Unzip the archive and, in the same directory, run:
+```
+signls.exe
+```
+Replace _./signls_ by _signls.exe_ for every following commands.
+
+### Build it yourself
 
 You can also [build it yourself](https://github.com/emprcl/signls?tab=readme-ov-file#build-it-yourself) if your want to.
 
@@ -94,8 +108,11 @@ Key binding reference:
 
 Press the `f2` key to cycle through the available MIDI devices and set up your preferred MIDI output.
 
+On _macOS_, you might need to [enable the IAC driver](https://discussions.apple.com/thread/8096575?answerId=32319872022&sortBy=rank#32319872022) if you're only using webmidi instruments.
+
 Some companion apps that receive MIDI for testing Signls:
- - [Enfer](https://neauoire.github.io/Enfer/) ([github](https://github.com/neauoire/Enfer))
+ - [Webmidi synths](https://synth.playtronica.com/)
+ - [Enfer](https://neauoire.github.io/Enfer/) ([github](https://github.com/neauoire/Enfer)) _*works only on linux*_
  - [QSynth](https://qsynth.sourceforge.io/)
 
 ## Workflow

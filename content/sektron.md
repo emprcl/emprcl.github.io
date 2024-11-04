@@ -1,5 +1,5 @@
 +++
-title = "sektron"
+title = "Sektron"
 description = "a midi step sequencer, made with live performance in mind, that runs in the terminal"
 weight = 5
 [extra]
@@ -9,8 +9,8 @@ image = "/images/sektron/screenshot.png"
 
 ## Overview
 
-<span id="release"></span> • 
-[source code](https://github.com/emprcl/sektron) • 
+<span id="release"></span> •
+[source code](https://github.com/emprcl/sektron) •
 [report an issue](https://github.com/emprcl/sektron/issues/new)
 
 <hr/>
