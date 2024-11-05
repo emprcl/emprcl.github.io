@@ -108,7 +108,7 @@ Key binding reference:
 
 Press the `f2` key to cycle through the available MIDI devices and set up your preferred MIDI output.
 
-On _macOS_, you might need to [enable the IAC driver](https://discussions.apple.com/thread/8096575?answerId=32319872022&sortBy=rank#32319872022) if you're only using webmidi instruments.
+On **macOS**, you might need to [enable the IAC driver](https://discussions.apple.com/thread/8096575?answerId=32319872022&sortBy=rank#32319872022) if you're only using webmidi instruments.
 
 Some companion apps that receive MIDI for testing Signls:
  - [Webmidi synths](https://synth.playtronica.com/)
