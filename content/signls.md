@@ -49,13 +49,15 @@ mkdir -p signls && tar -zxvf signls_VERSION_PLATFORM.tar.gz -C signls
 
 ### Windows
 
-> _Signls has not been tested properly on Windows. Please [open an issue](https://github.com/emprcl/signls/issues/new) if something is not working._
+> _*We recommend using [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701) with a good monospace font like [Iosevka](https://typeof.net/Iosevka/) to display Signls correctly on Windows.*_
+
+> _*Some specific Windows [bugs](https://github.com/emprcl/signls/issues/5) regarding unicode characters prevent us to display some UI elements (randomization indicator or non-empty bank slot) but it should not degrade the experience that much.*_
 
 Unzip the archive and, in the same directory, run:
 ```
-signls.exe
+.\signls.exe
 ```
-Replace _./signls_ by _signls.exe_ for every following commands.
+Replace _./signls_ by _.\signls.exe_ for every following commands.
 
 ### Build it yourself
 
