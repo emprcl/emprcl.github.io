@@ -96,7 +96,32 @@ You can select one of the default keyboard layouts available:
 ./signls --keyboard azerty-mac
 ```
 
-Key binding reference:
+#### Default keybindings
+
+For qwerty keyboards, here's the default mapping:
+
+ - `space` **play** or **stop**
+ - `tab` **show bank**
+ - `1` ... `9` **add nodes**
+ - `↑` `↓` `←` `→` **move cursor**
+ - `shift`+`↑` `↓` `←` `→` **multiple selection (or modify alt parameter mode in edit mode)**
+ - `ctrl`+`↑` `↓` `←` `→` **modify selected node direction (modify parameter or alt parameter value)**
+ - `backspace` **remove selected nodes (or grid in bank)**
+ - `enter` **edit selected nodes**
+ - `m` **toggle selected nodes mute**
+ - `M` **mute/unmute all selected nodes**
+ - `/` **trigger selected node**
+ - `-` `=` **modify tempo**
+ - `'` `;` **modify root note**
+ - `"` `:` **modify scale**
+ - `ctrl`+`c` `x` `v`  **copy, cut, paste selection**
+ - `escape` **exit parameter edit or bank selection**
+ - `f2` **select midi device**
+ - `f10` **fit grid to window**
+ - `?` **show help**
+ - `ctrl`+`q` **quit**
+
+#### Key binding reference
  - [qwerty](https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L183)
  - [qwerty mac](https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L244)
  - [azerty](https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L62)
@@ -242,6 +267,10 @@ Each position on the grid represents a **1/16 note**. You can adjust the **tempo
 ### Transposition
 
 The MIDI notes assigned to each node are fixed. However, when the **root key** or **scale** of the grid is changed, these notes are **transposed** according to the new root key and scale. This means the original note values are shifted in relation to the grid's updated musical context, allowing you to easily adjust the overall harmony without manually changing the notes on each node. The transposition happens relative to the set root and scale, providing a flexible way to experiment with different keys and tonalities.
+
+To modify the **root key** and **scale**, use:
+ - `'` `;` to decrease and increase the root key
+ - `"` `:` to cycle through the available scales
 
 Available scales include the chromatic scale, the 7 diatonic modes, a few pentatonic scales and a tetratonic scale:
 - **chromatic**
