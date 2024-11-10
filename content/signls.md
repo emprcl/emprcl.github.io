@@ -108,6 +108,7 @@ For qwerty keyboards, here's the default mapping:
  - `↑` `↓` `←` `→` **move cursor**
  - `shift`+`↑` `↓` `←` `→` **multiple selection (or modify alt parameter mode in edit mode)**
  - `ctrl`+`↑` `↓` `←` `→` **modify selected node direction (modify parameter or alt parameter value)**
+ - `.` **modify selected parameter**
  - `backspace` **remove selected nodes (or grid in bank)**
  - `enter` **edit selected nodes**
  - `m` **toggle selected nodes mute**
@@ -205,6 +206,7 @@ A key feature of each node is the direction in which it **emits** or **relays si
 #### Parameters
 
 Each node has adjustable parameters that you can edit to modify its behavior. To enter **node editing mode**, move the cursor to the node you want to modify and press `enter`. The available parameters will appear in the control bar at the bottom. You can navigate between parameters using `←` `→` keys. To change a parameter value, press `ctrl`+`↑` to increase or `ctrl`+`↓` to decrease it.
+You can edit a parameter value directly by pressing the `.` key. This opens a text input where you can type the value manually. Press `enter` to confirm the change.
 
 Each node parameter can have up to four alternative values:
  - **Main 1** `Ctrl`+`↑`/`↓`: adjusts the main value
