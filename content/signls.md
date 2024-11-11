@@ -206,7 +206,8 @@ A key feature of each node is the direction in which it **emits** or **relays si
 #### Parameters
 
 Each node has adjustable parameters that you can edit to modify its behavior. To enter **node editing mode**, move the cursor to the node you want to modify and press `enter`. The available parameters will appear in the control bar at the bottom. You can navigate between parameters using `←` `→` keys. To change a parameter value, press `ctrl`+`↑` to increase or `ctrl`+`↓` to decrease it.
-You can edit a parameter value directly by pressing the `.` key. This opens a text input where you can type the value manually. Press `enter` to confirm the change.
+
+You can edit a parameter value precisely by pressing the `.` key. This opens a **text input** where you can type the value manually. Press `enter` to confirm the change.
 
 Each node parameter can have up to four alternative values:
  - **Main 1** `Ctrl`+`↑`/`↓`: adjusts the main value
