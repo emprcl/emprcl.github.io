@@ -60,7 +60,7 @@
                 {% for page in section_.pages -%}
                     <ul class="subtree">
                         <li class="active">
-                            <a href="{{ page.permalink | safe }}{{ _ugly_url }}">{{ page.title }}</a>
+                            <a href="{{ page.permalink | safe }}{{ _ugly_url }}">{{ page.title | lower }}</a>
                         </li>
                             
 
