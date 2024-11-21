@@ -42,6 +42,7 @@ In your terminal:
 ```sh
 # Extract files
 mkdir -p signls && tar -zxvf signls_VERSION_PLATFORM.tar.gz -C signls
+cd signls
 
 # Run signls
 ./signls
