@@ -120,7 +120,7 @@ For qwerty keyboards, here's the default mapping:
  - `"` `:` **modify scale**
  - `ctrl`+`c` `x` `v`  **copy, cut, paste selection**
  - `escape` **exit parameter edit or bank selection**
- - `f2` **select midi device**
+ - `f2` **edit midi configuration**
  - `f10` **fit grid to window**
  - `?` **show help**
  - `ctrl`+`q` **quit**
@@ -135,7 +135,14 @@ For qwerty keyboards, here's the default mapping:
 
 **Signls** doesn't generate sound on its own, but it works seamlessly with MIDI software or hardware. You can connect it to your favorite synthesizers, virtual instruments, or any MIDI-compatible devices for live performances or production.
 
-Press the `f2` key to cycle through the available MIDI devices and set up your preferred MIDI output.
+Press the `f2` to open the MIDI configuration menu, where you can adjust three parameters:
+ - **Clock**: enable or disable clock send messages
+ - **Transport**: enable or disable transport start and stop messages
+ - **Device**: select the midi output device
+
+Use `←` and `→` to navigate between the parameters, and modify their values with `ctrl`+`↑` and `ctrl`+`↓`.
+
+In addition of _NoteOn_ and _NoteOff_ messages, **Signls** can also send [_CC_ messages](#parameter-page-2).
 
 On **macOS**, you might need to [enable the IAC driver](https://discussions.apple.com/thread/8096575?answerId=32319872022&sortBy=rank#32319872022) if you're only using webmidi instruments.
 
@@ -198,15 +205,18 @@ You can easily manage nodes on the grid by copying, cutting, and pasting them us
 
  To move nodes in bulk, you can **select multiple nodes** by holding `shift` + `↑` `↓` `←` `→` to define a selection area. This makes it easy to reposition or replicate parts of your sequence.
 
-#### Emit and relay directions
+### Signals
 
 A key feature of each node is the direction in which it **emits** or **relays signals**. You can configure up to four directions: **up**, **down**, **left**, and **right**. To modify a node's directions, move the cursor to the desired node and press `Ctrl` + `↑` `↓` `←` `→` to add or remove directions. The way a node uses these directions (one or multiple) depends on its specific behavior.
 
 <img src="/images/signls/directions.jpg" alt="directions" class="shadow" width="300"/>
 
-#### Parameters
+### Parameters
 
-Each node has adjustable parameters that you can edit to modify its behavior. To enter **node editing mode**, move the cursor to the node you want to modify and press `enter`. The available parameters will appear in the control bar at the bottom. You can navigate between parameters using `←` `→` keys. To change a parameter value, press `ctrl`+`↑` to increase or `ctrl`+`↓` to decrease it.
+Each node has adjustable parameters that you can edit to modify its behavior. To enter **node editing mode**, move the cursor to the node you want to modify and press `enter`. The available parameters will appear in the control bar at the bottom.
+You can navigate between parameters using `←` `→` key and switch between parameter pages with using `↑` `↓` keys.
+
+To change a parameter value, press `ctrl`+`↑` to increase or `ctrl`+`↓` to decrease it.
 
 You can edit a parameter value precisely by pressing the `.` key. This opens a **text input** where you can type the value manually. Press `enter` to confirm the change.
 
@@ -226,45 +236,59 @@ Parameters are displayed in two parts if an alternative value (for example [rand
 1. **the actual value**: here _F5_ for the key or _100_ for the velocity
 2. **the alternative value**: here _+8_ for the key or _-18_ for the velocity
 
+> _You can edit multiple nodes at once by selecting them together.The common parameters for all selected nodes will be displayed, and any changes you make will apply to all of them simultaneously._
+
+
 <br/>
 
+#### Parameter page 1
 
-**Key**: key of the MIDI note
+**Key** (_key_): key of the MIDI note
 - **Value Range**: A1 - G10
 - **Main 1**: key value for the note
 - **Main 2**: randomization range
 - **Alt 1**: _unused_
 - **Alt 2**: note modes (random | silent)
 
-**Velocity**: intensity of the MIDI note
+**Velocity** (_vel_): intensity of the MIDI note
 - **Value Range**: 0 - 127
 - **Main 1**: velocity value for the note
 - **Main 2**: randomization range
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
-**Length**: duration of the MIDI note.
+**Length** (_len_): duration of the MIDI note.
 - **Value Range**: 1/64 - inf
 - **Main 1**: length value of the note
 - **Main 2**: randomization range
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
-**Channel**: MIDI channel
+**Channel** (_cha_): MIDI channel
 - **Value Range**: 1 - 16
 - **Main 1**: channel value
 - **Main 2**: randomization range
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
-**Probability**: the chance of triggering the MIDI note
+**Probability** (_prb_): the chance of triggering the MIDI note
 - **Value Range**: 0 - 100
 - **Main 1**: probability value
 - **Main 2**: _unused_
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
-> _You can edit multiple nodes at once by selecting them together.The common parameters for all selected nodes will be displayed, and any changes you make will apply to all of them simultaneously._
+#### Parameter page 2
+
+On parameter page 2, you can configure up to **8 MIDI CC messages** which will be sent alongside the note messages.
+
+**CC** (_cc_): the control change message
+- **Value Range**: 0 - 127
+- **Main 1**: cc value
+- **Main 2**: randomization range
+- **Alt 1**: cc number (_only for cc mode_)
+- **Alt 2**: message mode - _disabled_, _cc_, _after touch_, _pitch bend_, _program change_
+
 
 ### Timing
 
@@ -332,19 +356,19 @@ Here is a reference guide for all the **node types** available in **Signls**. Ea
 - **Description:** emits signals based on the **euclidean rhythm algorithm**, ensuring an even distribution of steps across the grid. Relays signals on all configured directions
 - **Key binding**: `2`
 - **Extra Parameters:**
-  - **Steps:** number of total steps in the pattern
+  - **Steps** (_stp_): number of total steps in the pattern
 	- **Value Range**: 1 - 128
 	- **Main 1**: steps value
 	- **Main 2**: randomization range
 	- **Alt 1**: _unused_
 	- **Alt 2**:  _unused_
-  - **Triggers:** number of signals to emit within the total steps
+  - **Triggers** (_trg_): number of signals to emit within the total steps
 	- **Value Range**: 1 - 128
 	- **Main 1**: triggers value
 	- **Main 2**: randomization range
 	- **Alt 1**: _unused_
 	- **Alt 2**:  _unused_
-  - **Offset:** shifts the start point of the pattern
+  - **Offset** (_off_): shifts the start point of the pattern
 	- **Value Range**: 0 - 128
 	- **Main 1**: offset value
 	- **Main 2**: randomization range
@@ -375,7 +399,7 @@ Here is a reference guide for all the **node types** available in **Signls**. Ea
 - **Description:** relays signals on all configured directions, but only after being triggered a specific number of times
 - **Key binding**: `7`
 - **Extra Parameters:**
-  - **Threshold:** the number of times the node must be triggered before it relays a signal
+  - **Threshold** (_thd_): the number of times the node must be triggered before it relays a signal
 	- **Value Range**: 1 - no upper limit
 	- **Main 1**: offset value
 	- **Main 2**: randomization range
@@ -391,7 +415,7 @@ Here is a reference guide for all the **node types** available in **Signls**. Ea
 - **Description:** instantly teleports the signal to a specified location on the grid without triggering any notes
 - **Key binding**: `9`
 - **Extra Parameters:**
-  - **Destination:** The coordinate of the destination
+  - **Destination** (_dest_): The coordinate of the destination
 	- **Value Range**: 1 - grid width/height
 	- **Main 1**: y-coordinate value of the destination
 	- **Main 2**: x-coordinate value of the destination
