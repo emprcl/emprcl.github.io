@@ -135,14 +135,15 @@ For qwerty keyboards, here's the default mapping:
 
 **Signls** doesn't generate sound on its own, but it works seamlessly with MIDI software or hardware. You can connect it to your favorite synthesizers, virtual instruments, or any MIDI-compatible devices for live performances or production.
 
+On each [node](#nodes), you can configure **_NoteOn_** and **_NoteOff_** messages, using [note parameters](#note-parameters).
+Each node can also send up to 8 **_CC_** messages, using [CC parameters](#cc-parameters).
+
 Press the `f2` to open the MIDI configuration menu, where you can adjust three parameters:
- - **Clock**: enable or disable clock send messages
- - **Transport**: enable or disable transport start and stop messages
+ - **Clock**: enable or disable **_clock send_** messages
+ - **Transport**: enable or disable **_transport start_** and **_stop_** messages
  - **Device**: select the midi output device
 
 Use `←` and `→` to navigate between the parameters, and modify their values with `ctrl`+`↑` and `ctrl`+`↓`.
-
-In addition of _NoteOn_ and _NoteOff_ messages, **Signls** can also send [_CC_ messages](#parameter-page-2).
 
 On **macOS**, you might need to [enable the IAC driver](https://discussions.apple.com/thread/8096575?answerId=32319872022&sortBy=rank#32319872022) if you're only using webmidi instruments.
 
@@ -158,16 +159,16 @@ Some companion apps that receive MIDI for testing Signls:
 <img src="/images/signls/ui_1.png" alt="UI 1" />
 
 1. **Grid**: The [grid](#grid) is where you place [nodes](#nodes). Each nodes displays its type and emit/relay directions. Signals are displayed in white.
-2. **Selection indicator**: Shows the currently selected [nodes](#nodes).
-3. **Mode indicator**: Shows the current mode - _move_, _[edit](#parameters)_ or _[bank](#bank)_.
-4. **Selector position**: Shows the current selector position.
-5. **Grid size**: Shows the current grid size. Useful to know if the grid is bigger than the current terminal window.
-6. **Tempo**: Shows the current [tempo](#timing) in bpm (_beats per minute_).
-7. **Play status**: Shows if the grid is currently playing (▶) or stopped (■). Also shows the number of 1/16 notes since it started to play.
-8. **Root key**: Shows the current [root key](#transposition).
-9. **Scale**: Shows the current [scale](#transposition).
-10. **Bank**: Shows the currently selected grid in the [bank](#bank), and the name of the bank (which is the bank filename).
-11. **MIDI device**: Shows the currently selected [MIDI device](#midi).
+2. **Cursor**: The cursor is the tool to place, select or edit nodes.
+3. **Selection indicator**: Shows the currently selected [nodes](#nodes).
+4. **Mode indicator**: Shows the current mode - _move_, _[edit](#parameters)_ or _[bank](#bank)_.
+5. **Selector position**: Shows the current selector position.
+6. **Grid size**: Shows the current grid size. Useful to know if the grid is bigger than the current terminal window.
+7. **Tempo**: Shows the current [tempo](#timing) in bpm (_beats per minute_).
+8. **Play status**: Shows if the grid is currently playing (▶) or stopped (■). Also shows the number of 1/16 notes since it started to play.
+9. **Root key**: Shows the current [root key](#transposition).
+10. **Scale**: Shows the current [scale](#transposition).
+11. **Bank**: Shows the currently selected grid in the [bank](#bank), and the name of the bank (which is the bank filename).
 12. **Control zone**: Shows either [grid](#grid) informations and parameters (_move_ mode), selected [node parameters](#parameters) (_edit_ mode) or [bank](#bank) grid slots (_bank_ mode).
 
 
@@ -239,9 +240,9 @@ Parameters are displayed in two parts if an alternative value (for example [rand
 > _You can edit multiple nodes at once by selecting them together.The common parameters for all selected nodes will be displayed, and any changes you make will apply to all of them simultaneously._
 
 
-<br/>
+### Note parameters
 
-#### Parameter page 1
+The first parameter page will display the note parameters.
 
 **Key** (_key_): key of the MIDI note
 - **Value Range**: A1 - G10
@@ -278,9 +279,9 @@ Parameters are displayed in two parts if an alternative value (for example [rand
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
-#### Parameter page 2
+### CC parameters
 
-On parameter page 2, you can configure up to **8 MIDI CC messages** which will be sent alongside the note messages.
+On the second parameter page, you can configure up to **8 MIDI CC messages** which will be sent alongside the note messages.
 
 **CC** (_cc_): the control change message
 - **Value Range**: 0 - 127
