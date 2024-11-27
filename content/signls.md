@@ -17,7 +17,7 @@ image = "/images/signls/screenshot.png"
 <hr/>
 
 <br/>
-<iframe frameborder="0" src="https://itch.io/embed/3138285?linkback=true&amp;border_width=0&amp;bg_color=f9f9f9&amp;link_color=ff005f&amp;border_color=f9f9f9" width="550" height="165"><a href="https://emprcl.itch.io/signls">Signls by emprcl</a></iframe>
+<iframe frameborder="0" src="https://itch.io/embed/3138285?linkback=true&amp;border_width=0&amp;bg_color=f9f9f9&amp;link_color=ff005f&amp;border_color=f9f9f9" width="550" height="165" style="width: 100%;"><a href="https://emprcl.itch.io/signls">Signls by emprcl</a></iframe>
 <br/>
 <br/>
 <br/>
