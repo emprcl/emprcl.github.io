@@ -16,6 +16,12 @@ image = "/images/signls/screenshot.png"
 
 <hr/>
 
+<br/>
+<iframe frameborder="0" src="https://itch.io/embed/3138285?linkback=true&amp;border_width=0&amp;bg_color=f9f9f9&amp;link_color=ff005f&amp;border_color=f9f9f9" width="550" height="165"><a href="https://emprcl.itch.io/signls">Signls by emprcl</a></iframe>
+<br/>
+<br/>
+<br/>
+
 **Signls** (_pronounced signals_) is a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal. It allows you to create complex, evolving musical patterns using a grid-based approach. You can place nodes on the grid, and these nodes can emit signals, relay them, or trigger MIDI notes. There are 9 different types of nodes to explore, each with its own unique behavior.
 
 With Signls, you can generate dynamic, generative music, meaning that the patterns evolve and change over time. It's designed to give you a powerful creative tool to build intricate sequences without being stuck in a rigid timeline or structure.
