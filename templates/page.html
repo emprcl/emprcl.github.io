@@ -6,8 +6,8 @@ endblock description %} {% block opengraph %}
     property="og:image"
     content="{{ config.base_url }}/{{ page.extra.image }}"
 />
-{% endblock opengraph %} {% block title %} {{ page.title }}
-{% endblock title %} {% block content %} {% if page.extra.release -%}
+{% endblock opengraph %} {% block title %} {{ page.title }} {% endblock title %}
+{% block content %} {% if page.extra.release -%}
 <script>
     fetch("{{ page.extra.release | safe }}")
         .then((response) => {
@@ -15,9 +15,8 @@ endblock description %} {% block opengraph %}
         })
         .then((data) => {
             let release_name = data.name;
-            let html_url = data.html_url;
             let release = document.querySelector("#release");
-            release.innerHTML = `<a href='${html_url}'>{{ page.title }} ${release_name}</a>`;
+            release.innerHTML = `<a href='{{ page.extra.download | safe }}'>{{ page.title }} ${release_name}</a>`;
         });
 </script>
 {% endif -%} {{ page.content | safe }} {% endblock content %}

@@ -4,6 +4,7 @@ description = "a non-linear, generative MIDI sequencer designed for music compos
 weight = 1
 [extra]
 release = "https://api.github.com/repos/emprcl/signls/releases/latest"
+download = "https://emprcl.itch.io/signls"
 image = "/images/signls/screenshot.png"
 +++
 
@@ -34,7 +35,7 @@ It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](htt
 
 **Signls** is available for **Linux**, **macOS** and **Windows**.
 
-[Download the last release](https://github.com/emprcl/signls/releases) for your platform.
+[Download the last release](https://emprcl.itch.io/signls) for your platform.
 
 ### Linux & macOS
 

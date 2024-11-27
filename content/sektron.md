@@ -4,6 +4,7 @@ description = "a midi step sequencer, made with live performance in mind, that r
 weight = 5
 [extra]
 release = "https://api.github.com/repos/emprcl/sektron/releases/latest"
+download = "https://github.com/emprcl/sektron/releases/latest"
 image = "/images/sektron/screenshot.png"
 +++
 
