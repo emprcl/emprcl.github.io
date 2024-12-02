@@ -297,6 +297,39 @@ On the second parameter page, you can configure up to **8 MIDI CC messages** whi
 - **Alt 1**: cc number (_only for cc mode_)
 - **Alt 2**: message mode - _disabled_, _cc_, _after touch_, _pitch bend_, _program change_
 
+### Meta parameters
+
+On the third parameter page, you can configure **meta parameters** which controls grid parameter values.
+
+**Tempo** (_tempo_): the current tempo of the grid
+- **Value Range**: 1 - 300
+- **Main 1**: tempo value
+- **Main 2**: randomization range
+- **Alt 1**: _unused_
+- **Alt 2**: mode - _disabled_, _tempo_
+
+**Bank slot** (_bank_): the active grid in the bank
+- **Value Range**: 1 - 32
+- **Main 1**: bank value
+- **Main 2**: randomization range
+- **Alt 1**: _unused_
+- **Alt 2**: mode - _disabled_, _bank_
+
+**Root key** (_root_): the root key of the grid
+- **Value Range**: A1 - G10
+- **Main 1**: root key value
+- **Main 2**: randomization range
+- **Alt 1**: _unused_
+- **Alt 2**: mode - _disabled_, _root_
+
+**Scale** (_scale_): the scale of the grid
+- **Value Range**: [see transposition](#transposition)
+- **Main 1**: scale value
+- **Main 2**: randomization range
+- **Alt 1**: _unused_
+- **Alt 2**: mode - _disabled_, _scale_
+
+
 
 ### Timing
 
