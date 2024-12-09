@@ -3,7 +3,7 @@ title = "Signls"
 description = "a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal"
 weight = 1
 [extra]
-release = "https://api.github.com/repos/emprcl/signls/releases/latest"
+release = "https://github.com/emprcl/signls/releases"
 download = "https://emprcl.itch.io/signls"
 image = "/images/signls/screenshot.png"
 +++
@@ -17,10 +17,10 @@ image = "/images/signls/screenshot.png"
 <hr/>
 
 <br/>
-<iframe frameborder="0" src="https://itch.io/embed/3138285?linkback=true&amp;border_width=0&amp;bg_color=f9f9f9&amp;link_color=ff005f&amp;border_color=f9f9f9" width="550" height="165" style="width: 100%;"><a href="https://emprcl.itch.io/signls">Signls by emprcl</a></iframe>
+<!--<iframe frameborder="0" src="https://itch.io/embed/3138285?linkback=true&amp;border_width=0&amp;bg_color=f9f9f9&amp;link_color=ff005f&amp;border_color=f9f9f9" width="550" height="165" style="width: 100%;"><a href="https://emprcl.itch.io/signls">Signls by emprcl</a></iframe>
 <br/>
 <br/>
-<br/>
+<br/>-->
 
 **Signls** (_pronounced signals_) is a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal. It allows you to create complex, evolving musical patterns using a grid-based approach. You can place nodes on the grid, and these nodes can emit signals, relay them, or trigger MIDI notes. There are 9 different types of nodes to explore, each with its own unique behavior.
 
@@ -41,7 +41,7 @@ It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](htt
 
 **Signls** is available for **Linux**, **macOS** and **Windows**.
 
-[Download the last release](https://emprcl.itch.io/signls) for your platform.
+[Download the last release](https://github.com/emprcl/signls/releases) for your platform.
 
 ### Linux & macOS
 
