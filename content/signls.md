@@ -429,12 +429,24 @@ Here is a reference guide for all the **node types** available in **Signls**. Ea
 ### <img src="/images/signls/cycle.jpg" alt="cycle" class="node shadow" width="25"/> **Cycle**
 - **Description:** relays signals in a **clockwise direction**, starting from the "up" direction, one at a time
 - **Key binding**: `5`
-- **Extra Parameters:** none
+- **Extra Parameters:**
+  - **Repeat** (_rpt_): repeats last emitting direction
+	- **Value Range**: 1 - no upper limit
+	- **Main 1**: repeat value
+	- **Main 2**: randomization range
+	- **Alt 1**: _unused_
+	- **Alt 2**:  _unused_
 
 ### <img src="/images/signls/dice.jpg" alt="dice" class="node shadow" width="25"/> **Dice**
 - **Description:** relays signals in a randomly selected direction each time it is triggered
 - **Key binding**: `6`
-- **Extra Parameters:** none
+- **Extra Parameters:**
+  - **Repeat** (_rpt_): repeats last emitting direction
+	- **Value Range**: 1 - no upper limit
+	- **Main 1**: repeat value
+	- **Main 2**: randomization range
+	- **Alt 1**: _unused_
+	- **Alt 2**:  _unused_
 
 ### <img src="/images/signls/toll.jpg" alt="toll" class="node shadow" width="25"/> **Toll**
 - **Description:** relays signals on all configured directions, but only after being triggered a specific number of times
