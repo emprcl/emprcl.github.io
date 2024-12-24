@@ -148,9 +148,10 @@ Each node can also send up to 8 **_CC_** messages, using [CC parameters](#cc-par
 Press the `f2` to open the MIDI configuration menu, where you can adjust three parameters:
  - **Clock**: enable or disable **_clock send_** messages
  - **Transport**: enable or disable **_transport start_** and **_stop_** messages
- - **Device**: select the midi output device
+ - **Device**: select the midi output device. It will display **??** if the saved device if not connected, and it will fallback on the default device behind the scene. You will need to restart Signls to see a newly plugged device.
 
 Use `←` and `→` to navigate between the parameters, and modify their values with `ctrl`+`↑` and `ctrl`+`↓`.
+Each grid in the bank saves its own independent values for these three parameters.
 
 On **macOS**, you might need to [enable the IAC driver](https://discussions.apple.com/thread/8096575?answerId=32319872022&sortBy=rank#32319872022) if you're only using webmidi instruments.
 
@@ -272,6 +273,13 @@ The first parameter page will display the note parameters.
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
+**Probability** (_prb_): the chance of triggering the MIDI note
+- **Value Range**: 0 - 100
+- **Main 1**: probability value
+- **Main 2**: _unused_
+- **Alt 1**: _unused_
+- **Alt 2**: _unused_
+
 **Channel** (_cha_): MIDI channel
 - **Value Range**: 1 - 16
 - **Main 1**: channel value
@@ -279,12 +287,12 @@ The first parameter page will display the note parameters.
 - **Alt 1**: _unused_
 - **Alt 2**: _unused_
 
-**Probability** (_prb_): the chance of triggering the MIDI note
-- **Value Range**: 0 - 100
-- **Main 1**: probability value
+**Device** (_dvc_): MIDI device override. Allows to select a specific MIDI device for the node. If disabled, the [grid device](#midi) is used. It will display **??** if the saved device if not connected, and it will fallback on the [grid device](#midi) behind the scene. You will need to restart Signls to see a newly plugged device.
+- **Value Range**: 0 - _number of devices available_
+- **Main 1**: device value
 - **Main 2**: _unused_
 - **Alt 1**: _unused_
-- **Alt 2**: _unused_
+- **Alt 2**: message mode (_disabled_, _active_)
 
 ### CC parameters
 
