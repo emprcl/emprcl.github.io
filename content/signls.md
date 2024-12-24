@@ -292,7 +292,7 @@ The first parameter page will display the note parameters.
 - **Main 1**: device value
 - **Main 2**: _unused_
 - **Alt 1**: _unused_
-- **Alt 2**: message mode (_disabled_, _active_)
+- **Alt 2**: device mode (_disabled_, _active_)
 
 ### CC parameters
 
