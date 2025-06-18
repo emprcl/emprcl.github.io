@@ -5,7 +5,7 @@ sort_by = "weight"
 
 # emprcl
 
-A modest venture into crafting unconventional music-making tools.
+A modest venture into crafting unconventional creative tools.
 
 ---
 

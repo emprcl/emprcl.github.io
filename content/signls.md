@@ -1,7 +1,7 @@
 +++
 title = "Signls"
 description = "a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal"
-weight = 1
+weight = 2
 [extra]
 release = "https://api.github.com/repos/emprcl/signls/releases/latest"
 download = "https://emprcl.itch.io/signls"
