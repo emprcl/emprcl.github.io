@@ -18,7 +18,7 @@ image = "/images/runal/screenshot.png"
 
 **Runal** is a simple creative coding environment for text and ascii art, that runs in the terminal. It works similarly as [processing](https://processing.org/) or [p5js](https://p5js.org/) and can either be programmed with [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), or used as a [Go](https://go.dev/) package.
 
-![runal screenshot](https://raw.githubusercontent.com/emprcl/runal/7369d1c976745c2c2610982932109a4948eaba4e/docs/screenshot.png?token=GHSAT0AAAAAAC47ZOX4ZG3U74I2ABG22X6W2CS24WQ)
+![runal screenshot](/images/runal/screenshot.png)
 
 **Features**
 - **Text only**: explore text and ascii art directly in the terminal
