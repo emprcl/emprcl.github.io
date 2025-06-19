@@ -171,7 +171,7 @@ function onKey(c, key) {
 }
 ```
 
-### More...
+### More
 
 You can find more small examples in the [Github repository](https://github.com/emprcl/runal/tree/main/examples).
 
