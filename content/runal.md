@@ -184,7 +184,9 @@ You're missing a specific method or feature? Feel free to [open an issue](https:
 
 > _Go properties and methods are the same as JavaScript, with an uppercase first letter (js: c.width, go: c.Width)._
 
----
+<hr class="separator"/>
+
+<section class="reference">
 
 ### Properties
 
@@ -200,7 +202,7 @@ Number of frames rendered since the beginning.
 #### c.isLooping
 Boolean indicating whether the render loop is active.
 
----
+<hr class="separator"/>
 
 ### Canvas
 
@@ -225,24 +227,24 @@ Clears the canvas.
 #### c.size(w, h)
 Resizes the canvas.
 
----
+<hr class="separator"/>
 
 ### Colors
 
-For every color arguments (see [Stroke, Fill and Background](#stroke-fill-and-background), you can set 2 types of color values:
+For every color arguments (see [Draw](#draw), you can set 2 types of color values:
  - **hexadecimal** (_ex: `#000000`_): the hexadecimal color code
  - **ANSI 256** (_between 0 and 255_): one of the [256 ANSI colors](https://www.ditig.com/256-colors-cheat-sheet)
 
----
+<hr class="separator"/>
 
-### Stroke, Fill and Background
+### Draw
 
 There are 3 types of zones when you draw:
  - **stroke**: a point, a line or the outline of a shape
  - **fill**: the inside of a closed shape
  - **background**: the background of the canvas
 
-For each zones, you have 2 settings:
+For each zones, you have 3 settings:
  - **text**: the unicode character set to use when drawing
  - **foreground**: the color of the text
  - **background**: the color of the background of the cell
@@ -290,7 +292,7 @@ Sets the foreground color for the background style.
 #### c.backgroundBg(color)
 Sets the background color for the background style.
 
----
+<hr class="separator"/>
 
 ### Shapes
 
@@ -322,14 +324,14 @@ Draws a triangle using three vertex points.
 #### c.quad(x1, y1, x2, y2, x3, y3, x4, y4)
 Draws a quadrilateral defined by four points.
 
----
+<hr class="separator"/>
 
 ### Curve
 
 #### c.bezier(x1, y1, x2, y2, x3, y3, x4, y4)
 Draws a Bezier curve using four control points.
 
----
+<hr class="separator"/>
 
 ### Control
 
@@ -351,13 +353,13 @@ Saves the current drawing state (stroke, fill, background, rotate, translate, sc
 #### c.pop()
 Restores the last saved drawing state (stroke, fill, background, rotate, translate, scale).
 
----
+<hr class="separator"/>
 
 ### Math
 
 All JavaScript [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) namespace objects are usable.
 
-Runal **doesn't expose specific trigonometry functions**, please use _Math.sin()_, _Math.cos()_ etc...
+Runal **doesn't define trigonometry functions**, please use [_Math.sin()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin), [_Math.cos()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos) etc...
 
 #### c.map(value, inputStart, inputEnd, outputStart, outputEnd)
 Maps a value from one range to another.
@@ -365,7 +367,7 @@ Maps a value from one range to another.
 #### c.dist(x1, y1, x2, y2)
 Returns the euclidean distance between two points (x1, y1) and (x2, y2).
 
----
+<hr class="separator"/>
 
 ### Randomness
 
@@ -375,7 +377,7 @@ Returns a random float between min and max.
 #### c.randomSeed(seed)
 Sets the seed for random number generation.
 
----
+<hr class="separator"/>
 
 ### Noise
 
@@ -388,9 +390,9 @@ Generates 2D Perlin noise for a given (x, y) coordinate.
 #### c.noiseSeed(seed)
 Sets the seed for noise generation.
 
----
+<hr class="separator"/>
 
-### Transformations
+### Transform
 
 #### c.translate(x, y)
 Moves the origin of the canvas.
@@ -401,7 +403,7 @@ Rotates the drawing context by the given angle in radians.
 #### c.scale(factor)
 Scales the drawing context by the given factor.
 
----
+<hr class="separator"/>
 
 ### Export
 
@@ -410,3 +412,21 @@ Exports the current canvas to an image file (png).
 
 #### c.savedCanvasFont(path)
 Sets a custom font (tff) file used for rendering text characters in exported images generated via _SaveCanvas()_.
+
+### Log
+
+You can use JavaScript _console.log()_ to log things.
+
+```js
+let x = Math.osc(c.framecount);
+console.log(x);
+```
+
+Entries will be written in a **console.log** file in your current directory.
+
+You can display the logs live in another terminal pane with:
+```sh
+tail -f console.log
+```
+
+</section>
