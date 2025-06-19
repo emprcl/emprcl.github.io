@@ -115,15 +115,7 @@ func draw(c *runal.Canvas) {}
 func onKey(c *runal.Canvas, key string) {}
 ```
 
-## Canvas
-
-### Cell padding
-
-###
-
 ## Examples
-
-> **_You can find more small examples in the [Github repository](https://github.com/emprcl/runal/tree/main/examples)._**
 
 ### Perlin noise map
 
@@ -176,6 +168,10 @@ function onKey(c, key) {
   }
 }
 ```
+
+### More...
+
+You can find more small examples in the [Github repository](https://github.com/emprcl/runal/tree/main/examples).
 
 ## Reference
 
