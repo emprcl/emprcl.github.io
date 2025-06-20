@@ -191,10 +191,10 @@ You're missing a specific method or feature? Feel free to [open an issue](https:
 ### Properties
 
 #### c.width
-Returns the width of the canvas in cells.
+Returns the width of the canvas.
 
 #### c.height
-Returns the height of the canvas in cells.
+Returns the height of the canvas.
 
 #### c.framecount
 Number of frames rendered since the beginning.
@@ -226,6 +226,28 @@ Clears the canvas.
 
 #### c.size(w, h)
 Resizes the canvas.
+
+<hr class="separator"/>
+
+### Control
+
+#### c.loop()
+Starts the draw loop if stopped.
+
+#### c.noLoop()
+Stops the draw loop if started.
+
+#### c.redraw()
+Forces one frame render in noLoop mode.
+
+#### c.fps(fps)
+Sets the desired frames per second.
+
+#### c.push()
+Saves the current drawing state (stroke, fill, background, rotate, translate, scale).
+
+#### c.pop()
+Restores the last saved drawing state (stroke, fill, background, rotate, translate, scale).
 
 <hr class="separator"/>
 
@@ -333,28 +355,6 @@ Draws a Bezier curve using four control points.
 
 <hr class="separator"/>
 
-### Control
-
-#### c.loop()
-Starts the draw loop if stopped.
-
-#### c.noLoop()
-Stops the draw loop if started.
-
-#### c.redraw()
-Forces one frame render in noLoop mode.
-
-#### c.fps(fps)
-Sets the desired frames per second.
-
-#### c.push()
-Saves the current drawing state (stroke, fill, background, rotate, translate, scale).
-
-#### c.pop()
-Restores the last saved drawing state (stroke, fill, background, rotate, translate, scale).
-
-<hr class="separator"/>
-
 ### Math
 
 All JavaScript [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) namespace objects are usable.
@@ -369,7 +369,7 @@ Returns the euclidean distance between two points (x1, y1) and (x2, y2).
 
 <hr class="separator"/>
 
-### Randomness
+### Random
 
 #### c.random(min, max)
 Returns a random float between min and max.
@@ -382,13 +382,26 @@ Sets the seed for random number generation.
 ### Noise
 
 #### c.noise1D(x)
-Generates 1D Perlin noise for a given input.
+Generates 1D Perlin noise (float number, range [0, 1]) for a given input.
 
 #### c.noise2D(x, y)
-Generates 2D Perlin noise for a given (x, y) coordinate.
+Generates 2D Perlin noise (float number, range [0, 1]) for a given (x, y) coordinate.
 
 #### c.noiseSeed(seed)
 Sets the seed for noise generation.
+
+#### c.loopAngle(duration)
+Returns the angular progress (in radians, range [0, 2π]) through a looping cycle of given duration in seconds.
+
+#### c.noiseLoop(angle, radius)
+Returns a noise value (range [0, 1]) by sampling the noise on a circular path of the given radius. Angle is the loop angle in radians, from 0 to 2π. You can use [loopAngle](#c-loopangle-duration) for the angle value to control the loop duration.
+This is useful for creating cyclic animations or evolving patterns that repeat perfectly after one full loop.
+
+#### c.noiseLoop1D(angle, radius, x)
+Returns a 1D noise value (range [0, 1]) that loops as the angle progresses. It samples a 2D noise space using the given radius and combines it with a horizontal offset.
+
+#### c.noiseLoop2D(angle, radius, x, y)
+Returns a 2D noise value (range [0, 1]) that loops as the angle progresses. It samples a circular path in 2D noise space, offset by the (x, y) coordinates.
 
 <hr class="separator"/>
 
@@ -405,13 +418,16 @@ Scales the drawing context by the given factor.
 
 <hr class="separator"/>
 
-### Export
+### Image
 
-#### c.saveCanvas(filename)
+#### c.saveCanvasToPNG(filename)
 Exports the current canvas to an image file (png).
 
+#### c.saveCanvasToGIF(filename, duration)
+Exports the current canvas to an animated gif file for a given duration (in seconds).
+
 #### c.savedCanvasFont(path)
-Sets a custom font (tff) file used for rendering text characters in exported images generated via _SaveCanvas()_.
+Sets a custom font (tff) file used for rendering text characters in exported images generated via _SaveCanvasTo...()_ methods.
 
 ### Log
 
