@@ -31,15 +31,24 @@ It works similarly as [processing](https://processing.org/) or [p5js](https://p5
 - **Cross-platform**: runs on Linux, macOS, and Windows
 
 
-## Installation (runtime)
+## Installation
 
 > _*If you want to use Runal as a Go package, see [Go package](#go-package).*_
 
 **Runal** runtime is available for **Linux**, **macOS** and **Windows**.
 
+### Quick-install
+
+On **linux** or **macOS**, you can run this quick-install bash script:
+```sh
+curl -sSL empr.cl/get/runal | bash
+```
+
+### Manual installation
+
 [Download the last release](https://github.com/emprcl/runal/releases) for your platform.
 
-### Linux & macOS
+#### Linux & macOS
 
 In your terminal:
 ```sh
@@ -51,7 +60,7 @@ cd runal
 ./runal -f my_sketch.js
 ```
 
-### Windows
+#### Windows
 
 > _*We recommend using [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701) with a good monospace font like [Iosevka](https://typeof.net/Iosevka/) to display Runal correctly on Windows.*_
 
