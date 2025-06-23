@@ -100,6 +100,8 @@ And you can then execute the file with:
 
 The js file will be **automatically reloaded when modified**, no need to restart the command.
 
+To **exit**, just type `ctrl+c`.
+
 ### Go package
 
 Because **Runal** is written in Go, you can also use it as a Go package.
@@ -453,5 +455,7 @@ You can display the logs live in another terminal pane with:
 ```sh
 tail -f console.log
 ```
+
+The **console.log** file is deleted upon exit.
 
 </section>
