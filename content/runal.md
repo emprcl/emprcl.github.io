@@ -28,6 +28,7 @@ It works similarly as [processing](https://processing.org/) or [p5js](https://p5
 - **Simple primitives**: provides a set of simple primitives for 2D shapes, trigonometry, randomization, colors...
 - **Multi-language**: it can be programmed with Javascript, or used as a Go library
 - **Fast feedback loop**: reloads your sketch each time you modify it
+- **Export**: save your canvas to png images of gif animations
 - **Cross-platform**: runs on Linux, macOS, and Windows
 
 
