@@ -58,7 +58,10 @@ mkdir -p runal && tar -zxvf signls_runal.tar.gz -C runal
 cd runal
 
 # Run runal
-./runal -f my_sketch.js
+./runal
+
+# Run runal demo
+./runal -demo
 ```
 
 #### Windows
@@ -66,9 +69,14 @@ cd runal
 > _*We recommend using [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701) with a good monospace font like [Iosevka](https://typeof.net/Iosevka/) to display Runal correctly on Windows.*_
 
 Unzip the archive and, in the same directory, run:
+```winbatch
+; Run runal
+.\runal.exe
+
+; Run runal demo
+.\runal.exe -demo
 ```
-.\runal.exe -f my_sketch.js
-```
+
 Replace _./runal_ by _.\runal.exe_ for every following commands.
 
 ### Go install
