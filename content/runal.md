@@ -470,7 +470,7 @@ The **console.log** file is deleted upon exit.
 ### Events
 
 #### onKey(c, key)
-Listen to keyboard events. Key contains the key string. **It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
+Listen to keyboard events. Key contains the key string. It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
 ```js
 // mySketch.js
 setup(c) { ... }
