@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="robots" content="index, follow" />
     <meta name="language" content="en" />
-    <meta name="description" content="{% block description %}Creating weird music software for the command line{% endblock description %}">
+    <meta name="description" content="{% block description %}A modest venture into crafting unconventional creative tools for the terminal{% endblock description %}">
     {% block opengraph %}
     <meta property="og:title" content="{{ config.title }}">
-    <meta property="og:description" content="Creating weird music software for the command line">
+    <meta property="og:description" content="A modest venture into crafting unconventional creative tools for the terminal">
     <meta property="og:image" content="{{ config.base_url }}/images/logo_big.png">
     {% endblock opengraph %}
     <link rel="canonical" href="{{current_url | safe}}">
@@ -62,7 +62,7 @@
                         <li class="active">
                             <a href="{{ page.permalink | safe }}{{ _ugly_url }}">{{ page.title | lower }}</a>
                         </li>
-                            
+
 
                         {% if page.toc -%}
 
