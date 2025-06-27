@@ -1,6 +1,6 @@
 +++
 title = "Runal"
-description = "a simple creative coding environment for the terminal. It works similarly as processing or p5js and can either be programmed with JavaScript, or used as a Go package."
+description = "a text-based creative coding environment for the terminal. It works similarly as processing or p5js and can either be programmed with JavaScript, or used as a Go package."
 weight = 1
 [extra]
 release = "https://api.github.com/repos/emprcl/runal/releases/latest"
@@ -16,9 +16,9 @@ image = "/images/runal/screenshot.png"
 
 <hr/>
 
-**Runal** is a simple creative coding environment for text and ascii art, that runs in the terminal.
+**Runal** is a text-based creative coding environment, that runs in the terminal.
 
-It works similarly as [processing](https://processing.org/) or [p5js](https://p5js.org/) and can either be programmed with [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), or used as a [Go](https://go.dev/) package.
+It works similarly as [processing](https://processing.org/) or [p5js](https://p5js.org/) but it does all the rendering as text. It can either be programmed with [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), or used as a [Go](https://go.dev/) package.
 
 ![runal screenshot](/images/runal/screenshot.png)
 
