@@ -28,7 +28,7 @@ It works similarly as [processing](https://processing.org/) or [p5js](https://p5
 - **Simple primitives**: provides a set of simple primitives for 2D shapes, trigonometry, randomization, colors...
 - **Multi-language**: it can be programmed with Javascript, or used as a Go library
 - **Fast feedback loop**: reloads your sketch each time you modify it
-- **Export**: save your canvas to png images of gif animations
+- **Export**: save your canvas to png images, gif animations or mp4 videos
 - **Cross-platform**: runs on Linux, macOS, and Windows
 
 
@@ -438,13 +438,18 @@ Scales the drawing context by the given factor.
 
 <hr class="separator"/>
 
-### Image
+### Export
 
 #### c.saveCanvasToPNG(filename)
 Exports the current canvas to an image file (png).
 
 #### c.saveCanvasToGIF(filename, duration)
 Exports the current canvas to an animated gif file for a given duration (in seconds).
+
+#### c.saveCanvasToPNG(filename, duration) <sub>since v0.4.0</sub>
+> **This feature needs **[ffmpeg](https://ffmpeg.org/download.html)** installed**
+
+Exports the current canvas to a mp4 (h264) video file for a given duration (in seconds).
 
 #### c.savedCanvasFont(path)
 Sets a custom font (tff) file used for rendering text characters in exported images generated via _SaveCanvasTo...()_ methods.

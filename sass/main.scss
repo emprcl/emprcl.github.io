@@ -338,7 +338,15 @@ article {
             color: #d5009f;
         }
 
-        h4 + p {
+        h4 sub {
+            color: #333333;
+            margin-left: 12px;
+            vertical-align: baseline;
+            font-style: italic;
+        }
+
+        h4 + p,
+        h4 + blockquote + p {
             font-style: italic;
         }
     }
