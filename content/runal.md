@@ -474,18 +474,24 @@ The **console.log** file is deleted upon exit.
 
 ### Events
 
-#### onKey(c, key)
-Listen to keyboard events. Key contains the key string. It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
+#### onKey(c, event)
+Listen to keyboard events.
+
+Event is an object with 2 attributes:
+ - **key**: the string representation of the key pressed (`a`, `b`, `c`, `1`, `2`, `3` etc...)
+ - **code**: the numerical value of the key pressed (97, 98, 99, 49, 50, 51 etc...)
+
+It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
 ```js
 // mySketch.js
 setup(c) { ... }
 
 draw(c) { ... }
 
-onKey(c, key) {
+onKey(c, event) {
   // save the current canvas in a png file
   // when the "c" key is pressed.
-  if (key == "c") {
+  if (event.key == "space") {
     saveCanvasToPNG("canvas.png");
   }
 }
