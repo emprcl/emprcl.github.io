@@ -86,7 +86,7 @@ h4 {
 article code {
     border: 1px solid #000;
     border-radius: 4px;
-    padding: 1px 4px;
+    padding: 0px 4px;
 }
 
 table td,
@@ -341,8 +341,10 @@ article {
         h4 sub {
             color: #333333;
             margin-left: 12px;
-            vertical-align: baseline;
+            vertical-align: text-bottom;
+            font-size: 10px;
             font-style: italic;
+            font-weight: lighter;
         }
 
         h4 + p,

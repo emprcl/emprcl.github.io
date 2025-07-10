@@ -102,6 +102,12 @@ function setup(c) {}
 function draw(c) {}
 ```
 
+You can add extra methods `onKey` and `onMouse` to catch keyboard and mouse events:
+```js
+function onKey(c, e) {}
+function onMouse(c, e) {}
+````
+
 And you can then execute the file with:
 ```sh
 ./runal -f sketch.js
@@ -133,8 +139,17 @@ func main() {
 func setup(c *runal.Canvas) {}
 
 func draw(c *runal.Canvas) {}
+```
 
-func onKey(c *runal.Canvas, key string) {}
+You can add extra methods `onKey` and `onMouse` to catch keyboard and mouse events:
+```go
+func onKey(c *runal.Canvas, e runal.KeyEvent) {}
+func onMouse(c *runal.Canvas, e runal.MouseEvent) {}
+````
+
+And you can then execute the file with:
+```sh
+go run sketch.go
 ```
 
 ## Examples
@@ -221,6 +236,12 @@ Number of frames rendered since the beginning.
 
 #### c.isLooping
 Boolean indicating whether the render loop is active.
+
+#### c.mouseX <sub>since v0.5.0</sub>
+Returns the horizontal mouse position relative to the terminal window.
+
+#### c.mouseY <sub>since v0.5.0</sub>
+Returns the vertical mouse position relative to the terminal window.
 
 <hr class="separator"/>
 
@@ -474,12 +495,8 @@ The **console.log** file is deleted upon exit.
 
 ### Events
 
-#### onKey(c, event)
+#### onKey(c, event) <sub>since v0.5.0</sub>
 Listen to keyboard events.
-
-Event is an object with 2 attributes:
- - **key**: the string representation of the key pressed (`a`, `b`, `c`, `1`, `2`, `3` etc...)
- - **code**: the numerical value of the key pressed (97, 98, 99, 49, 50, 51 etc...)
 
 It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
 ```js
@@ -494,7 +511,44 @@ onKey(c, event) {
   if (event.key == "space") {
     saveCanvasToPNG("canvas.png");
   }
+
+  // same using the key code.
+  if (event.code == 32) {
+    saveCanvasToPNG("canvas.png");
+  }
 }
 ```
+
+Event is an object with the following attributes:
+ - **key**: the string representation of the key pressed (`a`, `b`, `c`, `1`, `2`, `3` etc...)
+ - **code**: the numerical value of the key pressed (97, 98, 99, 49, 50, 51 etc...)
+
+Key string representations for keys other than alphanumerical works as well. You can use the following strings to handle all your keyboard keys:
+`enter`, `tab`, `backspace`, `esc`, `space`, `up`, `down`, `left`, `right`, `begin`, `find`, `insert`, `delete`, `select`, `pgup`, `pgdown`, `home`, `end`, `kpenter`, `kpequal`, `kpmul`, `kpplus`, `kpcomma`, `kpminus`, `kpperiod`, `kpdiv`, `kp0`, `kp1`, `kp2`, `kp3`, `kp4`, `kp5`, `kp6`, `kp7`, `kp8`, `kp9`.
+
+You can also use `ctrl+a`, `alt+b` etc...
+
+#### onMouse(c, event) <sub>since v0.5.0</sub>
+Listen to mouse click events.
+
+It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
+```js
+// mySketch.js
+setup(c) { ... }
+
+draw(c) { ... }
+
+onMouse(c, event) {
+  // draw a circle at mouse position when
+  // the mouse left button is clicked.
+  if (event.button == "left") {
+    c.circle(event.x, event.y, 5);
+  }
+}
+```
+Event is an object with the following attributes:
+ - **x**: the horizontal mouse position relative to the terminal window
+ - **y**: the vertical mouse position relative to the terminal window
+ - **button**: the mouse button that has been clicked. Possible values: **left**, **middle**, **right**
 
 </section>
