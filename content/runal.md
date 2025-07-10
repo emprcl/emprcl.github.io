@@ -79,13 +79,6 @@ Unzip the archive and, in the same directory, run:
 
 Replace _./runal_ by _.\runal.exe_ for every following commands.
 
-### Go install
-
-If you're a Go developer, you can install it via _go install_:
-```sh
-go install github.com/emprcl/runal@latest
-```
-
 ### Build it yourself
 
 You can also [build it yourself](https://github.com/emprcl/runal?tab=readme-ov-file#build-it-yourself) if your want to.
