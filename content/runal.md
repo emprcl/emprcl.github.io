@@ -133,19 +133,17 @@ import (
 )
 
 func main() {
-	runal.Run(context.Background(), setup, draw, onKey)
+	runal.Run(context.Background(), setup, draw, onKey, onMouse)
 }
 
 func setup(c *runal.Canvas) {}
 
 func draw(c *runal.Canvas) {}
-```
 
-You can add extra methods `onKey` and `onMouse` to catch keyboard and mouse events:
-```go
+// You can add extra methods `onKey` and `onMouse` to catch keyboard and mouse events
 func onKey(c *runal.Canvas, e runal.KeyEvent) {}
 func onMouse(c *runal.Canvas, e runal.MouseEvent) {}
-````
+```
 
 And you can then execute the file with:
 ```sh
