@@ -236,6 +236,37 @@ Returns the vertical mouse position relative to the terminal window.
 
 <hr class="separator"/>
 
+### Objects
+
+This is a list of different objects type returned by methods.
+
+#### cell <sub>since v0.6.0</sub>
+A object representing a single cell of the canvas.
+
+Properties:
+ - **char**: the character displayed on the cell
+ - **background**: the string representation of the background color of the cell. [_See colors_](#colors)
+ - **foreground**: the string representation of the foreground color of the cell. [_See colors_](#colors)
+
+#### image <sub>since v0.6.0</sub>
+An object representing an image containing [cells](#cell-since-v0-6-0).
+
+Methods:
+ - **cell(x, y)**: returns the [cell](#cell-since-v0-6-0) at (x, y) in the image.
+ ```js
+
+function setup(c) {
+    let img = c.loadImage("my_image.jpg");
+
+    // print the character of the cell at
+    // position (1, 2) in the loaded image.
+    console.log(img.cell(1, 2).char);
+}
+ ```
+
+
+<hr class="separator"/>
+
 ### Canvas
 
 Drawing in the terminal is a little bit weird, because each cell is not a square. Therefore, **results can look squished** depending on what you're trying to do.
@@ -258,6 +289,28 @@ Clears the canvas.
 
 #### c.size(w, h)
 Resizes the canvas.
+
+#### c.get(x, y, w, h) <sub>since v0.6.0</sub>
+Returns a part of the current canvas from origin (x, y) with width w and height h.
+Returns an [image](#image-since-v0-6-0).
+
+```js
+// Get the entire canvas
+let entireCanvas = c.get(0, 0, c.width, c.height);
+
+// Get a 3x3 square of the canvas at position (2, 2)
+let square = c.get(2, 2, 3, 3);
+```
+
+#### c.set(x, y, img) <sub>since v0.6.0</sub>
+Draws an [image](#image-since-v0-6-0) to the canvas at (x, y).
+
+```js
+// Duplicate the first half of the canvas.
+let half = c.get(0, 0, c.width/2, c.height);
+c.set(c.width/2, 0, half);
+```
+
 
 <hr class="separator"/>
 
@@ -285,7 +338,7 @@ Restores the last saved drawing state (stroke, fill, background, rotate, transla
 
 ### Colors
 
-For every color arguments (see [Draw](#draw), you can set 2 types of color values:
+For every color arguments and properties (see [Draw](#draw), you can set 2 types of color values:
  - **hexadecimal** (_ex: `#000000`_): the hexadecimal color code
  - **ANSI 256** (_between 0 and 255_): one of the [256 ANSI colors](https://www.ditig.com/256-colors-cheat-sheet)
 
@@ -447,6 +500,40 @@ Rotates the drawing context by the given angle in radians.
 
 #### c.scale(factor)
 Scales the drawing context by the given factor.
+
+<hr class="separator"/>
+
+### Image
+
+#### c.loadImage(path) <sub>since v0.6.0</sub>
+Loads an image from the given path. Supported formats: jpg, png, webp.
+Returns an [image](#image-since-v0-6-0).
+
+You should usually load your images in the setup method:
+```js
+
+let img;
+
+function setup(c) {
+  img = c.loadImage("my_image.jpg");
+}
+```
+
+#### c.image(image, x, y, w, h) <sub>since v0.6.0</sub>
+Draws the given image at (x, y) with width w and height h.
+
+```js
+let img;
+
+function setup(c) {
+  img = c.loadImage("my_image.jpg");
+}
+
+function draw(c) {
+  // draw the image on the entire canvas
+  c.image(img, 0, 0, c.width, c.height);
+}
+```
 
 <hr class="separator"/>
 
