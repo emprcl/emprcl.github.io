@@ -302,13 +302,17 @@ let entireCanvas = c.get(0, 0, c.width, c.height);
 let square = c.get(2, 2, 3, 3);
 ```
 
-#### c.set(x, y, img) <sub>since v0.6.0</sub>
-Draws an [image](#image-since-v0-6-0) to the canvas at (x, y).
+#### c.set(x, y, cells) <sub>since v0.6.0</sub>
+Draws an [image](#image-since-v0-6-0) or a [cell](#cell-since-v0-6-0) to the canvas at (x, y).
 
 ```js
 // Duplicate the first half of the canvas.
 let half = c.get(0, 0, c.width/2, c.height);
 c.set(c.width/2, 0, half);
+
+// Duplicate a single cell
+let single = c.get(0, 0, 1, 1);
+c.set(1, 0, single.cell(0, 0));
 ```
 
 
