@@ -394,7 +394,7 @@ Sets only the foreground color for stroke.
 #### c.strokeBg(color)
 Sets only the background color for stroke.
 
-#### c.noStroke()
+#### c.noStroke() <sub>since v0.6.0</sub>
 Disables stroke rendering.
 
 #### c.background(text, foregroundColor, backgroundColor)
