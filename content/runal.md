@@ -338,6 +338,9 @@ Saves the current drawing state (stroke, fill, background, rotate, translate, sc
 #### c.pop()
 Restores the last saved drawing state (stroke, fill, background, rotate, translate, scale).
 
+#### c.exit() <sub>since v0.6.0</sub>
+Ends the program execution. It also quits the JavaScript runtime.
+
 <hr class="separator"/>
 
 ### Colors
