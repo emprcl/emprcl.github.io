@@ -599,11 +599,11 @@ Listen to keyboard events.
 It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
 ```js
 // mySketch.js
-setup(c) { ... }
+function setup(c) { ... }
 
-draw(c) { ... }
+function draw(c) { ... }
 
-onKey(c, event) {
+function onKey(c, event) {
   // save the current canvas in a png file
   // when the "c" key is pressed.
   if (event.key == "space") {
@@ -626,17 +626,17 @@ Key string representations for keys other than alphanumerical works as well. You
 
 You can also use `ctrl+a`, `alt+b` etc...
 
-#### onMouse(c, event) <sub>since v0.5.0</sub>
+#### onMouseClick(c, event) <sub>since v0.8.0</sub>
 Listen to mouse click events.
 
 It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
 ```js
 // mySketch.js
-setup(c) { ... }
+function setup(c) { ... }
 
-draw(c) { ... }
+function draw(c) { ... }
 
-onMouse(c, event) {
+function onMouseClick(c, event) {
   // draw a circle at mouse position when
   // the mouse left button is clicked.
   if (event.button == "left") {
@@ -648,5 +648,81 @@ Event is an object with the following attributes:
  - **x**: the horizontal mouse position relative to the terminal window
  - **y**: the vertical mouse position relative to the terminal window
  - **button**: the mouse button that has been clicked. Possible values: **left**, **middle**, **right**
+
+#### onMouseRelease(c, event) <sub>since v0.8.0</sub>
+Listen to mouse release events.
+
+It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
+```js
+// mySketch.js
+function setup(c) { ... }
+
+function draw(c) { ... }
+
+function onMouseRelease(c, event) {
+  // draw a circle at mouse position when
+  // the mouse left button is released.
+  if (event.button == "left") {
+    c.circle(event.x, event.y, 5);
+  }
+}
+```
+Event is an object with the following attributes:
+ - **x**: the horizontal mouse position relative to the terminal window
+ - **y**: the vertical mouse position relative to the terminal window
+ - **button**: the mouse button that has been clicked. Possible values: **left**, **middle**, **right**
+
+#### onMouseWheel(c, event) <sub>since v0.8.0</sub>
+Listen to mouse wheel events.
+
+It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
+```js
+// mySketch.js
+let x, y;
+function setup(c) {
+  x = c.width/2;
+  y = c.height/2;
+}
+
+function draw(c) {
+  c.circle(x, y, 5);
+}
+
+function onMouseWheel(c, event) {
+  // draw a circle at mouse position when
+  // the mouse left button is released.
+  if (event.button == "wheelup") {
+    y = Math.max(0, y - 1);
+  } else if (event.button == "wheeldown") {
+    y = Math.min(c.height, y + 1);
+  }
+}
+```
+Event is an object with the following attributes:
+ - **x**: the horizontal mouse position relative to the terminal window
+ - **y**: the vertical mouse position relative to the terminal window
+ - **button**: the wheel motion. Possible values: **wheelup**, **wheeldown**
+
+#### onMouseMove(c, event) <sub>since v0.8.0</sub>
+Listen to mouse moved events.
+
+It's a root function, which means it should be placed at the same level as **setup()** and **draw()**.
+```js
+// mySketch.js
+let color = 0;
+function setup(c) {}
+function draw(c) {}
+
+function onMouseMove(c, event) {
+  color = color + 1;
+  if (color > 255) {
+    color = 0;
+  }
+  c.backgroundBg(color);
+}
+```
+Event is an object with the following attributes:
+ - **x**: the horizontal mouse position relative to the terminal window
+ - **y**: the vertical mouse position relative to the terminal window
 
 </section>
