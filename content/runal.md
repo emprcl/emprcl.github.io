@@ -95,10 +95,10 @@ function setup(c) {}
 function draw(c) {}
 ```
 
-You can add extra methods `onKey` and `onMouse` to catch keyboard and mouse events:
+You can add extra methods `onKey` and `onMouseClick` to catch keyboard or mouse events (check [events documentation](#events)):
 ```js
 function onKey(c, e) {}
-function onMouse(c, e) {}
+function onMouseClick(c, e) {}
 ````
 
 And you can then execute the file with:
@@ -136,16 +136,17 @@ import (
 )
 
 func main() {
-	runal.Run(context.Background(), setup, draw, onKey, onMouse)
+	runal.Run(context.Background(), setup, draw, runal.WithOnKey(onKey), runal.WithOnMouseClick(onMouseClick))
 }
 
 func setup(c *runal.Canvas) {}
 
 func draw(c *runal.Canvas) {}
 
-// You can add extra methods `onKey` and `onMouse` to catch keyboard and mouse events
+// You can add extra methods `onKey` and `onMouseClick` to catch keyboard and mouse events.
+// Ensure to register them in the runal.Run() function.
 func onKey(c *runal.Canvas, e runal.KeyEvent) {}
-func onMouse(c *runal.Canvas, e runal.MouseEvent) {}
+func onMouseClick(c *runal.Canvas, e runal.MouseEvent) {}
 ```
 
 And you can then execute the file with:
@@ -617,6 +618,16 @@ function onKey(c, event) {
 }
 ```
 
+In go you need to register the event through the `Run()` method using the functional option `WithOnKey`.
+```go
+func main() {
+	runal.Run(context.Background(), setup, draw, runal.WithOnKey(onKey))
+}
+func setup(c *runal.Canvas) {}
+func draw(c *runal.Canvas) {}
+func onKey(c *runal.Canvas, e runal.KeyEvent) {}
+```
+
 Event is an object with the following attributes:
  - **key**: the string representation of the key pressed (`a`, `b`, `c`, `1`, `2`, `3` etc...)
  - **code**: the numerical value of the key pressed (97, 98, 99, 49, 50, 51 etc...)
@@ -644,6 +655,17 @@ function onMouseClick(c, event) {
   }
 }
 ```
+
+In Go you need to register the event through the `Run()` method using the functional option `WithOnMouseClick`.
+```go
+func main() {
+	runal.Run(context.Background(), setup, draw, runal.WithOnMouseClick(onMouseClick))
+}
+func setup(c *runal.Canvas) {}
+func draw(c *runal.Canvas) {}
+func onMouseClick(c *runal.Canvas, e runal.MouseEvent) {}
+```
+
 Event is an object with the following attributes:
  - **x**: the horizontal mouse position relative to the terminal window
  - **y**: the vertical mouse position relative to the terminal window
@@ -667,6 +689,17 @@ function onMouseRelease(c, event) {
   }
 }
 ```
+
+In Go you need to register the event through the `Run()` method using the functional option `WithOnMouseRelease`.
+```go
+func main() {
+	runal.Run(context.Background(), setup, draw, runal.WithOnMouseRelease(onMouseRelease))
+}
+func setup(c *runal.Canvas) {}
+func draw(c *runal.Canvas) {}
+func onMouseRelease(c *runal.Canvas, e runal.MouseEvent) {}
+```
+
 Event is an object with the following attributes:
  - **x**: the horizontal mouse position relative to the terminal window
  - **y**: the vertical mouse position relative to the terminal window
@@ -698,6 +731,17 @@ function onMouseWheel(c, event) {
   }
 }
 ```
+
+In Go you need to register the event through the `Run()` method using the functional option `WithOnMouseWheel`.
+```go
+func main() {
+	runal.Run(context.Background(), setup, draw, runal.WithOnMouseWheel(onMouseWheel))
+}
+func setup(c *runal.Canvas) {}
+func draw(c *runal.Canvas) {}
+func onMouseWheel(c *runal.Canvas, e runal.MouseEvent) {}
+```
+
 Event is an object with the following attributes:
  - **x**: the horizontal mouse position relative to the terminal window
  - **y**: the vertical mouse position relative to the terminal window
@@ -721,6 +765,17 @@ function onMouseMove(c, event) {
   c.backgroundBg(color);
 }
 ```
+
+In Go you need to register the event through the `Run()` method using the functional option `WithOnMouseMove`.
+```go
+func main() {
+	runal.Run(context.Background(), setup, draw, runal.WithOnMouseMove(onMouseMove))
+}
+func setup(c *runal.Canvas) {}
+func draw(c *runal.Canvas) {}
+func onMouseMove(c *runal.Canvas, e runal.MouseEvent) {}
+```
+
 Event is an object with the following attributes:
  - **x**: the horizontal mouse position relative to the terminal window
  - **y**: the vertical mouse position relative to the terminal window
