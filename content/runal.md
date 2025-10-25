@@ -166,7 +166,7 @@ function setup(c) {
   // just to get a more balenced output.
   // A terminal cell is not a square, so the result can feel
   // squished a little bit.
-  c.cellPaddingDouble();
+  c.cellModeDouble();
 }
 
 function draw(c) {
@@ -285,14 +285,16 @@ Drawing in the terminal is a little bit weird, because each cell is not a square
 One simple way to fix this problem is to **use 2 cells instead of one** for drawing one canvas pixel, but the question is : which character to draw in the second cell?
 
 You can control this behavior with 2 methods:
- - **c.cellPadding(char)**: it allows you to define which character to use in the second cell. One obvious option is to use a black space, but other choice may give you fun results.
- - **c.cellPaddingDouble()**: it just duplicates the first character.
+ - **c.cellModeCustom(char)**: it allows you to define which character to use in the second cell. One obvious option is to use a black space, but other choice may give you fun results.
+ - **c.cellModeDouble()**: it just duplicates the first character.
 
+#### c.cellModeDefault() <sub>since v0.9.0</sub>
+Makes every cell a single character. This is the default behavior.
 
-#### c.cellPadding(char)
+#### c.cellModeCustom(char) <sub>since v0.9.0</sub>
 Sets a character used for cell spacing between elements.
 
-#### c.cellPaddingDouble()
+#### c.cellModeDouble() <sub>since v0.9.0</sub>
 Makes every cell duplicated.
 
 #### c.clear()
