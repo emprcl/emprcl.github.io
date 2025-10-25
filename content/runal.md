@@ -469,6 +469,8 @@ All JavaScript [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 
 Runal **doesn't define trigonometry functions**, please use [_Math.sin()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin), [_Math.cos()_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos) etc...
 
+In Go, use the [math](https://pkg.go.dev/math) package.
+
 #### c.map(value, inputStart, inputEnd, outputStart, outputEnd)
 Maps a value from one range to another.
 
@@ -576,23 +578,25 @@ Exports the current canvas to a mp4 (h264) video file for a given duration (in s
 #### c.savedCanvasFont(path)
 Sets a custom font (tff) file used for rendering text characters in exported images generated via _SaveCanvasTo...()_ methods.
 
-### Log
+### Log & Debug
 
-You can use JavaScript _console.log()_ to log things.
+You can use JavaScript _console.log()_ to log things on the screen.
 
 ```js
+
 let x = Math.osc(c.framecount);
 console.log(x);
 ```
 
-Entries will be written in a **console.log** file in your current directory.
+In Go (and also in JavaScript), you can use _Debug()_:
+```go
 
-You can display the logs live in another terminal pane with:
-```sh
-tail -f console.log
+x := math.Sin(float64(c.Framecount))
+c.Debug(x)
 ```
 
-The **console.log** file is deleted upon exit.
+#### c.debug(message1, message2, ...) <sub>since v0.9.0</sub>
+Print debug messages on screen.
 
 ### Events
 
