@@ -225,6 +225,18 @@ You're missing a specific method or feature? Feel free to [open an issue](https:
 
 <section class="reference">
 
+### Fonts
+
+We recommend configuring your terminal to use a good monospace font like [Iosevka](https://typeof.net/Iosevka/) for example.
+
+Because most of fonts aren't square, your sketches might look squished or unbalanced.
+There are 2 ways of fixing this problem:
+ - using [cell modes](#canvas)
+ - using a square 8x8 font, like [Ursa](https://ursafrank.itch.io/ursafont) for example
+
+<hr class="separator"/>
+
+
 ### Properties
 
 #### c.width
@@ -280,9 +292,9 @@ function setup(c) {
 
 ### Canvas
 
-Drawing in the terminal is a little bit weird, because each cell is not a square. Therefore, **results can look squished** depending on what you're trying to do.
+Drawing in the terminal is a little bit weird, because each cell is not a square with usual fonts. Therefore, **results can look squished** depending on what you're trying to do.
 
-One simple way to fix this problem is to **use 2 cells instead of one** for drawing one canvas pixel, but the question is : which character to draw in the second cell?
+One simple way to fix this problem is to **use 2 cells instead of one** for drawing one canvas pixel, but the question is: which character to draw in the second cell?
 
 You can control this behavior with 2 methods:
  - **c.cellModeCustom(char)**: it allows you to define which character to use in the second cell. One obvious option is to use a black space, but other choice may give you fun results.
