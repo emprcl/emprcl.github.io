@@ -370,9 +370,33 @@ Ends the program execution. It also quits the JavaScript runtime.
 
 ### Colors
 
-For every color arguments and properties (see [Draw](#draw), you can set 2 types of color values:
+For every color arguments and properties (see [Draw](#draw), you can set 3 types of color values:
  - **hexadecimal** (_ex: `#000000`_): the hexadecimal color code
  - **ANSI 256** (_between 0 and 255_): one of the [256 ANSI colors](https://www.ditig.com/256-colors-cheat-sheet)
+ - **CSS colors** (_ex: `fuchsia`_): one of the [css colors](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/named-color)
+
+In addition, you can use the following primitives that allows you to work with RGB, HSL and HSV color spaces.
+
+#### c.colorRGB(r, g, b) <sub>since v0.10.0</sub>
+Returns a hex color from R, G, B values. All 3 values are range between 0 and 255.
+
+```js
+c.strokeFg(c.colorRGB(0, 0, 255));
+```
+
+#### c.colorHSL(h, s, l) <sub>since v0.10.0</sub>
+Returns a hex color from H (range 0 to 360), S (range 0 to 100), L (range 0 to 100) values.
+
+```js
+c.strokeFg(c.colorHSL(160, 100, 50));
+```
+
+#### c.colorHSV(h, s, v) <sub>since v0.10.0</sub>
+Returns a hex color from H (range 0 to 360), S (range 0 to 100), V (range 0 to 100) values.
+
+```js
+c.strokeFg(c.colorHSL(50, 55, 100));
+```
 
 <hr class="separator"/>
 
