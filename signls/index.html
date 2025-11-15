@@ -1,0 +1,668 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="description" content="a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal">
+    
+<meta property="og:title" content="Signls" />
+<meta property="og:description" content="a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal" />
+<meta
+    property="og:image"
+    content="https:&#x2F;&#x2F;empr.cl/&#x2F;images&#x2F;signls&#x2F;screenshot.png"
+/>
+
+    <link rel="canonical" href="https://empr.cl/signls/">
+    <link rel="stylesheet" href="https://empr.cl/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Signls </title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="3495e2be-776d-4d16-afef-9a5cb76bb521"></script>
+</head>
+<body>
+
+<main>
+    
+    <nav>
+            <a href="https:&#x2F;&#x2F;empr.cl">
+                        <img src="https://empr.cl/images/logo.png" alt="logo"/>
+                    </a>
+                <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <div id="trees">
+                <ul class="subtree">
+                    <li class="active">
+                        <a href="/">about</a>
+                    </li>
+                </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/runal/">runal</a>
+                        </li>
+
+
+                        </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/signls/">signls</a>
+                        </li>
+
+
+                        
+                                
+                                
+                                    <ul id="toc">
+                                        <li><a href="
+                                                    https://empr.cl/signls/#overview">Overview</a>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/signls/#installation">Installation</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#linux-macos">Linux &amp; macOS</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#windows">Windows</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#build-it-yourself">Build it yourself</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/signls/#usage">Usage</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#basic-commands">Basic commands</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#keyboard-mapping">Keyboard mapping</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#midi">MIDI</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/signls/#workflow">Workflow</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#user-interface">User Interface</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#grid">Grid</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#nodes">Nodes</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#signals">Signals</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#parameters">Parameters</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#note-parameters">Note parameters</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#cc-parameters">CC parameters</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#meta-parameters">Meta parameters</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#timing">Timing</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#transposition">Transposition</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#randomization">Randomization</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#bank">Bank</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/signls/#nodes-reference">Nodes reference</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#bang"> Bang</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#euclid"> Euclid</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#pass"> Pass</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#spread"> Spread</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#cycle"> Cycle</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#dice"> Dice</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#toll"> Toll</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#zone"> Zone</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/signls/#hole"> Hole</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        </ul>
+                                </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/sektron/">sektron</a>
+                        </li>
+
+
+                        </ul>
+                </div>
+        </nav>
+    <article>
+        <div id="wrap">
+             <script>
+    fetch("https://api.github.com/repos/emprcl/signls/releases/latest")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let release_name = data.name;
+            let release = document.querySelector("#release");
+            release.innerHTML = `<a href='https://emprcl.itch.io/signls'>Signls ${release_name}</a>`;
+        });
+</script>
+<h2 id="overview">Overview</h2>
+<p><span id="release"></span> •
+<a href="https://github.com/emprcl/signls">source code</a> •
+<a href="https://github.com/emprcl/signls/issues/new">report an issue</a></p>
+<hr/>
+<br/>
+<iframe frameborder="0" src="https://itch.io/embed/3138285?linkback=true&amp;border_width=0&amp;bg_color=f9f9f9&amp;link_color=ff005f&amp;border_color=f9f9f9" width="550" height="165" style="width: 100%;"><a href="https://emprcl.itch.io/signls">Signls by emprcl</a></iframe>
+<br/>
+<br/>
+<br/>
+<p><strong>Signls</strong> (<em>pronounced signals</em>) is a non-linear, generative MIDI sequencer designed for music composition and live performances, all within the terminal. It allows you to create complex, evolving musical patterns using a grid-based approach. You can place nodes on the grid, and these nodes can emit signals, relay them, or trigger MIDI notes. There are 9 different types of nodes to explore, each with its own unique behavior.</p>
+<p>With Signls, you can generate dynamic, generative music, meaning that the patterns evolve and change over time. It's designed to give you a powerful creative tool to build intricate sequences without being stuck in a rigid timeline or structure.</p>
+<p>It takes inspiration from <a href="https://100r.co/site/orca.html">Orca</a> and <a href="https://nodalmusic.com/">Nodal</a>.</p>
+<iframe style="width:100%; aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/N2jTlwaZbgk?si=P2ymGjp82mqf9--h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><strong>Features</strong></p>
+<ul>
+<li><strong>Non-linear sequencing</strong>: unlike traditional sequencers, Signls doesn't force you into a single direction. Your sequences can move and shift in multiple ways, allowing for complex and unique arrangements.</li>
+<li><strong>Randomize everything</strong>: create evolving musical patterns that shift over time, adding depth and unpredictability to your compositions.</li>
+<li><strong>Live performance</strong>: designed to be used in real-time, making it a adequate tool for live performances where improvisation is key.</li>
+<li><strong>Keyboard first</strong>: Signls operates directly from your terminal, giving you control in a simple, lightweight environment, where everything is controllable via keyboard.</li>
+<li><strong>Cross-platform</strong>: runs on Linux, macOS, and Windows</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p><strong>Signls</strong> is available for <strong>Linux</strong>, <strong>macOS</strong> and <strong>Windows</strong>.</p>
+<p><a href="https://emprcl.itch.io/signls">Download the last release</a> for your platform.</p>
+<h3 id="linux-macos">Linux &amp; macOS</h3>
+<p>In your terminal:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># Extract files
+</span><span style="color:#bf616a;">mkdir -p</span><span> signls &amp;&amp; </span><span style="color:#bf616a;">tar -zxvf</span><span> signls_VERSION_PLATFORM.tar.gz</span><span style="color:#bf616a;"> -C</span><span> signls
+</span><span style="color:#96b5b4;">cd</span><span> signls
+</span><span>
+</span><span style="color:#a7adba;"># Run signls
+</span><span style="color:#bf616a;">./signls
+</span></code></pre>
+<h3 id="windows">Windows</h3>
+<blockquote>
+<p><em><em>We recommend using <a href="https://apps.microsoft.com/detail/9n0dx20hk701">Windows Terminal</a> with a good monospace font like <a href="https://typeof.net/Iosevka/">Iosevka</a> to display Signls correctly on Windows.</em></em></p>
+</blockquote>
+<blockquote>
+<p><em><em>Some specific Windows <a href="https://github.com/emprcl/signls/issues/5">bugs</a> regarding unicode characters prevent us to display some UI elements (randomization indicator or non-empty bank slot) but it should not degrade the experience that much.</em></em></p>
+</blockquote>
+<p>Unzip the archive and, in the same directory, run:</p>
+<pre style="background-color:#eff1f5;color:#4f5b66;"><code><span>.\signls.exe
+</span></code></pre>
+<p>Replace <em>./signls</em> by <em>.\signls.exe</em> for every following commands.</p>
+<h3 id="build-it-yourself">Build it yourself</h3>
+<p>You can also <a href="https://github.com/emprcl/signls?tab=readme-ov-file#build-it-yourself">build it yourself</a> if your want to.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-commands">Basic commands</h3>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># Run signls
+</span><span style="color:#bf616a;">./signls
+</span><span>
+</span><span style="color:#a7adba;"># Display current version
+</span><span style="color:#bf616a;">./signls --version
+</span></code></pre>
+<p>Hit <code>?</code> to see all keybindings. <code>esc</code> to quit.</p>
+<h3 id="keyboard-mapping">Keyboard mapping</h3>
+<p>Keys mapping is fully customizable. After running signls for the first time, a <em>config.json</em> is created.
+You can edit all the keys inside it.</p>
+<p>You can select one of the default keyboard layouts available:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># QWERTY
+</span><span style="color:#bf616a;">./signls --keyboard</span><span> qwerty
+</span><span>
+</span><span style="color:#a7adba;"># AZERTY
+</span><span style="color:#bf616a;">./signls --keyboard</span><span> azerty
+</span><span>
+</span><span style="color:#a7adba;"># QWERTY MAC
+</span><span style="color:#bf616a;">./signls --keyboard</span><span> qwerty-mac
+</span><span>
+</span><span style="color:#a7adba;"># AZERTY MAC
+</span><span style="color:#bf616a;">./signls --keyboard</span><span> azerty-mac
+</span></code></pre>
+<h4 id="default-keybindings">Default keybindings</h4>
+<p>For qwerty keyboards, here's the default mapping:</p>
+<ul>
+<li><code>space</code> <strong>play</strong> or <strong>stop</strong></li>
+<li><code>tab</code> <strong>show bank</strong></li>
+<li><code>1</code> ... <code>9</code> <strong>add nodes</strong></li>
+<li><code>↑</code> <code>↓</code> <code>←</code> <code>→</code> <strong>move cursor</strong></li>
+<li><code>shift</code>+<code>↑</code> <code>↓</code> <code>←</code> <code>→</code> <strong>multiple selection (or modify alt parameter mode in edit mode)</strong></li>
+<li><code>ctrl</code>+<code>↑</code> <code>↓</code> <code>←</code> <code>→</code> <strong>modify selected node direction (modify parameter or alt parameter value)</strong></li>
+<li><code>.</code> <strong>modify selected parameter</strong></li>
+<li><code>backspace</code> <strong>remove selected nodes (or grid in bank)</strong></li>
+<li><code>enter</code> <strong>edit selected nodes</strong></li>
+<li><code>m</code> <strong>toggle selected nodes mute</strong></li>
+<li><code>M</code> <strong>mute/unmute all selected nodes</strong></li>
+<li><code>/</code> <strong>trigger selected node</strong></li>
+<li><code>-</code> <code>=</code> <strong>modify tempo</strong></li>
+<li><code>'</code> <code>;</code> <strong>modify root note</strong></li>
+<li><code>&quot;</code> <code>:</code> <strong>modify scale</strong></li>
+<li><code>ctrl</code>+<code>c</code> <code>x</code> <code>v</code>  <strong>copy, cut, paste selection</strong></li>
+<li><code>escape</code> <strong>exit parameter edit or bank selection</strong></li>
+<li><code>f2</code> <strong>edit midi configuration</strong></li>
+<li><code>f10</code> <strong>fit grid to window</strong></li>
+<li><code>?</code> <strong>show help</strong></li>
+<li><code>ctrl</code>+<code>q</code> <strong>quit</strong></li>
+</ul>
+<h4 id="key-binding-reference">Key binding reference</h4>
+<ul>
+<li><a href="https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L183">qwerty</a></li>
+<li><a href="https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L244">qwerty mac</a></li>
+<li><a href="https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L62">azerty</a></li>
+<li><a href="https://github.com/emprcl/signls/blob/7d9c8016e99fc9c973f61764fb9801d92eee21db/filesystem/keymap.go#L123">azerty mac</a></li>
+</ul>
+<h3 id="midi">MIDI</h3>
+<p><strong>Signls</strong> doesn't generate sound on its own, but it works seamlessly with MIDI software or hardware. You can connect it to your favorite synthesizers, virtual instruments, or any MIDI-compatible devices for live performances or production.</p>
+<p>On each <a href="https://empr.cl/signls/#nodes">node</a>, you can configure <strong><em>NoteOn</em></strong> and <strong><em>NoteOff</em></strong> messages, using <a href="https://empr.cl/signls/#note-parameters">note parameters</a>.
+Each node can also send up to 8 <strong><em>CC</em></strong> messages, using <a href="https://empr.cl/signls/#cc-parameters">CC parameters</a>.</p>
+<p>Press the <code>f2</code> to open the MIDI configuration menu, where you can adjust three parameters:</p>
+<ul>
+<li><strong>Clock</strong>: enable or disable <strong><em>clock send</em></strong> messages</li>
+<li><strong>Transport</strong>: enable or disable <strong><em>transport start</em></strong> and <strong><em>stop</em></strong> messages</li>
+<li><strong>Device</strong>: select the midi output device. It will display <strong>??</strong> if the saved device if not connected, and it will fallback on the default device behind the scene. You will need to restart Signls to see a newly plugged device.</li>
+</ul>
+<p>Use <code>←</code> and <code>→</code> to navigate between the parameters, and modify their values with <code>ctrl</code>+<code>↑</code> and <code>ctrl</code>+<code>↓</code>.
+Each grid in the bank saves its own independent values for these three parameters.</p>
+<p>On <strong>macOS</strong>, you might need to <a href="https://discussions.apple.com/thread/8096575?answerId=32319872022&amp;sortBy=rank#32319872022">enable the IAC driver</a> if you're only using webmidi instruments.</p>
+<p>Some companion apps that receive MIDI for testing Signls:</p>
+<ul>
+<li><a href="https://synth.playtronica.com/">Webmidi synths</a></li>
+<li><a href="https://neauoire.github.io/Enfer/">Enfer</a> (<a href="https://github.com/neauoire/Enfer">github</a>) <em><em>works only on linux</em></em></li>
+<li><a href="https://qsynth.sourceforge.io/">QSynth</a></li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<h3 id="user-interface">User Interface</h3>
+<img src="/images/signls/ui_1.png" alt="UI 1" />
+<ol>
+<li><strong>Grid</strong>: The <a href="https://empr.cl/signls/#grid">grid</a> is where you place <a href="https://empr.cl/signls/#nodes">nodes</a>. Each nodes displays its type and emit/relay directions. Signals are displayed in white.</li>
+<li><strong>Cursor</strong>: The cursor is the tool to place, select or edit nodes.</li>
+<li><strong>Selection indicator</strong>: Shows the currently selected <a href="https://empr.cl/signls/#nodes">nodes</a>.</li>
+<li><strong>Mode indicator</strong>: Shows the current mode - <em>move</em>, <em><a href="https://empr.cl/signls/#parameters">edit</a></em> or <em><a href="https://empr.cl/signls/#bank">bank</a></em>.</li>
+<li><strong>Selector position</strong>: Shows the current selector position.</li>
+<li><strong>Grid size</strong>: Shows the current grid size. Useful to know if the grid is bigger than the current terminal window.</li>
+<li><strong>Tempo</strong>: Shows the current <a href="https://empr.cl/signls/#timing">tempo</a> in bpm (<em>beats per minute</em>).</li>
+<li><strong>Play status</strong>: Shows if the grid is currently playing (▶) or stopped (■). Also shows the number of 1/16 notes since it started to play.</li>
+<li><strong>Root key</strong>: Shows the current <a href="https://empr.cl/signls/#transposition">root key</a>.</li>
+<li><strong>Scale</strong>: Shows the current <a href="https://empr.cl/signls/#transposition">scale</a>.</li>
+<li><strong>Bank</strong>: Shows the currently selected grid in the <a href="https://empr.cl/signls/#bank">bank</a>, and the name of the bank (which is the bank filename).</li>
+<li><strong>Control zone</strong>: Shows either <a href="https://empr.cl/signls/#grid">grid</a> informations and parameters (<em>move</em> mode), selected <a href="https://empr.cl/signls/#parameters">node parameters</a> (<em>edit</em> mode) or <a href="https://empr.cl/signls/#bank">bank</a> grid slots (<em>bank</em> mode).</li>
+</ol>
+<h3 id="grid">Grid</h3>
+<p>The <strong>grid</strong> serves as a canvas for your sequencing, where you control the flow of MIDI signals across various <a href="https://empr.cl/signls/#nodes">nodes</a>. You can <strong>start</strong> or <strong>stop</strong> the grid's underlying sequencer by pressing <code>space</code>.</p>
+<p>By default, the <strong>size</strong> of the grid adapts to your terminal size. If you <strong>increase</strong> the terminal window, the grid will expand accordingly. However, if you <strong>decrease</strong> the terminal size, the grid remains unchanged to prevent the accidental loss of nodes outside the visible bounds. You can still scroll through the grid even if the terminal is smaller.</p>
+<p>If you want to force the grid to <strong>resize</strong> and match the terminal (which may result in some nodes being deleted), you can press <code>f10</code> to do so manually.</p>
+<h3 id="nodes">Nodes</h3>
+<p><strong>Nodes</strong> can perform three main functions based on their type:</p>
+<ul>
+<li>they can <strong>emit new signals</strong></li>
+<li>they can <strong>relay incoming signals</strong> to up to 4 directions</li>
+<li>they can <strong>trigger MIDI messages</strong></li>
+</ul>
+<p>To <strong>add</strong> nodes on the grid, move the cursor using the arrow keys and press keys <code>1</code> to <code>9</code> to choose one of the <strong><a href="https://empr.cl/signls/#nodes-reference">9 available node types</a></strong>.</p>
+<p>To <strong>remove</strong> nodes from the grid, move the cursor using the arrow keys and press <code>backspace</code>.</p>
+<p>You can manually <strong>trigger</strong> a node by using <code>/</code>.</p>
+<p>You can <strong>mute</strong> nodes to temporarily silence their behavior:</p>
+<ul>
+<li>Press <code>m</code> to toggle mute on the selected nodes.</li>
+<li>Press <code>M</code> to force mute sync across all selected nodes, ensuring they are all muted or unmuted together.</li>
+</ul>
+<p>This is useful for controlling which nodes are active during live performances or while experimenting with different parts of your sequence.</p>
+<p>You can easily manage nodes on the grid by copying, cutting, and pasting them using the usual key bindings:</p>
+<ul>
+<li><code>ctrl</code>+<code>C</code> to <strong>copy</strong>,</li>
+<li><code>ctrl</code>+<code>X</code> to <strong>cut</strong></li>
+<li><code>ctrl</code>+<code>V</code> to <strong>paste</strong>.</li>
+</ul>
+<p>To move nodes in bulk, you can <strong>select multiple nodes</strong> by holding <code>shift</code> + <code>↑</code> <code>↓</code> <code>←</code> <code>→</code> to define a selection area. This makes it easy to reposition or replicate parts of your sequence.</p>
+<h3 id="signals">Signals</h3>
+<p>A key feature of each node is the direction in which it <strong>emits</strong> or <strong>relays signals</strong>. You can configure up to four directions: <strong>up</strong>, <strong>down</strong>, <strong>left</strong>, and <strong>right</strong>. To modify a node's directions, move the cursor to the desired node and press <code>Ctrl</code> + <code>↑</code> <code>↓</code> <code>←</code> <code>→</code> to add or remove directions. The way a node uses these directions (one or multiple) depends on its specific behavior.</p>
+<img src="/images/signls/directions.jpg" alt="directions" class="shadow" width="300"/>
+<h3 id="parameters">Parameters</h3>
+<p>Each node has adjustable parameters that you can edit to modify its behavior. To enter <strong>node editing mode</strong>, move the cursor to the node you want to modify and press <code>enter</code>. The available parameters will appear in the control bar at the bottom.
+You can navigate between parameters using <code>←</code> <code>→</code> key and switch between parameter pages with using <code>↑</code> <code>↓</code> keys.</p>
+<p>To change a parameter value, press <code>ctrl</code>+<code>↑</code> to increase or <code>ctrl</code>+<code>↓</code> to decrease it.</p>
+<p>You can edit a parameter value precisely by pressing the <code>.</code> key. This opens a <strong>text input</strong> where you can type the value manually. Press <code>enter</code> to confirm the change.</p>
+<p>Each node parameter can have up to four alternative values:</p>
+<ul>
+<li><strong>Main 1</strong> <code>Ctrl</code>+<code>↑</code>/<code>↓</code>: adjusts the main value</li>
+<li><strong>Main 2</strong> <code>Ctrl</code>+<code>←</code>/<code>→</code>: adjusts a second value, often used for randomization</li>
+<li><strong>Alt 1</strong> <code>Shift</code>+<code>↑</code>/<code>↓</code>: adjusts a third alternative value</li>
+<li><strong>Alt 2</strong> <code>Shift</code>+<code>←</code>/<code>→</code>: adjusts a fourth alternative value</li>
+</ul>
+<blockquote>
+<p><em>We will refer to these as <strong>Main 1</strong>, <strong>Main 2</strong>, <strong>Alt 1</strong>, and <strong>Alt 2</strong> for simplicity</em></p>
+</blockquote>
+<p>Each node (except &quot;The Hole&quot;) shares <strong>five common MIDI parameters</strong>.</p>
+<img src="/images/signls/ui_2.png" alt="UI 2" />
+<p>Parameters are displayed in two parts if an alternative value (for example <a href="https://empr.cl/signls/#randomization">randomization</a>) is set:</p>
+<ol>
+<li><strong>the actual value</strong>: here <em>F5</em> for the key or <em>100</em> for the velocity</li>
+<li><strong>the alternative value</strong>: here <em>+8</em> for the key or <em>-18</em> for the velocity</li>
+</ol>
+<blockquote>
+<p><em>You can edit multiple nodes at once by selecting them together.The common parameters for all selected nodes will be displayed, and any changes you make will apply to all of them simultaneously.</em></p>
+</blockquote>
+<h3 id="note-parameters">Note parameters</h3>
+<p>The first parameter page will display the note parameters.</p>
+<p><strong>Key</strong> (<em>key</em>): key of the MIDI note</p>
+<ul>
+<li><strong>Value Range</strong>: A1 - G10</li>
+<li><strong>Main 1</strong>: key value for the note</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: note modes (random | silent)</li>
+</ul>
+<p><strong>Velocity</strong> (<em>vel</em>): intensity of the MIDI note</p>
+<ul>
+<li><strong>Value Range</strong>: 0 - 127</li>
+<li><strong>Main 1</strong>: velocity value for the note</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: <em>unused</em></li>
+</ul>
+<p><strong>Length</strong> (<em>len</em>): duration of the MIDI note.</p>
+<ul>
+<li><strong>Value Range</strong>: 1/64 - inf</li>
+<li><strong>Main 1</strong>: length value of the note</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: <em>unused</em></li>
+</ul>
+<p><strong>Probability</strong> (<em>prb</em>): the chance of triggering the MIDI note</p>
+<ul>
+<li><strong>Value Range</strong>: 0 - 100</li>
+<li><strong>Main 1</strong>: probability value</li>
+<li><strong>Main 2</strong>: <em>unused</em></li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: <em>unused</em></li>
+</ul>
+<p><strong>Channel</strong> (<em>cha</em>): MIDI channel</p>
+<ul>
+<li><strong>Value Range</strong>: 1 - 16</li>
+<li><strong>Main 1</strong>: channel value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: <em>unused</em></li>
+</ul>
+<p><strong>Device</strong> (<em>dvc</em>): MIDI device override. Allows to select a specific MIDI device for the node. If disabled, the <a href="https://empr.cl/signls/#midi">grid device</a> is used. It will display <strong>??</strong> if the saved device if not connected, and it will fallback on the <a href="https://empr.cl/signls/#midi">grid device</a> behind the scene. You will need to restart Signls to see a newly plugged device.</p>
+<ul>
+<li><strong>Value Range</strong>: 0 - <em>number of devices available</em></li>
+<li><strong>Main 1</strong>: device value</li>
+<li><strong>Main 2</strong>: <em>unused</em></li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: device mode (<em>disabled</em>, <em>active</em>)</li>
+</ul>
+<h3 id="cc-parameters">CC parameters</h3>
+<p>On the second parameter page, you can configure up to <strong>8 MIDI CC messages</strong> which will be sent alongside the note messages.</p>
+<p><strong>CC</strong> (<em>cc</em>): the control change message</p>
+<ul>
+<li><strong>Value Range</strong>: 0 - 127</li>
+<li><strong>Main 1</strong>: cc value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: cc number (<em>only for cc mode</em>)</li>
+<li><strong>Alt 2</strong>: message mode - <em>disabled</em>, <em>cc</em>, <em>after touch</em>, <em>pitch bend</em>, <em>program change</em></li>
+</ul>
+<h3 id="meta-parameters">Meta parameters</h3>
+<p>On the third parameter page, you can configure <strong>meta parameters</strong> which controls grid parameter values.</p>
+<p><strong>Tempo</strong> (<em>tempo</em>): the current tempo of the grid</p>
+<ul>
+<li><strong>Value Range</strong>: 1 - 300</li>
+<li><strong>Main 1</strong>: tempo value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: mode - <em>disabled</em>, <em>tempo</em></li>
+</ul>
+<p><strong>Bank slot</strong> (<em>bank</em>): the active grid in the bank</p>
+<ul>
+<li><strong>Value Range</strong>: 1 - 32</li>
+<li><strong>Main 1</strong>: bank value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: mode - <em>disabled</em>, <em>bank</em></li>
+</ul>
+<p><strong>Root key</strong> (<em>root</em>): the root key of the grid</p>
+<ul>
+<li><strong>Value Range</strong>: A1 - G10</li>
+<li><strong>Main 1</strong>: root key value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: mode - <em>disabled</em>, <em>root</em></li>
+</ul>
+<p><strong>Scale</strong> (<em>scale</em>): the scale of the grid</p>
+<ul>
+<li><strong>Value Range</strong>: <a href="https://empr.cl/signls/#transposition">see transposition</a></li>
+<li><strong>Main 1</strong>: scale value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>: mode - <em>disabled</em>, <em>scale</em></li>
+</ul>
+<h3 id="timing">Timing</h3>
+<p>Each position on the grid represents a <strong>1/16 note</strong>. You can adjust the <strong>tempo</strong> (in beats per minute, or BPM) to control how fast signals move across the grid. To modify the tempo, simply press <code>=</code> to increase the BPM or <code>-</code> to decrease it, allowing you to set the pace of your sequence in real time.</p>
+<h3 id="transposition">Transposition</h3>
+<p>The MIDI notes assigned to each node are fixed. However, when the <strong>root key</strong> or <strong>scale</strong> of the grid is changed, these notes are <strong>transposed</strong> according to the new root key and scale. This means the original note values are shifted in relation to the grid's updated musical context, allowing you to easily adjust the overall harmony without manually changing the notes on each node. The transposition happens relative to the set root and scale, providing a flexible way to experiment with different keys and tonalities.</p>
+<p>To modify the <strong>root key</strong> and <strong>scale</strong>, use:</p>
+<ul>
+<li><code>'</code> <code>;</code> to decrease and increase the root key</li>
+<li><code>&quot;</code> <code>:</code> to cycle through the available scales</li>
+</ul>
+<p>Available scales include the chromatic scale, the 7 diatonic modes, a few pentatonic scales and a tetratonic scale:</p>
+<ul>
+<li><strong>chromatic</strong></li>
+<li><strong>ionian</strong></li>
+<li><strong>dorian</strong></li>
+<li><strong>phrygian</strong></li>
+<li><strong>lydian</strong></li>
+<li><strong>mixolydian</strong></li>
+<li><strong>aeolian</strong></li>
+<li><strong>locrian</strong></li>
+<li><strong>pentatonic major</strong></li>
+<li><strong>pentatonic minor</strong></li>
+<li><strong>hirajoshi</strong></li>
+<li><strong>iwato</strong></li>
+<li><strong>tetratonic</strong></li>
+</ul>
+<h3 id="randomization">Randomization</h3>
+<p>You can apply <strong>randomization</strong> to most node parameters. When editing randomization, you can specify positive or negative randomization values.</p>
+<p>For example, if you set the <strong>velocity</strong> to <em>80+5</em>, the random value will be picked between 80 and 85. If you set the velocity to <em>80-5</em>, the random value will be picked between 75 and 80. This allows for subtle variations in your sequences, adding a layer of unpredictability while keeping control over the range of changes.</p>
+<blockquote>
+<p><em>Randomized node keys will always conform to the current <a href="https://empr.cl/signls/#transposition">scale</a>.</em></p>
+</blockquote>
+<h3 id="bank">Bank</h3>
+<p>You manage your projects using a <strong>bank</strong>. When you start the program, you can provide a <strong>bank</strong> JSON file, or if none is provided, a default file (<em>default.json</em>) will be created or loaded automatically. Each bank can store up to <strong>32 grids</strong>.</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">./signls --bank</span><span> my-grids.json
+</span></code></pre>
+<p>The grids are <strong>saved automatically</strong> whenever you make changes or exit the program, so you never have to worry about losing progress.</p>
+<p>To load a specific grid from the bank, press <code>tab</code> to switch to the <strong>bank view</strong>, then use the arrow keys to select a grid slot and press <code>enter</code> to load it. This allows you to quickly swap between different configurations during live performances or while working on different projects.</p>
+<img src="/images/signls/ui_3.png" alt="UI 3" />
+<p>The <em>̠</em> character under the grid number indicates that the grid slot is not empty.</p>
+<p>Like nodes, you can copy, cut and paste grids in the bank.</p>
+<h2 id="nodes-reference">Nodes reference</h2>
+<p>Here is a reference guide for all the <strong>node types</strong> available in <strong>Signls</strong>. Each node has common <a href="https://empr.cl/signls/#parameters"><strong>note parameters</strong></a> (except for the Hole) like key, velocity, length, channel, and probability. Some nodes also have <strong>extra parameters</strong> that give them unique behavior.</p>
+<h3 id="bang"><img src="/images/signls/bang.jpg" alt="bang" class="node shadow" width="25"/> <strong>Bang</strong></h3>
+<ul>
+<li><strong>Description:</strong> emits a signal when the grid starts playing and relays signals on all configured directions</li>
+<li><strong>Key binding</strong>: <code>1</code></li>
+<li><strong>Extra Parameters:</strong> none</li>
+</ul>
+<h3 id="euclid"><img src="/images/signls/euclid.jpg" alt="euclid" class="node shadow" width="25"/> <strong>Euclid</strong></h3>
+<ul>
+<li><strong>Description:</strong> emits signals based on the <strong>euclidean rhythm algorithm</strong>, ensuring an even distribution of steps across the grid. Relays signals on all configured directions</li>
+<li><strong>Key binding</strong>: <code>2</code></li>
+<li><strong>Extra Parameters:</strong>
+<ul>
+<li><strong>Steps</strong> (<em>stp</em>): number of total steps in the pattern
+<ul>
+<li><strong>Value Range</strong>: 1 - 128</li>
+<li><strong>Main 1</strong>: steps value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>:  <em>unused</em></li>
+</ul>
+</li>
+<li><strong>Triggers</strong> (<em>trg</em>): number of signals to emit within the total steps
+<ul>
+<li><strong>Value Range</strong>: 1 - 128</li>
+<li><strong>Main 1</strong>: triggers value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>:  <em>unused</em></li>
+</ul>
+</li>
+<li><strong>Offset</strong> (<em>off</em>): shifts the start point of the pattern
+<ul>
+<li><strong>Value Range</strong>: 0 - 128</li>
+<li><strong>Main 1</strong>: offset value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>:  <em>unused</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pass"><img src="/images/signls/pass.jpg" alt="pass" class="node shadow" width="25"/> <strong>Pass</strong></h3>
+<ul>
+<li><strong>Description:</strong> passes signals through without affecting their direction. No direction configuration is possible</li>
+<li><strong>Key binding</strong>: <code>3</code></li>
+<li><strong>Extra Parameters:</strong> none</li>
+</ul>
+<h3 id="spread"><img src="/images/signls/spread.jpg" alt="spread" class="node shadow" width="25"/> <strong>Spread</strong></h3>
+<ul>
+<li><strong>Description:</strong> relays signals on all configured directions, distributing them evenly</li>
+<li><strong>Key binding</strong>: <code>4</code></li>
+<li><strong>Extra Parameters:</strong> None</li>
+</ul>
+<h3 id="cycle"><img src="/images/signls/cycle.jpg" alt="cycle" class="node shadow" width="25"/> <strong>Cycle</strong></h3>
+<ul>
+<li><strong>Description:</strong> relays signals in a <strong>clockwise direction</strong>, starting from the &quot;up&quot; direction, one at a time</li>
+<li><strong>Key binding</strong>: <code>5</code></li>
+<li><strong>Extra Parameters:</strong>
+<ul>
+<li><strong>Repeat</strong> (<em>rpt</em>): repeats last emitting direction
+<ul>
+<li><strong>Value Range</strong>: 1 - no upper limit</li>
+<li><strong>Main 1</strong>: repeat value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>:  <em>unused</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dice"><img src="/images/signls/dice.jpg" alt="dice" class="node shadow" width="25"/> <strong>Dice</strong></h3>
+<ul>
+<li><strong>Description:</strong> relays signals in a randomly selected direction each time it is triggered</li>
+<li><strong>Key binding</strong>: <code>6</code></li>
+<li><strong>Extra Parameters:</strong>
+<ul>
+<li><strong>Repeat</strong> (<em>rpt</em>): repeats last emitting direction
+<ul>
+<li><strong>Value Range</strong>: 1 - no upper limit</li>
+<li><strong>Main 1</strong>: repeat value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>:  <em>unused</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="toll"><img src="/images/signls/toll.jpg" alt="toll" class="node shadow" width="25"/> <strong>Toll</strong></h3>
+<ul>
+<li><strong>Description:</strong> relays signals on all configured directions, but only after being triggered a specific number of times</li>
+<li><strong>Key binding</strong>: <code>7</code></li>
+<li><strong>Extra Parameters:</strong>
+<ul>
+<li><strong>Threshold</strong> (<em>thd</em>): the number of times the node must be triggered before it relays a signal
+<ul>
+<li><strong>Value Range</strong>: 1 - no upper limit</li>
+<li><strong>Main 1</strong>: offset value</li>
+<li><strong>Main 2</strong>: randomization range</li>
+<li><strong>Alt 1</strong>: <em>unused</em></li>
+<li><strong>Alt 2</strong>:  <em>unused</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="zone"><img src="/images/signls/zone.jpg" alt="zone" class="node shadow" width="25"/> <strong>Zone</strong></h3>
+<ul>
+<li><strong>Description:</strong> relays signals on all configured directions and immediately propagates the trigger to all neighboring nodes, making it ideal for triggering chords</li>
+<li><strong>Key binding</strong>: <code>8</code></li>
+<li><strong>Extra Parameters:</strong> none</li>
+</ul>
+<h3 id="hole"><img src="/images/signls/hole.jpg" alt="hole" class="node shadow" width="25"/> <strong>Hole</strong></h3>
+<ul>
+<li><strong>Description:</strong> instantly teleports the signal to a specified location on the grid without triggering any notes</li>
+<li><strong>Key binding</strong>: <code>9</code></li>
+<li><strong>Extra Parameters:</strong>
+<ul>
+<li><strong>Destination</strong> (<em>dest</em>): The coordinate of the destination
+<ul>
+<li><strong>Value Range</strong>: 1 - grid width/height</li>
+<li><strong>Main 1</strong>: y-coordinate value of the destination</li>
+<li><strong>Main 2</strong>: x-coordinate value of the destination</li>
+<li><strong>Alt 1</strong>: randomization range for the y-coordinate</li>
+<li><strong>Alt 2</strong>: randomization range for the y-coordinate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+ 
+        </div>
+    </article>
+</main>
+<script type="text/javascript">
+  function burger() {
+    let x = document.querySelector("#trees");
+    let y = document.querySelector("#mobile");
+
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      y.className = "ms-Icon--GlobalNavButton";
+    } else {
+      x.style.display = "block";
+      y.className = "ms-Icon--ChromeClose";
+    }
+  }
+</script>
+</body>
+</html>

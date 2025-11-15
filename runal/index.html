@@ -1,0 +1,813 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="description" content="a text-based creative coding environment for the terminal. It works similarly as processing or p5js and can either be programmed with JavaScript, or used as a Go package.">
+    
+<meta property="og:title" content="Runal" />
+<meta property="og:description" content="a text-based creative coding environment for the terminal. It works similarly as processing or p5js and can either be programmed with JavaScript, or used as a Go package." />
+<meta
+    property="og:image"
+    content="https:&#x2F;&#x2F;empr.cl/&#x2F;images&#x2F;runal&#x2F;screenshot.png"
+/>
+
+    <link rel="canonical" href="https://empr.cl/runal/">
+    <link rel="stylesheet" href="https://empr.cl/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Runal </title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="3495e2be-776d-4d16-afef-9a5cb76bb521"></script>
+</head>
+<body>
+
+<main>
+    
+    <nav>
+            <a href="https:&#x2F;&#x2F;empr.cl">
+                        <img src="https://empr.cl/images/logo.png" alt="logo"/>
+                    </a>
+                <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <div id="trees">
+                <ul class="subtree">
+                    <li class="active">
+                        <a href="/">about</a>
+                    </li>
+                </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/runal/">runal</a>
+                        </li>
+
+
+                        
+                                
+                                
+                                    <ul id="toc">
+                                        <li><a href="
+                                                    https://empr.cl/runal/#overview">Overview</a>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/runal/#installation">Installation</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#quick-install">Quick-install</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#manual-installation">Manual installation</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#build-it-yourself">Build it yourself</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/runal/#usage">Usage</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#javascript-runtime">JavaScript runtime</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#go-package">Go package</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/runal/#examples">Examples</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#perlin-noise-map">Perlin noise map</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#more">More</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/runal/#reference">Reference</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#fonts">Fonts</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#properties">Properties</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#objects">Objects</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#canvas">Canvas</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#control">Control</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#colors">Colors</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#draw">Draw</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#shapes">Shapes</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#curve">Curve</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#math">Math</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#random">Random</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#noise">Noise</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#transform">Transform</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#image">Image</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#export">Export</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#log-debug">Log &amp; Debug</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/runal/#events">Events</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        </ul>
+                                </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/signls/">signls</a>
+                        </li>
+
+
+                        </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/sektron/">sektron</a>
+                        </li>
+
+
+                        </ul>
+                </div>
+        </nav>
+    <article>
+        <div id="wrap">
+             <script>
+    fetch("https://api.github.com/repos/emprcl/runal/releases/latest")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let release_name = data.name;
+            let release = document.querySelector("#release");
+            release.innerHTML = `<a href='https://github.com/emprcl/runal/releases/latest'>Runal ${release_name}</a>`;
+        });
+</script>
+<h2 id="overview">Overview</h2>
+<p><span id="release"></span> •
+<a href="https://github.com/emprcl/runal">source code</a> •
+<a href="https://github.com/emprcl/runal/issues/new">report an issue</a></p>
+<hr/>
+<p><strong>Runal</strong> is a text-based creative coding environment, that runs in the terminal.</p>
+<p>It works similarly as <a href="https://processing.org/">processing</a> or <a href="https://p5js.org/">p5js</a> but it does all the rendering as text. It can either be programmed with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>, or used as a <a href="https://go.dev/">Go</a> package.</p>
+<p><img src="/images/runal/screenshot.png" alt="runal screenshot" /></p>
+<p><strong>Features</strong></p>
+<ul>
+<li><strong>Text only</strong>: explore text and ascii art directly in the terminal</li>
+<li><strong>Familiar</strong>: if you know <a href="https://processing.org/">processing</a> or <a href="https://p5js.org/">p5js</a>, you already know Runal</li>
+<li><strong>Simple primitives</strong>: provides a set of simple primitives for 2D shapes, trigonometry, randomization, colors...</li>
+<li><strong>Multi-language</strong>: it can be programmed with Javascript, or used as a Go library</li>
+<li><strong>Fast feedback loop</strong>: reloads your sketch each time you modify it</li>
+<li><strong>Export</strong>: save your canvas to png images, gif animations or mp4 videos</li>
+<li><strong>Cross-platform</strong>: runs on Linux, macOS, and Windows</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<blockquote>
+<p><em><em>If you want to use Runal as a Go package, see <a href="https://empr.cl/runal/#go-package">Go package</a>.</em></em></p>
+</blockquote>
+<p><strong>Runal</strong> runtime is available for <strong>Linux</strong>, <strong>macOS</strong> and <strong>Windows</strong>.</p>
+<h3 id="quick-install">Quick-install</h3>
+<p>On <strong>linux</strong> or <strong>macOS</strong>, you can run this quick-install bash script:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">curl -sSL</span><span> empr.cl/get/runal | </span><span style="color:#bf616a;">bash
+</span></code></pre>
+<h3 id="manual-installation">Manual installation</h3>
+<p><a href="https://github.com/emprcl/runal/releases">Download the last release</a> for your platform.</p>
+<h4 id="linux-macos">Linux &amp; macOS</h4>
+<p>In your terminal:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># Extract files
+</span><span style="color:#bf616a;">mkdir -p</span><span> runal &amp;&amp; </span><span style="color:#bf616a;">tar -zxvf</span><span> signls_runal.tar.gz</span><span style="color:#bf616a;"> -C</span><span> runal
+</span><span style="color:#96b5b4;">cd</span><span> runal
+</span><span>
+</span><span style="color:#a7adba;"># Run runal
+</span><span style="color:#bf616a;">./runal
+</span><span>
+</span><span style="color:#a7adba;"># Run runal demo
+</span><span style="color:#bf616a;">./runal -demo
+</span></code></pre>
+<h4 id="windows">Windows</h4>
+<blockquote>
+<p><em><em>We recommend using <a href="https://apps.microsoft.com/detail/9n0dx20hk701">Windows Terminal</a> with a good monospace font like <a href="https://typeof.net/Iosevka/">Iosevka</a> to display Runal correctly on Windows.</em></em></p>
+</blockquote>
+<p>Unzip the archive and, in the same directory, run:</p>
+<pre data-lang="winbatch" style="background-color:#eff1f5;color:#4f5b66;" class="language-winbatch "><code class="language-winbatch" data-lang="winbatch"><span>; Run runal
+</span><span>.\runal.exe
+</span><span>
+</span><span>; Run runal demo
+</span><span>.\runal.exe -demo
+</span></code></pre>
+<p>Replace <em>./runal</em> by <em>.\runal.exe</em> for every following commands.</p>
+<h3 id="build-it-yourself">Build it yourself</h3>
+<p>You can also <a href="https://github.com/emprcl/runal?tab=readme-ov-file#build-it-yourself">build it yourself</a> if your want to.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="javascript-runtime">JavaScript runtime</h3>
+<p>You will use JavaScript for scripting your sketch. Your js file should contain a setup and a draw method. Both methods take a single argument (here c) representing a canvas object that holds all the available primitives:</p>
+<pre data-lang="JavaScript" style="background-color:#eff1f5;color:#4f5b66;" class="language-JavaScript "><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a7adba;">// sketch.js
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(c) {}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(c) {}
+</span></code></pre>
+<p>You can add extra methods <code>onKey</code> and <code>onMouseClick</code> to catch keyboard or mouse events (check <a href="https://empr.cl/runal/#events">events documentation</a>):</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onKey</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">e</span><span>) {}
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onMouseClick</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">e</span><span>) {}
+</span></code></pre>
+<p>And you can then execute the file with:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">./runal -f</span><span> sketch.js
+</span></code></pre>
+<p>The js file will be <strong>automatically reloaded when modified</strong>, no need to restart the command.</p>
+<p>To <strong>exit</strong>, just type <code>ctrl+c</code>.</p>
+<h4 id="standalone-executable">Standalone executable</h4>
+<p>You can create a standalone executable from the JavaScript file specified with <strong>-f</strong> using <strong>-o [FILE]</strong>:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">./runal -f</span><span> sketch.js</span><span style="color:#bf616a;"> -o</span><span> sketch
+</span><span>
+</span><span style="color:#a7adba;"># Run the standalone executable
+</span><span style="color:#bf616a;">./sketch
+</span></code></pre>
+<h3 id="go-package">Go package</h3>
+<p>Because <strong>Runal</strong> is written in Go, you can also use it as a Go package.</p>
+<pre data-lang="Go" style="background-color:#eff1f5;color:#4f5b66;" class="language-Go "><code class="language-Go" data-lang="Go"><span style="color:#a7adba;">// sketch.go
+</span><span style="color:#b48ead;">package </span><span style="color:#bf616a;">main
+</span><span>
+</span><span style="color:#b48ead;">import </span><span>(
+</span><span>	&quot;</span><span style="color:#a3be8c;">context</span><span>&quot;
+</span><span>	&quot;</span><span style="color:#a3be8c;">os</span><span>&quot;
+</span><span>	&quot;</span><span style="color:#a3be8c;">os/signal</span><span>&quot;
+</span><span>
+</span><span>	&quot;</span><span style="color:#a3be8c;">github.com/emprcl/runal</span><span>&quot;
+</span><span>)
+</span><span>
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">Run</span><span>(</span><span style="color:#bf616a;">context</span><span>.</span><span style="color:#bf616a;">Background</span><span>(), </span><span style="color:#bf616a;">setup</span><span>, </span><span style="color:#bf616a;">draw</span><span>, </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnKey</span><span>(</span><span style="color:#bf616a;">onKey</span><span>), </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnMouseClick</span><span>(</span><span style="color:#bf616a;">onMouseClick</span><span>))
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span>
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span>
+</span><span style="color:#a7adba;">// You can add extra methods `onKey` and `onMouseClick` to catch keyboard and mouse events.
+</span><span style="color:#a7adba;">// Ensure to register them in the runal.Run() function.
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onKey</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">KeyEvent</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onMouseClick</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">MouseEvent</span><span>) {}
+</span></code></pre>
+<p>And you can then execute the file with:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">go</span><span> run sketch.go
+</span></code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="perlin-noise-map">Perlin noise map</h3>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// perlin_noise_map.js
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// Here we&#39;re just saying to print each cells 2 times
+</span><span>  </span><span style="color:#a7adba;">// just to get a more balenced output.
+</span><span>  </span><span style="color:#a7adba;">// A terminal cell is not a square, so the result can feel
+</span><span>  </span><span style="color:#a7adba;">// squished a little bit.
+</span><span>  </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">cellModeDouble</span><span>();
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// For each cell of the canvas, we map a perlin noise value (between 0 and 1)
+</span><span>  </span><span style="color:#a7adba;">// to an ansi color (between 150 and 231).
+</span><span>  </span><span style="color:#a7adba;">// Adding c.framecount in the noise parameter makes the canvas move over the map.
+</span><span>  </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">i </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">i </span><span>&lt; </span><span style="color:#bf616a;">c</span><span>.width; </span><span style="color:#bf616a;">i</span><span>++) {
+</span><span>    </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">j </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">j </span><span>&lt; </span><span style="color:#bf616a;">c</span><span>.height; </span><span style="color:#bf616a;">j</span><span>++) {
+</span><span>      </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">color </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">map</span><span>(
+</span><span>        </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">noise2D</span><span>(
+</span><span>          </span><span style="color:#bf616a;">i </span><span>* </span><span style="color:#d08770;">0.009 </span><span>+ </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#bf616a;">framecount </span><span>/ </span><span style="color:#d08770;">1000</span><span>,
+</span><span>          </span><span style="color:#bf616a;">j </span><span>* </span><span style="color:#d08770;">0.009 </span><span>+ </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#bf616a;">framecount </span><span>/ </span><span style="color:#d08770;">1000</span><span>,
+</span><span>        ),
+</span><span>        </span><span style="color:#d08770;">0</span><span>,
+</span><span>        </span><span style="color:#d08770;">1</span><span>,
+</span><span>        </span><span style="color:#d08770;">150</span><span>,
+</span><span>        </span><span style="color:#d08770;">231</span><span>,
+</span><span>      );
+</span><span>      </span><span style="color:#a7adba;">// We will use &quot;§&quot; character for drawing,
+</span><span>      </span><span style="color:#a7adba;">// width the computed foreground color, and a black background.
+</span><span>      </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">stroke</span><span>(&quot;</span><span style="color:#a3be8c;">§</span><span>&quot;, </span><span style="color:#bf616a;">color</span><span>, &quot;</span><span style="color:#a3be8c;">#000000</span><span>&quot;);
+</span><span>      </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">point</span><span>(</span><span style="color:#bf616a;">i</span><span>, </span><span style="color:#bf616a;">j</span><span>);
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onKey</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">key</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// When hitting the &quot;c&quot; key, we save the current
+</span><span>  </span><span style="color:#a7adba;">// canvas in a png file.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">key </span><span>== &quot;</span><span style="color:#a3be8c;">c</span><span>&quot;) {
+</span><span>    </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">saveCanvas</span><span>(`</span><span style="color:#a3be8c;">canvas_${</span><span style="color:#d08770;">Date</span><span style="color:#a3be8c;">.</span><span style="color:#8fa1b3;">now</span><span style="color:#a3be8c;">()}.png</span><span>`);
+</span><span>  }
+</span><span>  </span><span style="color:#a7adba;">// When hitting the space keep, we update the noise seed
+</span><span>  </span><span style="color:#a7adba;">// to get a new map.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">key </span><span>== &quot; &quot;) {
+</span><span>    </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">noiseSeed</span><span>(</span><span style="color:#d08770;">Date</span><span>.</span><span style="color:#8fa1b3;">now</span><span>());
+</span><span>    </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">redraw</span><span>();
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<h3 id="more">More</h3>
+<p>You can find more small examples in the <a href="https://github.com/emprcl/runal/tree/main/examples">Github repository</a>.</p>
+<h2 id="reference">Reference</h2>
+<p>This documentation covers the full JavaScript API.</p>
+<p>You're missing a specific method or feature? Feel free to <a href="https://github.com/emprcl/runal/issues/new">open an issue</a>.</p>
+<blockquote>
+<p><em>Go properties and methods are the same as JavaScript, with an uppercase first letter (js: c.width, go: c.Width).</em></p>
+</blockquote>
+<hr class="separator"/>
+<section class="reference">
+<h3 id="fonts">Fonts</h3>
+<p>We recommend configuring your terminal to use a good monospace font like <a href="https://typeof.net/Iosevka/">Iosevka</a> for example.</p>
+<p>Because most of fonts aren't square, your sketches might look squished or unbalanced.
+There are 2 ways of fixing this problem:</p>
+<ul>
+<li>using <a href="https://empr.cl/runal/#canvas">cell modes</a></li>
+<li>using a square 8x8 font, like <a href="https://ursafrank.itch.io/ursafont">Ursa</a> for example</li>
+</ul>
+<hr class="separator"/>
+<h3 id="properties">Properties</h3>
+<h4 id="c-width">c.width</h4>
+<p>Returns the width of the canvas.</p>
+<h4 id="c-height">c.height</h4>
+<p>Returns the height of the canvas.</p>
+<h4 id="c-framecount">c.framecount</h4>
+<p>Number of frames rendered since the beginning.</p>
+<h4 id="c-islooping">c.isLooping</h4>
+<p>Boolean indicating whether the render loop is active.</p>
+<h4 id="c-mousex-since-v0-5-0">c.mouseX <sub>since v0.5.0</sub></h4>
+<p>Returns the horizontal mouse position relative to the terminal window.</p>
+<h4 id="c-mousey-since-v0-5-0">c.mouseY <sub>since v0.5.0</sub></h4>
+<p>Returns the vertical mouse position relative to the terminal window.</p>
+<hr class="separator"/>
+<h3 id="objects">Objects</h3>
+<p>This is a list of different objects type returned by methods.</p>
+<h4 id="cell-since-v0-6-0">cell <sub>since v0.6.0</sub></h4>
+<p>A object representing a single cell of the canvas.</p>
+<p>Properties:</p>
+<ul>
+<li><strong>char</strong>: the character displayed on the cell</li>
+<li><strong>background</strong>: the string representation of the background color of the cell. <a href="https://empr.cl/runal/#colors"><em>See colors</em></a></li>
+<li><strong>foreground</strong>: the string representation of the foreground color of the cell. <a href="https://empr.cl/runal/#colors"><em>See colors</em></a></li>
+</ul>
+<h4 id="image-since-v0-6-0">image <sub>since v0.6.0</sub></h4>
+<p>An object representing an image containing <a href="https://empr.cl/runal/#cell-since-v0-6-0">cells</a>.</p>
+<p>Methods:</p>
+<ul>
+<li><strong>cell(x, y)</strong>: returns the <a href="https://empr.cl/runal/#cell-since-v0-6-0">cell</a> at (x, y) in the image.</li>
+</ul>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>   </span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">img </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">loadImage</span><span>(&quot;</span><span style="color:#a3be8c;">my_image.jpg</span><span>&quot;);
+</span><span>
+</span><span>   </span><span style="color:#a7adba;">// print the character of the cell at
+</span><span>   </span><span style="color:#a7adba;">// position (1, 2) in the loaded image.
+</span><span>   </span><span style="color:#d08770;">console</span><span>.</span><span style="color:#96b5b4;">log</span><span>(</span><span style="color:#bf616a;">img</span><span>.</span><span style="color:#8fa1b3;">cell</span><span>(</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">2</span><span>).</span><span style="color:#bf616a;">char</span><span>);
+</span><span>}
+</span></code></pre>
+<hr class="separator"/>
+<h3 id="canvas">Canvas</h3>
+<p>Drawing in the terminal is a little bit weird, because each cell is not a square with usual fonts. Therefore, <strong>results can look squished</strong> depending on what you're trying to do.</p>
+<p>One simple way to fix this problem is to <strong>use 2 cells instead of one</strong> for drawing one canvas pixel, but the question is: which character to draw in the second cell?</p>
+<p>You can control this behavior with 2 methods:</p>
+<ul>
+<li><strong>c.cellModeCustom(char)</strong>: it allows you to define which character to use in the second cell. One obvious option is to use a black space, but other choice may give you fun results.</li>
+<li><strong>c.cellModeDouble()</strong>: it just duplicates the first character.</li>
+</ul>
+<h4 id="c-cellmodedefault-since-v0-9-0">c.cellModeDefault() <sub>since v0.9.0</sub></h4>
+<p>Makes every cell a single character. This is the default behavior.</p>
+<h4 id="c-cellmodecustom-char-since-v0-9-0">c.cellModeCustom(char) <sub>since v0.9.0</sub></h4>
+<p>Sets a character used for cell spacing between elements.</p>
+<h4 id="c-cellmodedouble-since-v0-9-0">c.cellModeDouble() <sub>since v0.9.0</sub></h4>
+<p>Makes every cell duplicated.</p>
+<h4 id="c-clear">c.clear()</h4>
+<p>Clears the canvas.</p>
+<h4 id="c-size-w-h">c.size(w, h)</h4>
+<p>Resizes the canvas.</p>
+<h4 id="c-get-x-y-w-h-since-v0-6-0">c.get(x, y, w, h) <sub>since v0.6.0</sub></h4>
+<p>Returns a part of the current canvas from origin (x, y) with width w and height h.
+Returns an <a href="https://empr.cl/runal/#image-since-v0-6-0">image</a>.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// Get the entire canvas
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">entireCanvas </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#96b5b4;">get</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#bf616a;">c</span><span>.width, </span><span style="color:#bf616a;">c</span><span>.height);
+</span><span>
+</span><span style="color:#a7adba;">// Get a 3x3 square of the canvas at position (2, 2)
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">square </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#96b5b4;">get</span><span>(</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">3</span><span>, </span><span style="color:#d08770;">3</span><span>);
+</span></code></pre>
+<h4 id="c-set-x-y-cells-since-v0-6-0">c.set(x, y, cells) <sub>since v0.6.0</sub></h4>
+<p>Draws an <a href="https://empr.cl/runal/#image-since-v0-6-0">image</a> or a <a href="https://empr.cl/runal/#cell-since-v0-6-0">cell</a> to the canvas at (x, y).</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// Duplicate the first half of the canvas.
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">half </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#96b5b4;">get</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#bf616a;">c</span><span>.width/</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#bf616a;">c</span><span>.height);
+</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#96b5b4;">set</span><span>(</span><span style="color:#bf616a;">c</span><span>.width/</span><span style="color:#d08770;">2</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#bf616a;">half</span><span>);
+</span><span>
+</span><span style="color:#a7adba;">// Duplicate a single cell
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">single </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#96b5b4;">get</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">1</span><span>);
+</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#96b5b4;">set</span><span>(</span><span style="color:#d08770;">1</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#bf616a;">single</span><span>.</span><span style="color:#8fa1b3;">cell</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>));
+</span></code></pre>
+<hr class="separator"/>
+<h3 id="control">Control</h3>
+<h4 id="c-loop">c.loop()</h4>
+<p>Starts the draw loop if stopped.</p>
+<h4 id="c-noloop">c.noLoop()</h4>
+<p>Stops the draw loop if started.</p>
+<h4 id="c-redraw">c.redraw()</h4>
+<p>Forces one frame render in noLoop mode.</p>
+<h4 id="c-fps-fps">c.fps(fps)</h4>
+<p>Sets the desired frames per second.</p>
+<h4 id="c-push">c.push()</h4>
+<p>Saves the current drawing state (stroke, fill, background, rotate, translate, scale).</p>
+<h4 id="c-pop">c.pop()</h4>
+<p>Restores the last saved drawing state (stroke, fill, background, rotate, translate, scale).</p>
+<h4 id="c-exit-since-v0-6-0">c.exit() <sub>since v0.6.0</sub></h4>
+<p>Ends the program execution. It also quits the JavaScript runtime.</p>
+<hr class="separator"/>
+<h3 id="colors">Colors</h3>
+<p>For every color arguments and properties (see <a href="https://empr.cl/runal/#draw">Draw</a>, you can set 3 types of color values:</p>
+<ul>
+<li><strong>hexadecimal</strong> (<em>ex: <code>#000000</code></em>): the hexadecimal color code</li>
+<li><strong>ANSI 256</strong> (<em>between 0 and 255</em>): one of the <a href="https://www.ditig.com/256-colors-cheat-sheet">256 ANSI colors</a></li>
+<li><strong>CSS colors</strong> (<em>ex: <code>fuchsia</code></em>): one of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/named-color">css colors</a></li>
+</ul>
+<p>In addition, you can use the following primitives that allows you to work with RGB, HSL and HSV color spaces.</p>
+<h4 id="c-colorrgb-r-g-b-since-v0-10-0">c.colorRGB(r, g, b) <sub>since v0.10.0</sub></h4>
+<p>Returns a hex color from R, G, B values. All 3 values are range between 0 and 255.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">strokeFg</span><span>(</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">colorRGB</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">255</span><span>));
+</span></code></pre>
+<h4 id="c-colorhsl-h-s-l-since-v0-10-0">c.colorHSL(h, s, l) <sub>since v0.10.0</sub></h4>
+<p>Returns a hex color from H (range 0 to 360), S (range 0 to 100), L (range 0 to 100) values.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">strokeFg</span><span>(</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">colorHSL</span><span>(</span><span style="color:#d08770;">160</span><span>, </span><span style="color:#d08770;">100</span><span>, </span><span style="color:#d08770;">50</span><span>));
+</span></code></pre>
+<h4 id="c-colorhsv-h-s-v-since-v0-10-0">c.colorHSV(h, s, v) <sub>since v0.10.0</sub></h4>
+<p>Returns a hex color from H (range 0 to 360), S (range 0 to 100), V (range 0 to 100) values.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">strokeFg</span><span>(</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">colorHSL</span><span>(</span><span style="color:#d08770;">50</span><span>, </span><span style="color:#d08770;">55</span><span>, </span><span style="color:#d08770;">100</span><span>));
+</span></code></pre>
+<hr class="separator"/>
+<h3 id="draw">Draw</h3>
+<p>There are 3 types of zones when you draw:</p>
+<ul>
+<li><strong>stroke</strong>: a point, a line or the outline of a shape</li>
+<li><strong>fill</strong>: the inside of a closed shape</li>
+<li><strong>background</strong>: the background of the canvas</li>
+</ul>
+<p>For each zones, you have 3 settings:</p>
+<ul>
+<li><strong>text</strong>: the unicode character set to use when drawing</li>
+<li><strong>foreground</strong>: the color of the text</li>
+<li><strong>background</strong>: the color of the background of the cell</li>
+</ul>
+<p>It's a little bit confusing but it's very powerful.</p>
+<p>If you have a better API suggestion, please <a href="https://github.com/emprcl/runal/issues/new">create an issue</a>.</p>
+<h4 id="c-fill-text-foregroundcolor-backgroundcolor">c.fill(text, foregroundColor, backgroundColor)</h4>
+<p>Sets the fill style used to render shapes.</p>
+<h4 id="c-filltext-text">c.fillText(text)</h4>
+<p>Sets only the fill character.</p>
+<h4 id="c-fillfg-color">c.fillFg(color)</h4>
+<p>Sets only the foreground color for fill.</p>
+<h4 id="c-fillbg-color">c.fillBg(color)</h4>
+<p>Sets only the background color for fill.</p>
+<h4 id="c-nofill">c.noFill()</h4>
+<p>Disables fill rendering.</p>
+<h4 id="c-stroke-text-foregroundcolor-backgroundcolor">c.stroke(text, foregroundColor, backgroundColor)</h4>
+<p>Sets the stroke style used to outline shapes.</p>
+<h4 id="c-stroketext-text">c.strokeText(text)</h4>
+<p>Sets only the stroke character.</p>
+<h4 id="c-strokefg-color">c.strokeFg(color)</h4>
+<p>Sets only the foreground color for stroke.</p>
+<h4 id="c-strokebg-color">c.strokeBg(color)</h4>
+<p>Sets only the background color for stroke.</p>
+<h4 id="c-nostroke-since-v0-6-0">c.noStroke() <sub>since v0.6.0</sub></h4>
+<p>Disables stroke rendering.</p>
+<h4 id="c-background-text-foregroundcolor-backgroundcolor">c.background(text, foregroundColor, backgroundColor)</h4>
+<p>Sets the background fill style with custom character and colors.</p>
+<h4 id="c-backgroundtext-text">c.backgroundText(text)</h4>
+<p>Sets the character used for the background.</p>
+<h4 id="c-backgroundfg-color">c.backgroundFg(color)</h4>
+<p>Sets the foreground color for the background style.</p>
+<h4 id="c-backgroundbg-color">c.backgroundBg(color)</h4>
+<p>Sets the background color for the background style.</p>
+<hr class="separator"/>
+<h3 id="shapes">Shapes</h3>
+<h4 id="c-text-str-x-y">c.text(str, x, y)</h4>
+<p>Draws a string at position (x, y).</p>
+<h4 id="c-point-x-y">c.point(x, y)</h4>
+<p>Draws a point at the given position.</p>
+<h4 id="c-line-x1-y1-x2-y2">c.line(x1, y1, x2, y2)</h4>
+<p>Draws a straight line between two points.</p>
+<h4 id="c-circle-x-y-r">c.circle(x, y, r)</h4>
+<p>Draws a circle centered at (x, y) with the given radius r.</p>
+<h4 id="c-ellipse-x-y-rx-ry">c.ellipse(x, y, rx, ry)</h4>
+<p>Draws an ellipse centered at (x, y) with radiuses rx and ry.</p>
+<h4 id="c-rect-x-y-w-h">c.rect(x, y, w, h)</h4>
+<p>Draws a rectangle starting at (x, y) with width w and height h.</p>
+<h4 id="c-square-x-y-size">c.square(x, y, size)</h4>
+<p>Draws a square with the given top-left corner and side length.</p>
+<h4 id="c-triangle-x1-y1-x2-y2-x3-y3">c.triangle(x1, y1, x2, y2, x3, y3)</h4>
+<p>Draws a triangle using three vertex points.</p>
+<h4 id="c-quad-x1-y1-x2-y2-x3-y3-x4-y4">c.quad(x1, y1, x2, y2, x3, y3, x4, y4)</h4>
+<p>Draws a quadrilateral defined by four points.</p>
+<hr class="separator"/>
+<h3 id="curve">Curve</h3>
+<h4 id="c-bezier-x1-y1-x2-y2-x3-y3-x4-y4">c.bezier(x1, y1, x2, y2, x3, y3, x4, y4)</h4>
+<p>Draws a Bezier curve using four control points.</p>
+<hr class="separator"/>
+<h3 id="math">Math</h3>
+<p>All JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a> namespace objects are usable.</p>
+<p>Runal <strong>doesn't define trigonometry functions</strong>, please use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin"><em>Math.sin()</em></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos"><em>Math.cos()</em></a> etc...</p>
+<p>In Go, use the <a href="https://pkg.go.dev/math">math</a> package.</p>
+<h4 id="c-map-value-inputstart-inputend-outputstart-outputend">c.map(value, inputStart, inputEnd, outputStart, outputEnd)</h4>
+<p>Maps a value from one range to another.</p>
+<h4 id="c-dist-x1-y1-x2-y2">c.dist(x1, y1, x2, y2)</h4>
+<p>Returns the euclidean distance between two points (x1, y1) and (x2, y2).</p>
+<hr class="separator"/>
+<h3 id="random">Random</h3>
+<h4 id="c-random-min-max">c.random(min, max)</h4>
+<p>Returns a random float between min and max.</p>
+<h4 id="c-randomseed-seed">c.randomSeed(seed)</h4>
+<p>Sets the seed for random number generation.</p>
+<hr class="separator"/>
+<h3 id="noise">Noise</h3>
+<h4 id="c-noise1d-x">c.noise1D(x)</h4>
+<p>Generates 1D Perlin noise (float number, range [0, 1]) for a given input.</p>
+<h4 id="c-noise2d-x-y">c.noise2D(x, y)</h4>
+<p>Generates 2D Perlin noise (float number, range [0, 1]) for a given (x, y) coordinate.</p>
+<h4 id="c-noiseseed-seed">c.noiseSeed(seed)</h4>
+<p>Sets the seed for noise generation.</p>
+<h4 id="c-loopangle-duration">c.loopAngle(duration)</h4>
+<p>Returns the angular progress (in radians, range [0, 2π]) through a looping cycle of given duration in seconds.</p>
+<h4 id="c-noiseloop-angle-radius">c.noiseLoop(angle, radius)</h4>
+<p>Returns a noise value (range [0, 1]) by sampling the noise on a circular path of the given radius. Angle is the loop angle in radians, from 0 to 2π. You can use <a href="https://empr.cl/runal/#c-loopangle-duration">loopAngle</a> for the angle value to control the loop duration.
+This is useful for creating cyclic animations or evolving patterns that repeat perfectly after one full loop.</p>
+<h4 id="c-noiseloop1d-angle-radius-x">c.noiseLoop1D(angle, radius, x)</h4>
+<p>Returns a 1D noise value (range [0, 1]) that loops as the angle progresses. It samples a 2D noise space using the given radius and combines it with a horizontal offset.</p>
+<h4 id="c-noiseloop2d-angle-radius-x-y">c.noiseLoop2D(angle, radius, x, y)</h4>
+<p>Returns a 2D noise value (range [0, 1]) that loops as the angle progresses. It samples a circular path in 2D noise space, offset by the (x, y) coordinates.</p>
+<hr class="separator"/>
+<h3 id="transform">Transform</h3>
+<h4 id="c-translate-x-y">c.translate(x, y)</h4>
+<p>Moves the origin of the canvas.</p>
+<h4 id="c-rotate-angle">c.rotate(angle)</h4>
+<p>Rotates the drawing context by the given angle in radians.</p>
+<h4 id="c-scale-factor">c.scale(factor)</h4>
+<p>Scales the drawing context by the given factor.</p>
+<hr class="separator"/>
+<h3 id="image">Image</h3>
+<h4 id="c-loadimage-path-since-v0-6-0">c.loadImage(path) <sub>since v0.6.0</sub></h4>
+<p>Loads an image from the given path. Supported formats: jpg, png, webp.
+Returns an <a href="https://empr.cl/runal/#image-since-v0-6-0">image</a>.</p>
+<p>You should usually load your images in the setup method:</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span>
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">img</span><span>;
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#bf616a;">img </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">loadImage</span><span>(&quot;</span><span style="color:#a3be8c;">my_image.jpg</span><span>&quot;);
+</span><span>}
+</span></code></pre>
+<h4 id="c-image-image-x-y-w-h-since-v0-6-0">c.image(image, x, y, w, h) <sub>since v0.6.0</sub></h4>
+<p>Draws the given image at (x, y) with width w and height h.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#b48ead;">let </span><span style="color:#bf616a;">img</span><span>;
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#bf616a;">img </span><span>= </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">loadImage</span><span>(&quot;</span><span style="color:#a3be8c;">my_image.jpg</span><span>&quot;);
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// draw the image on the entire canvas
+</span><span>  </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">image</span><span>(</span><span style="color:#bf616a;">img</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">0</span><span>, </span><span style="color:#bf616a;">c</span><span>.width, </span><span style="color:#bf616a;">c</span><span>.height);
+</span><span>}
+</span></code></pre>
+<hr class="separator"/>
+<h3 id="export">Export</h3>
+<h4 id="c-savecanvastopng-filename">c.saveCanvasToPNG(filename)</h4>
+<p>Exports the current canvas to an image file (png).</p>
+<h4 id="c-savecanvastogif-filename-duration">c.saveCanvasToGIF(filename, duration)</h4>
+<p>Exports the current canvas to an animated gif file for a given duration (in seconds).</p>
+<h4 id="c-savecanvastopng-filename-duration-since-v0-4-0">c.saveCanvasToPNG(filename, duration) <sub>since v0.4.0</sub></h4>
+<blockquote>
+<p><strong>This feature needs <strong><a href="https://ffmpeg.org/download.html">ffmpeg</a></strong> installed</strong></p>
+</blockquote>
+<p>Exports the current canvas to a mp4 (h264) video file for a given duration (in seconds).</p>
+<h4 id="c-savedcanvasfont-path">c.savedCanvasFont(path)</h4>
+<p>Sets a custom font (tff) file used for rendering text characters in exported images generated via <em>SaveCanvasTo...()</em> methods.</p>
+<h3 id="log-debug">Log &amp; Debug</h3>
+<p>You can use JavaScript <em>console.log()</em> to log things on the screen.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span>
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x </span><span>= Math.</span><span style="color:#8fa1b3;">osc</span><span>(</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#bf616a;">framecount</span><span>);
+</span><span style="color:#d08770;">console</span><span>.</span><span style="color:#96b5b4;">log</span><span>(</span><span style="color:#bf616a;">x</span><span>);
+</span></code></pre>
+<p>In Go (and also in JavaScript), you can use <em>Debug()</em>:</p>
+<pre data-lang="go" style="background-color:#eff1f5;color:#4f5b66;" class="language-go "><code class="language-go" data-lang="go"><span>
+</span><span style="color:#bf616a;">x </span><span>:= </span><span style="color:#bf616a;">math</span><span>.</span><span style="color:#bf616a;">Sin</span><span>(</span><span style="color:#bf616a;">float64</span><span>(</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#bf616a;">Framecount</span><span>))
+</span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#bf616a;">Debug</span><span>(</span><span style="color:#bf616a;">x</span><span>)
+</span></code></pre>
+<h4 id="c-debug-message1-message2-since-v0-9-0">c.debug(message1, message2, ...) <sub>since v0.9.0</sub></h4>
+<p>Print debug messages on screen.</p>
+<h3 id="events">Events</h3>
+<h4 id="onkey-c-event-since-v0-5-0">onKey(c, event) <sub>since v0.5.0</sub></h4>
+<p>Listen to keyboard events.</p>
+<p>It's a root function, which means it should be placed at the same level as <strong>setup()</strong> and <strong>draw()</strong>.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// mySketch.js
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) { ... }
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) { ... }
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onKey</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">event</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// save the current canvas in a png file
+</span><span>  </span><span style="color:#a7adba;">// when the &quot;c&quot; key is pressed.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(event.</span><span style="color:#bf616a;">key </span><span>== &quot;</span><span style="color:#a3be8c;">space</span><span>&quot;) {
+</span><span>    </span><span style="color:#8fa1b3;">saveCanvasToPNG</span><span>(&quot;</span><span style="color:#a3be8c;">canvas.png</span><span>&quot;);
+</span><span>  }
+</span><span>
+</span><span>  </span><span style="color:#a7adba;">// same using the key code.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(event.code == </span><span style="color:#d08770;">32</span><span>) {
+</span><span>    </span><span style="color:#8fa1b3;">saveCanvasToPNG</span><span>(&quot;</span><span style="color:#a3be8c;">canvas.png</span><span>&quot;);
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p>In go you need to register the event through the <code>Run()</code> method using the functional option <code>WithOnKey</code>.</p>
+<pre data-lang="go" style="background-color:#eff1f5;color:#4f5b66;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">Run</span><span>(</span><span style="color:#bf616a;">context</span><span>.</span><span style="color:#bf616a;">Background</span><span>(), </span><span style="color:#bf616a;">setup</span><span>, </span><span style="color:#bf616a;">draw</span><span>, </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnKey</span><span>(</span><span style="color:#bf616a;">onKey</span><span>))
+</span><span>}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onKey</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">KeyEvent</span><span>) {}
+</span></code></pre>
+<p>Event is an object with the following attributes:</p>
+<ul>
+<li><strong>key</strong>: the string representation of the key pressed (<code>a</code>, <code>b</code>, <code>c</code>, <code>1</code>, <code>2</code>, <code>3</code> etc...)</li>
+<li><strong>code</strong>: the numerical value of the key pressed (97, 98, 99, 49, 50, 51 etc...)</li>
+</ul>
+<p>Key string representations for keys other than alphanumerical works as well. You can use the following strings to handle all your keyboard keys:
+<code>enter</code>, <code>tab</code>, <code>backspace</code>, <code>esc</code>, <code>space</code>, <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, <code>begin</code>, <code>find</code>, <code>insert</code>, <code>delete</code>, <code>select</code>, <code>pgup</code>, <code>pgdown</code>, <code>home</code>, <code>end</code>, <code>kpenter</code>, <code>kpequal</code>, <code>kpmul</code>, <code>kpplus</code>, <code>kpcomma</code>, <code>kpminus</code>, <code>kpperiod</code>, <code>kpdiv</code>, <code>kp0</code>, <code>kp1</code>, <code>kp2</code>, <code>kp3</code>, <code>kp4</code>, <code>kp5</code>, <code>kp6</code>, <code>kp7</code>, <code>kp8</code>, <code>kp9</code>.</p>
+<p>You can also use <code>ctrl+a</code>, <code>alt+b</code> etc...</p>
+<h4 id="onmouseclick-c-event-since-v0-8-0">onMouseClick(c, event) <sub>since v0.8.0</sub></h4>
+<p>Listen to mouse click events.</p>
+<p>It's a root function, which means it should be placed at the same level as <strong>setup()</strong> and <strong>draw()</strong>.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// mySketch.js
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) { ... }
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) { ... }
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onMouseClick</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">event</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// draw a circle at mouse position when
+</span><span>  </span><span style="color:#a7adba;">// the mouse left button is clicked.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(event.</span><span style="color:#bf616a;">button </span><span>== &quot;</span><span style="color:#a3be8c;">left</span><span>&quot;) {
+</span><span>    </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">circle</span><span>(event.x, event.y, </span><span style="color:#d08770;">5</span><span>);
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p>In Go you need to register the event through the <code>Run()</code> method using the functional option <code>WithOnMouseClick</code>.</p>
+<pre data-lang="go" style="background-color:#eff1f5;color:#4f5b66;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">Run</span><span>(</span><span style="color:#bf616a;">context</span><span>.</span><span style="color:#bf616a;">Background</span><span>(), </span><span style="color:#bf616a;">setup</span><span>, </span><span style="color:#bf616a;">draw</span><span>, </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnMouseClick</span><span>(</span><span style="color:#bf616a;">onMouseClick</span><span>))
+</span><span>}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onMouseClick</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">MouseEvent</span><span>) {}
+</span></code></pre>
+<p>Event is an object with the following attributes:</p>
+<ul>
+<li><strong>x</strong>: the horizontal mouse position relative to the terminal window</li>
+<li><strong>y</strong>: the vertical mouse position relative to the terminal window</li>
+<li><strong>button</strong>: the mouse button that has been clicked. Possible values: <strong>left</strong>, <strong>middle</strong>, <strong>right</strong></li>
+</ul>
+<h4 id="onmouserelease-c-event-since-v0-8-0">onMouseRelease(c, event) <sub>since v0.8.0</sub></h4>
+<p>Listen to mouse release events.</p>
+<p>It's a root function, which means it should be placed at the same level as <strong>setup()</strong> and <strong>draw()</strong>.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// mySketch.js
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) { ... }
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) { ... }
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onMouseRelease</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">event</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// draw a circle at mouse position when
+</span><span>  </span><span style="color:#a7adba;">// the mouse left button is released.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(event.</span><span style="color:#bf616a;">button </span><span>== &quot;</span><span style="color:#a3be8c;">left</span><span>&quot;) {
+</span><span>    </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">circle</span><span>(event.x, event.y, </span><span style="color:#d08770;">5</span><span>);
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p>In Go you need to register the event through the <code>Run()</code> method using the functional option <code>WithOnMouseRelease</code>.</p>
+<pre data-lang="go" style="background-color:#eff1f5;color:#4f5b66;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">Run</span><span>(</span><span style="color:#bf616a;">context</span><span>.</span><span style="color:#bf616a;">Background</span><span>(), </span><span style="color:#bf616a;">setup</span><span>, </span><span style="color:#bf616a;">draw</span><span>, </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnMouseRelease</span><span>(</span><span style="color:#bf616a;">onMouseRelease</span><span>))
+</span><span>}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onMouseRelease</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">MouseEvent</span><span>) {}
+</span></code></pre>
+<p>Event is an object with the following attributes:</p>
+<ul>
+<li><strong>x</strong>: the horizontal mouse position relative to the terminal window</li>
+<li><strong>y</strong>: the vertical mouse position relative to the terminal window</li>
+<li><strong>button</strong>: the mouse button that has been clicked. Possible values: <strong>left</strong>, <strong>middle</strong>, <strong>right</strong></li>
+</ul>
+<h4 id="onmousewheel-c-event-since-v0-8-0">onMouseWheel(c, event) <sub>since v0.8.0</sub></h4>
+<p>Listen to mouse wheel events.</p>
+<p>It's a root function, which means it should be placed at the same level as <strong>setup()</strong> and <strong>draw()</strong>.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// mySketch.js
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">x</span><span>, </span><span style="color:#bf616a;">y</span><span>;
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#bf616a;">x </span><span>= </span><span style="color:#bf616a;">c</span><span>.width/</span><span style="color:#d08770;">2</span><span>;
+</span><span>  </span><span style="color:#bf616a;">y </span><span>= </span><span style="color:#bf616a;">c</span><span>.height/</span><span style="color:#d08770;">2</span><span>;
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) {
+</span><span>  </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">circle</span><span>(</span><span style="color:#bf616a;">x</span><span>, </span><span style="color:#bf616a;">y</span><span>, </span><span style="color:#d08770;">5</span><span>);
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onMouseWheel</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">event</span><span>) {
+</span><span>  </span><span style="color:#a7adba;">// draw a circle at mouse position when
+</span><span>  </span><span style="color:#a7adba;">// the mouse left button is released.
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(event.</span><span style="color:#bf616a;">button </span><span>== &quot;</span><span style="color:#a3be8c;">wheelup</span><span>&quot;) {
+</span><span>    </span><span style="color:#bf616a;">y </span><span>= Math.</span><span style="color:#96b5b4;">max</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#bf616a;">y </span><span>- </span><span style="color:#d08770;">1</span><span>);
+</span><span>  } </span><span style="color:#b48ead;">else if </span><span>(event.</span><span style="color:#bf616a;">button </span><span>== &quot;</span><span style="color:#a3be8c;">wheeldown</span><span>&quot;) {
+</span><span>    </span><span style="color:#bf616a;">y </span><span>= Math.</span><span style="color:#96b5b4;">min</span><span>(</span><span style="color:#bf616a;">c</span><span>.height, </span><span style="color:#bf616a;">y </span><span>+ </span><span style="color:#d08770;">1</span><span>);
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p>In Go you need to register the event through the <code>Run()</code> method using the functional option <code>WithOnMouseWheel</code>.</p>
+<pre data-lang="go" style="background-color:#eff1f5;color:#4f5b66;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">Run</span><span>(</span><span style="color:#bf616a;">context</span><span>.</span><span style="color:#bf616a;">Background</span><span>(), </span><span style="color:#bf616a;">setup</span><span>, </span><span style="color:#bf616a;">draw</span><span>, </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnMouseWheel</span><span>(</span><span style="color:#bf616a;">onMouseWheel</span><span>))
+</span><span>}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onMouseWheel</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">MouseEvent</span><span>) {}
+</span></code></pre>
+<p>Event is an object with the following attributes:</p>
+<ul>
+<li><strong>x</strong>: the horizontal mouse position relative to the terminal window</li>
+<li><strong>y</strong>: the vertical mouse position relative to the terminal window</li>
+<li><strong>button</strong>: the wheel motion. Possible values: <strong>wheelup</strong>, <strong>wheeldown</strong></li>
+</ul>
+<h4 id="onmousemove-c-event-since-v0-8-0">onMouseMove(c, event) <sub>since v0.8.0</sub></h4>
+<p>Listen to mouse moved events.</p>
+<p>It's a root function, which means it should be placed at the same level as <strong>setup()</strong> and <strong>draw()</strong>.</p>
+<pre data-lang="js" style="background-color:#eff1f5;color:#4f5b66;" class="language-js "><code class="language-js" data-lang="js"><span style="color:#a7adba;">// mySketch.js
+</span><span style="color:#b48ead;">let </span><span style="color:#bf616a;">color </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c</span><span>) {}
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c</span><span>) {}
+</span><span>
+</span><span style="color:#b48ead;">function </span><span style="color:#8fa1b3;">onMouseMove</span><span>(</span><span style="color:#bf616a;">c</span><span>, </span><span style="color:#bf616a;">event</span><span>) {
+</span><span>  </span><span style="color:#bf616a;">color </span><span>= </span><span style="color:#bf616a;">color </span><span>+ </span><span style="color:#d08770;">1</span><span>;
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">color </span><span>&gt; </span><span style="color:#d08770;">255</span><span>) {
+</span><span>    </span><span style="color:#bf616a;">color </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>  }
+</span><span>  </span><span style="color:#bf616a;">c</span><span>.</span><span style="color:#8fa1b3;">backgroundBg</span><span>(</span><span style="color:#bf616a;">color</span><span>);
+</span><span>}
+</span></code></pre>
+<p>In Go you need to register the event through the <code>Run()</code> method using the functional option <code>WithOnMouseMove</code>.</p>
+<pre data-lang="go" style="background-color:#eff1f5;color:#4f5b66;" class="language-go "><code class="language-go" data-lang="go"><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">Run</span><span>(</span><span style="color:#bf616a;">context</span><span>.</span><span style="color:#bf616a;">Background</span><span>(), </span><span style="color:#bf616a;">setup</span><span>, </span><span style="color:#bf616a;">draw</span><span>, </span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#bf616a;">WithOnMouseMove</span><span>(</span><span style="color:#bf616a;">onMouseMove</span><span>))
+</span><span>}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">setup</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">draw</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>) {}
+</span><span style="color:#b48ead;">func </span><span style="color:#8fa1b3;">onMouseMove</span><span>(</span><span style="color:#bf616a;">c </span><span>*</span><span style="color:#bf616a;">runal</span><span>.</span><span style="color:#b48ead;">Canvas</span><span>, </span><span style="color:#bf616a;">e runal</span><span>.</span><span style="color:#b48ead;">MouseEvent</span><span>) {}
+</span></code></pre>
+<p>Event is an object with the following attributes:</p>
+<ul>
+<li><strong>x</strong>: the horizontal mouse position relative to the terminal window</li>
+<li><strong>y</strong>: the vertical mouse position relative to the terminal window</li>
+</ul>
+</section>
+ 
+        </div>
+    </article>
+</main>
+<script type="text/javascript">
+  function burger() {
+    let x = document.querySelector("#trees");
+    let y = document.querySelector("#mobile");
+
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      y.className = "ms-Icon--GlobalNavButton";
+    } else {
+      x.style.display = "block";
+      y.className = "ms-Icon--ChromeClose";
+    }
+  }
+</script>
+</body>
+</html>
