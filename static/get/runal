@@ -191,29 +191,6 @@ verbose() {
 # --- End of ./lib/colors.sh ---
 
 
-# --- Sourced from file: ./lib/map.sh ---
-
-# map_put map_name key value
-map_put() {
-  alias "${1}$2"="$3"
-}
-
-# map_get map_name key
-# @return value
-map_get() {
-  alias "${1}$2" | awk -F"'" '{ print $2; }'
-}
-
-# map_keys map_name
-# @return map keys
-map_keys() {
-  alias -p | grep $1 | cut -d'=' -f1 | awk -F"$1" '{print $2; }'
-}
-
-# --- End of ./lib/map.sh ---
-
-
-
 # Setup variables
 verbose="false"
 if [ "$verbose" = "true" ]; then
@@ -295,161 +272,69 @@ verbose "$assets"
 assetCount="$(echo "$assets" | wc -l | sed -E 's/^[[:space:]]*//')"
 info "Found $assetCount assets in '$tagName' - searching for one that fits your system..."
 
-# Get architecture of host
-arch="$(uname -m)"
-# Convert arch to lowercase
-arch="$(echo "$arch" | tr '[:upper:]' '[:lower:]')"
-verbose "Host architecture: $arch"
+# Detect operating system and normalize it to the GoReleaser naming
+os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+case "$os" in
+	linux*) os="linux" ;;
+	darwin*) os="darwin" ;;
+	mingw* | msys* | cygwin*) os="windows" ;;
+	*) error "Unsupported operating system: $os" ;;
+esac
+verbose "Detected OS: $os"
 
-# Set aliases for architectures
-amd64=("amd64" "x86_64" "x86-64" "x64")
-amd32=("386" "i386" "i686" "x86")
-arm=("arm" "armv7" "armv6" "armv8" "armv8l" "armv7l" "armv6l" "armv8l" "armv7l" "armv6l")
+# Detect architecture and normalize it to the GoReleaser naming
+arch="$(uname -m | tr '[:upper:]' '[:lower:]')"
+case "$arch" in
+	x86_64 | amd64 | x64) arch="amd64" ;;
+	aarch64 | arm64) arch="arm64" ;;     # Raspberry Pi 3/4/5 on a 64-bit OS
+	armv7* | armv7l) arch="armv7" ;;     # Raspberry Pi 2/3 on 32-bit Pi OS
+	armv6* | armv6l) arch="armv6" ;;     # Raspberry Pi 1 / Zero
+	arm) arch="armv7" ;;                 # bare "arm": assume armv7
+	*) error "Unsupported architecture: $arch" ;;
+esac
+verbose "Detected architecture: $arch"
 
-currentArchAliases=()
-# Set the right aliases for current host system
-if [ "$arch" == "x86_64" ]; then
-	currentArchAliases=("${amd64[@]}")
-elif [ "$arch" == "i386" ] || [ "$arch" == "i686" ]; then
-	currentArchAliases=("${amd32[@]}")
-# Else if starts with "arm"
-elif [[ "$arch" =~ ^arm ]]; then
-	currentArchAliases=("${arm[@]}")
+# Build the expected asset suffix. This MUST stay in sync with the
+# name_template in the project's .goreleaser.yaml, e.g.:
+#   runal_0.10.0_linux_arm64.tar.gz
+#   runal_0.10.0_linux_armv7.tar.gz
+#   runal_0.10.0_windows_amd64.zip
+if [ "$os" == "windows" ]; then
+	assetSuffix="_${os}_${arch}.zip"
 else
-	error "Unsupported architecture: $arch"
+	assetSuffix="_${os}_${arch}.tar.gz"
 fi
-verbose "Current architecture aliases: ${currentArchAliases[*]}"
+verbose "Looking for an asset ending in: ${assetSuffix}"
 
-# Get operating system of host
-os="$(uname -s)"
-# Convert os to lowercase
-os="$(echo "$os" | tr '[:upper:]' '[:lower:]')"
-verbose "Host operating system: $os"
-
-# Set aliases for operating systems
-linux=("linux")
-darwin=("darwin" "macos" "osx")
-
-currentOsAliases=()
-# If current os is linux, add linux aliases to the curentOsAliases array
-if [ "${os}" == "linux" ]; then
-	currentOsAliases+=("${linux[@]}")
-elif [ "${os}" == "darwin" ]; then
-	currentOsAliases+=("${darwin[@]}")
+# Find the matching asset URL (anchored to the end of the file name)
+assetURL="$(echo "$assets" | grep -i "${assetSuffix}\$" | head -n 1)"
+if [ -z "$assetURL" ]; then
+	error "Could not find a release asset for ${os}/${arch} (looked for *${assetSuffix})"
 fi
-verbose "Current operating system aliases: ${currentOsAliases[*]}"
+assetName="$(echo "$assetURL" | awk -F'/' '{ print $NF; }')"
 
-# Create map of assets and a score
-for asset in $assets; do
-	score=0
-
-	# Get file name from asset path
-	fileName="$(echo "$asset" | awk -F'/' '{ print $NF; }')"
-	# Set filename to lowercase
-	fileName="$(echo "$fileName" | tr '[:upper:]' '[:lower:]')"
-
-	# Set score to one, if the file name contains the current os
-	for osAlias in "${currentOsAliases[@]}"; do
-		if [[ "${fileName}" == *"$osAlias"* ]]; then
-			score=10
-			break
-		fi
-	done
-
-	# Add two to the score for every alias that matches the current architecture
-	for archAlias in "${currentArchAliases[@]}"; do
-		if [[ "${fileName}" == *"$archAlias"* ]]; then
-			verbose "Adding one to score for asset $fileName because it matches architecture $archAlias"
-			score=$((score + 2))
-		fi
-	done
-
-	# Add one to the score if the file name contains .tar or .tar.gz or .tar.bz2
-	if [[ "$fileName" == *".tar" ]] || [[ "$fileName" == *".tar.gz" ]] || [[ "$fileName" == *".tar.bz2" ]]; then
-		verbose "Adding one to score for asset $fileName because it is a .tar or .tar.gz or .tar.bz2 file"
-		score=$((score + 1))
-	fi
-
-	# Add two to the score if the file name contains the repo name
-	if [[ "$fileName" == *"$repo"* ]]; then
-		verbose "Adding two to score for asset $fileName because it contains the repo name"
-		score=$((score + 2))
-	fi
-
-	# Add one to the score if the file name is exactly the repo name
-	if [[ "$fileName" == "$repo" ]]; then
-		verbose "Adding one to score for asset $fileName because it is exactly the repo name"
-		score=$((score + 1))
-	fi
-
-	# Initialize asset with score
-	map_put assets "$fileName" "$score"
-done
-
-# Get map entry with highest score
-verbose "Finding asset with highest score"
-maxScore=0
-maxKey=""
-for asset in $(map_keys assets); do
-	score="$(map_get assets "$asset")"
-	if [ $score -gt $maxScore ]; then
-		maxScore=$score
-		maxKey=$asset
-	fi
-	verbose "Asset: $asset, score: $score"
-done
-
-assetName="$maxKey"
-
-# Check if asset name is still empty
-if [ -z "$assetName" ]; then
-	error "Could not find any assets that fit your system"
-fi
-
-# Get asset URL from release assets
-assetURL="$(echo "$assets" | grep -i "$assetName")"
-
-info "Found asset with highest match score: $assetName"
+info "Found asset for your system (${os}/${arch}): $assetName"
 
 info "Downloading asset..."
 # Download asset
-downloadAssetArgs=$curlOpts
+downloadAssetArgs=("${curlOpts[@]}")
 downloadAssetArgs+=(-L "$assetURL" -o "$tmpDir/$assetName")
 verbose "${downloadAssetArgs[@]}"
 curl "${downloadAssetArgs[@]}"
 
-# Unpack asset if it is compressed
-if [[ "$assetName" == *".tar" ]]; then
-	verbose "Unpacking .tar asset to $tmpDir"
-	tar -xf "$tmpDir/$assetName" -C "$tmpDir"
-	verbose "Removing packed asset ($tmpDir/$assetName)"
-	rm "$tmpDir/$assetName"
-elif [[ "$assetName" == *".tar.gz" ]]; then
+# Unpack asset (GoReleaser produces .tar.gz for linux/macOS, .zip for windows)
+if [[ "$assetName" == *".tar.gz" ]]; then
 	verbose "Unpacking .tar.gz asset to $tmpDir"
 	tar -xzf "$tmpDir/$assetName" -C "$tmpDir"
 	verbose "Removing packed asset ($tmpDir/$assetName)"
 	rm "$tmpDir/$assetName"
-elif [[ "$assetName" == *".gz" ]]; then
-	verbose "Unpacking .gz asset to $tmpDir/$repo"
-	gunzip -c "$tmpDir/$assetName" >"$tmpDir/$repo"
-	verbose "Removing packed asset ($tmpDir/$assetName)"
-	rm "$tmpDir/$assetName"
-	verbose "Setting asset name to $repo, because it is a .gz file"
-	assetName="$repo"
-	verbose "Marking asset as executable"
-	chmod +x "$tmpDir/$repo"
-elif [[ "$assetName" == *".tar.bz2" ]]; then
-	verbose "Unpacking .tar.bz2 asset to $tmpDir"
-	tar -xjf "$tmpDir/$assetName" -C "$tmpDir"
-	verbose "Removing packed asset"
-	rm "$tmpDir/$assetName"
 elif [[ "$assetName" == *".zip" ]]; then
-	verbose "Unpacking .zip asset to $tmpDir/$repo"
+	verbose "Unpacking .zip asset to $tmpDir"
 	unzip "$tmpDir/$assetName" -d "$tmpDir" >/dev/null 2>&1
 	verbose "Removing packed asset ($tmpDir/$assetName)"
 	rm "$tmpDir/$assetName"
 else
-	verbose "Asset is not a tar or zip file. Skipping unpacking."
+	error "Unexpected asset format: $assetName"
 fi
 
 # If it was unpacked to a single directory, move the files to the root of the tmpDir
