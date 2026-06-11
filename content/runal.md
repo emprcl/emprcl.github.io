@@ -38,6 +38,16 @@ It works similarly as [processing](https://processing.org/) or [p5js](https://p5
 
 **Runal** runtime is available for **Linux**, **macOS** and **Windows**.
 
+Prebuilt binaries are provided for the following platforms:
+
+| OS      | Architectures                              |
+| ------- | ------------------------------------------ |
+| Linux   | x86-64 (amd64), arm64, armv7, armv6        |
+| macOS   | Intel (amd64), Apple Silicon (arm64)       |
+| Windows | x86-64 (amd64)                             |
+
+> _The Linux arm builds cover the Raspberry Pi: use **arm64** for the 64-bit Raspberry Pi OS, and **armv7** / **armv6** for the 32-bit Raspberry Pi OS (armv6 targets the Pi 1 / Zero). The quick-install script picks the right one automatically._
+
 ### Quick-install
 
 On **linux** or **macOS**, you can run this quick-install bash script:
