@@ -54,7 +54,7 @@ curl -sSL empr.cl/get/runal | bash
 In your terminal:
 ```sh
 # Extract files
-mkdir -p runal && tar -zxvf signls_runal.tar.gz -C runal
+mkdir -p runal && tar -zxvf runal_VERSION_PLATFORM.tar.gz -C runal
 cd runal
 
 # Run runal
@@ -296,7 +296,8 @@ Drawing in the terminal is a little bit weird, because each cell is not a square
 
 One simple way to fix this problem is to **use 2 cells instead of one** for drawing one canvas pixel, but the question is: which character to draw in the second cell?
 
-You can control this behavior with 2 methods:
+You can control this behavior with these cell modes:
+ - **c.cellModeDefault()**: every cell is a single character. This is the default behavior.
  - **c.cellModeCustom(char)**: it allows you to define which character to use in the second cell. One obvious option is to use a black space, but other choice may give you fun results.
  - **c.cellModeDouble()**: it just duplicates the first character.
 
@@ -606,13 +607,16 @@ Exports the current canvas to an image file (png).
 #### c.saveCanvasToGIF(filename, duration)
 Exports the current canvas to an animated gif file for a given duration (in seconds).
 
-#### c.saveCanvasToPNG(filename, duration) <sub>since v0.4.0</sub>
+#### c.saveCanvasToMP4(filename, duration) <sub>since v0.4.0</sub>
 > **This feature needs **[ffmpeg](https://ffmpeg.org/download.html)** installed**
 
 Exports the current canvas to a mp4 (h264) video file for a given duration (in seconds).
 
 #### c.savedCanvasFont(path)
-Sets a custom font (tff) file used for rendering text characters in exported images generated via _SaveCanvasTo...()_ methods.
+Sets a custom font (tff) file used for rendering text characters in exported images generated via _saveCanvasTo...()_ methods.
+
+#### c.savedCanvasFontSize(size)
+Sets the font size used for rendering text characters in exported images generated via _saveCanvasTo...()_ methods.
 
 ### Log & Debug
 
@@ -620,7 +624,7 @@ You can use JavaScript _console.log()_ to log things on the screen.
 
 ```js
 
-let x = Math.osc(c.framecount);
+let x = Math.sin(c.framecount);
 console.log(x);
 ```
 
