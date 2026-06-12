@@ -52,6 +52,13 @@ On **linux** or **macOS**, you can run this quick-install bash script:
 curl -sSL empr.cl/get/runal | bash
 ```
 
+### Homebrew (macOS & Linux)
+
+```sh
+brew tap emprcl/tap
+brew install runal
+```
+
 ### Manual installation
 
 [Download the last release](https://github.com/emprcl/runal/releases) for your platform.
