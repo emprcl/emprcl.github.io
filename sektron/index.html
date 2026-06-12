@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="en" />
+    <meta name="description" content="a midi step sequencer, made with live performance in mind, that runs in the terminal">
+    
+<meta property="og:title" content="Sektron" />
+<meta property="og:description" content="a midi step sequencer, made with live performance in mind, that runs in the terminal" />
+<meta
+    property="og:image"
+    content="https:&#x2F;&#x2F;empr.cl/&#x2F;images&#x2F;sektron&#x2F;screenshot.png"
+/>
+
+    <link rel="canonical" href="https://empr.cl/sektron/">
+    <link rel="stylesheet" href="https://empr.cl/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Sektron </title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="3495e2be-776d-4d16-afef-9a5cb76bb521"></script>
+</head>
+<body>
+
+<main>
+    
+    <nav>
+            <a href="https:&#x2F;&#x2F;empr.cl">
+                        <img src="https://empr.cl/images/logo.png" alt="logo"/>
+                    </a>
+                <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <div id="trees">
+                <ul class="subtree">
+                    <li class="active">
+                        <a href="/">about</a>
+                    </li>
+                </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/runal/">runal</a>
+                        </li>
+
+
+                        </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/signls/">signls</a>
+                        </li>
+
+
+                        </ul>
+                <ul class="subtree">
+                        <li class="active">
+                            <a href="https://empr.cl/sektron/">sektron</a>
+                        </li>
+
+
+                        
+                                
+                                
+                                    <ul id="toc">
+                                        <li><a href="
+                                                    https://empr.cl/sektron/#overview">Overview</a>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/sektron/#installation">Installation</a>
+                                                </li>
+                                        <li><a href="
+                                                    https://empr.cl/sektron/#usage">Usage</a>
+                                                <ul>
+                                                        <li>
+                                                                <a href="https://empr.cl/sektron/#basic-commands">Basic commands</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/sektron/#midi">MIDI</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/sektron/#keyboard-mapping">Keyboard mapping</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/sektron/#default-keyboard-mapping">Default keyboard mapping</a>
+                                                            </li>
+                                                        <li>
+                                                                <a href="https://empr.cl/sektron/#pattern-bank">Pattern bank</a>
+                                                            </li>
+                                                        </ul>
+                                                </li>
+                                        </ul>
+                                </ul>
+                </div>
+        </nav>
+    <article>
+        <div id="wrap">
+             <script>
+    fetch("https://api.github.com/repos/emprcl/sektron/releases/latest")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let release_name = data.name;
+            let release = document.querySelector("#release");
+            release.innerHTML = `<a href='https://github.com/emprcl/sektron/releases/latest'>Sektron ${release_name}</a>`;
+        });
+</script>
+<h2 id="overview">Overview</h2>
+<p><span id="release"></span> •
+<a href="https://github.com/emprcl/sektron">source code</a> •
+<a href="https://github.com/emprcl/sektron/issues/new">report an issue</a></p>
+<hr/>
+<p><strong>Sektron</strong> is a midi step sequencer, made with live performance in mind, that runs in the terminal (TUI). Its main purpose is to mimic the fun and immediacity of hardware sequencers by being entirely controllable via keyboard.</p>
+<p>It's heavily inspired by <a href="https://www.elektron.se">elektron devices</a>.</p>
+<p><img src="https://raw.githubusercontent.com/emprcl/sektron/refs/heads/main/docs/screenshot.png" alt="sektron screenshot" /></p>
+<p><strong>Features</strong></p>
+<ul>
+<li>Fully (and only) <strong>controllable by keyboard</strong></li>
+<li><strong>Customizable</strong> keyboard mapping</li>
+<li>Up to <strong>10 midi tracks</strong>, that can be attached to specific midi device and channel</li>
+<li>Up to <strong>128 steps per track</strong>. The number of steps per track is independent, allowing complex polyrhythms</li>
+<li>Parameters can be set per track or step (<strong>parameter locking</strong>)</li>
+<li>Up to <strong>64 patterns</strong> can be loaded at the same time</li>
+<li><strong>Pattern chaining</strong></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p><a href="https://github.com/emprcl/sektron/releases">Download the last release</a> for your platform.</p>
+<p>Then:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># Extract files
+</span><span style="color:#bf616a;">mkdir -p</span><span> sektron &amp;&amp; </span><span style="color:#bf616a;">tar -zxvf</span><span> sektron_VERSION_PLATFORM.tar.gz</span><span style="color:#bf616a;"> -C</span><span> sektron
+</span><span>
+</span><span style="color:#a7adba;"># Run sektron
+</span><span style="color:#bf616a;">./sektron
+</span></code></pre>
+<p>You can also <a href="https://github.com/emprcl/sektron?tab=readme-ov-file#build-it-yourself">build it yourself</a> if your want to.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-commands">Basic commands</h3>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># Run sektron
+</span><span style="color:#bf616a;">./sektron
+</span><span>
+</span><span style="color:#a7adba;"># Display current version
+</span><span style="color:#bf616a;">./sektron --version
+</span></code></pre>
+<p>Hit <code>?</code> to see all keybindings. <code>esc</code> to quit.</p>
+<h3 id="midi">MIDI</h3>
+<p><strong>Sektron</strong> doesn't generate sound on its own, but it works seamlessly with MIDI software or hardware. You can connect it to your favorite synthesizers, virtual instruments, or any MIDI-compatible devices for live performances or production.</p>
+<p>Some companion apps that receive MIDI for testing Sektron:</p>
+<ul>
+<li><a href="https://neauoire.github.io/Enfer/">Enfer</a> (<a href="https://github.com/neauoire/Enfer">github</a>)</li>
+<li><a href="https://qsynth.sourceforge.io/">QSynth</a></li>
+</ul>
+<h3 id="keyboard-mapping">Keyboard mapping</h3>
+<p>Keys mapping is fully customizable. After running Sektron for the first time, a <code>config.json</code> is created.
+You can edit all the keys inside it.</p>
+<p>You can select one of the default keyboard layouts available:</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#a7adba;"># QWERTY
+</span><span style="color:#bf616a;">./sektron --keyboard</span><span> qwerty
+</span><span>
+</span><span style="color:#a7adba;"># AZERTY
+</span><span style="color:#bf616a;">./sektron --keyboard</span><span> azerty
+</span><span>
+</span><span style="color:#a7adba;"># QWERTY MAC
+</span><span style="color:#bf616a;">./sektron --keyboard</span><span> qwerty-mac
+</span><span>
+</span><span style="color:#a7adba;"># AZERTY MAC
+</span><span style="color:#bf616a;">./sektron --keyboard</span><span> azerty-mac
+</span></code></pre>
+<h3 id="default-keyboard-mapping">Default keyboard mapping</h3>
+<p>The default key mapping looks like this:</p>
+<p><img src="https://raw.githubusercontent.com/emprcl/sektron/refs/heads/main/docs/keyboard-layout.png" alt="keyboard layout" /></p>
+<p>For qwerty keyboards, here's the default mapping:</p>
+<ul>
+<li><code>space</code> <strong>play</strong> or <strong>stop</strong></li>
+<li><code>tab</code> <strong>toggle parameter mode (track, record)</strong></li>
+<li><code>`</code> <strong>toggle pattern bank mode</strong></li>
+<li><code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>0</code> <strong>select track</strong></li>
+<li><code>!</code> <code>@</code> <code>#</code> <code>$</code> <code>%</code> <code>^</code> <code>&amp;</code> <code>*</code> <code>(</code> <code>)</code> <strong>toggle track</strong></li>
+<li><code>q</code> <code>w</code> <code>e</code> <code>r</code> <code>t</code> <code>y</code> <code>u</code> <code>i</code> <code>q</code> <code>s</code> <code>d</code> <code>f</code> <code>g</code> <code>h</code> <code>j</code> <code>k</code> <strong>select step</strong> or <strong>switch to pattern</strong></li>
+<li><code>Q</code> <code>W</code> <code>E</code> <code>R</code> <code>T</code> <code>Y</code> <code>U</code> <code>I</code> <code>Q</code> <code>S</code> <code>D</code> <code>F</code> <code>G</code> <code>H</code> <code>J</code> <code>K</code> <strong>toggle step</strong> or <strong>chain pattern</strong></li>
+<li><code>,</code> <strong>previous step</strong></li>
+<li><code>.</code> <strong>next step</strong></li>
+<li><code>=</code> <strong>add track</strong></li>
+<li><code>-</code> <strong>remove track</strong></li>
+<li><code>+</code> <strong>add step</strong> to the selected track</li>
+<li><code>_</code> <strong>remove step</strong> from the selected track</li>
+<li><code>p</code> <strong>page up</strong> either steps or patterns if more than 16 items</li>
+<li><code>;</code> <strong>page down</strong> either steps or patterns if more than 16 items</li>
+<li><code>shift</code>+<code>up</code> <strong>increase tempo</strong></li>
+<li><code>shift</code>+<code>down</code> <strong>decrease tempo</strong></li>
+<li><code>ctrl</code>+<code>c</code> <strong>copy selected step</strong></li>
+<li><code>ctrl</code>+<code>v</code> <strong>paste selected step</strong></li>
+<li><code>ctrl</code>+<code>up</code> <strong>add new midi control</strong> to the selected track</li>
+<li><code>ctrl</code>+<code>down</code> <strong>remove midi control</strong>. It will remove the selected one</li>
+<li><code>enter</code> <strong>validate selection</strong></li>
+<li><code>left</code> <strong>move parameter selection to the left</strong></li>
+<li><code>right</code> <strong>move parameter selection to the right</strong></li>
+<li><code>up</code> <strong>increase selected parameter value</strong></li>
+<li><code>down</code> <strong>decrease selected parameter value</strong></li>
+<li><code>?</code> <strong>show help</strong></li>
+<li><code>escape</code> or <code>ctrl</code>+<code>q</code> <strong>quit</strong></li>
+</ul>
+<h3 id="pattern-bank">Pattern bank</h3>
+<p>You manage your projects using a <strong>bank</strong>. When you start the program, you can provide a <strong>bank</strong> JSON file, or if none is provided, a default file (<em>default.json</em>) will be created or loaded automatically. Each bank can store up to <strong>128 patterns</strong>.</p>
+<pre data-lang="sh" style="background-color:#eff1f5;color:#4f5b66;" class="language-sh "><code class="language-sh" data-lang="sh"><span style="color:#bf616a;">./sektron --bank</span><span> my-patterns.json
+</span></code></pre>
+<p>The patterns are <strong>saved automatically</strong> whenever you changes pattern or exit the program, so you never have to worry about losing progress.</p>
+ 
+        </div>
+    </article>
+</main>
+<script type="text/javascript">
+  function burger() {
+    let x = document.querySelector("#trees");
+    let y = document.querySelector("#mobile");
+
+    if (x.style.display === "block") {
+      x.style.display = "none";
+      y.className = "ms-Icon--GlobalNavButton";
+    } else {
+      x.style.display = "block";
+      y.className = "ms-Icon--ChromeClose";
+    }
+  }
+</script>
+</body>
+</html>
