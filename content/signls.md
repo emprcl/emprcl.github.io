@@ -41,7 +41,7 @@ It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](htt
 
 **Signls** is available for **Linux**, **macOS** and **Windows**.
 
-[Download the last release](https://emprcl.itch.io/signls) for your platform.
+[Download the last release](https://github.com/emprcl/signls/releases) for your platform.
 
 ### Linux & macOS
 
@@ -85,10 +85,18 @@ You can also [build it yourself](https://github.com/emprcl/signls?tab=readme-ov-
 
 Hit `?` to see all keybindings. `esc` to quit.
 
+### Files location
+
+Signls stores its _config.json_ and bank files in your user config directory:
+
+ - **Linux / macOS**: `~/.config/emprcl/signls/` (or `$XDG_CONFIG_HOME/emprcl/signls/`)
+ - **Windows**: `%AppData%\emprcl\signls\`
+
+You can override either with an explicit path using the `--config` and `--bank` flags.
 
 ### Keyboard mapping
 
-Keys mapping is fully customizable. After running signls for the first time, a _config.json_ is created.
+Keys mapping is fully customizable. After running signls for the first time, a _config.json_ is created in your [config directory](#files-location).
 You can edit all the keys inside it.
 
 You can select one of the default keyboard layouts available:
@@ -376,7 +384,7 @@ For example, if you set the **velocity** to _80+5_, the random value will be pic
 
 ### Bank
 
-You manage your projects using a **bank**. When you start the program, you can provide a **bank** JSON file, or if none is provided, a default file (_default.json_) will be created or loaded automatically. Each bank can store up to **32 grids**.
+You manage your projects using a **bank**. When you start the program, you can provide a **bank** JSON file, or if none is provided, a default file (_default.json_) will be created or loaded automatically in your [config directory](#files-location). Each bank can store up to **32 grids**.
 
 ```sh
 ./signls --bank my-grids.json
