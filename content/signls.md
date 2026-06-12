@@ -41,9 +41,25 @@ It takes inspiration from [Orca](https://100r.co/site/orca.html) and [Nodal](htt
 
 **Signls** is available for **Linux**, **macOS** and **Windows**.
 
+Prebuilt binaries are provided for the following platforms:
+ - **Linux**: x86-64 (amd64), arm64
+ - **macOS**: Intel (amd64), Apple Silicon (arm64)
+ - **Windows**: x86-64 (amd64)
+
+> _The Linux arm64 build covers the 64-bit Raspberry Pi OS (Raspberry Pi 3 and later). The quick-install script picks the right one automatically._
+
+### Quick-install
+
+On **linux** or **macOS**, you can run this quick-install bash script:
+```sh
+curl -sSL empr.cl/get/signls | bash
+```
+
+### Manual installation
+
 [Download the last release](https://github.com/emprcl/signls/releases) for your platform.
 
-### Linux & macOS
+#### Linux & macOS
 
 In your terminal:
 ```sh
@@ -55,7 +71,7 @@ cd signls
 ./signls
 ```
 
-### Windows
+#### Windows
 
 > _*We recommend using [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701) with a good monospace font like [Iosevka](https://typeof.net/Iosevka/) to display Signls correctly on Windows.*_
 
