@@ -55,6 +55,14 @@ On **linux** or **macOS**, you can run this quick-install bash script:
 curl -sSL empr.cl/get/signls | bash
 ```
 
+### Homebrew (macOS & Linux)
+
+```sh
+brew tap emprcl/tap
+brew trust emprcl/tap
+brew install signls
+```
+
 ### Manual installation
 
 [Download the last release](https://github.com/emprcl/signls/releases) for your platform.

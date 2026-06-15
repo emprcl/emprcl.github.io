@@ -56,6 +56,7 @@ curl -sSL empr.cl/get/runal | bash
 
 ```sh
 brew tap emprcl/tap
+brew trust emprcl/tap
 brew install runal
 ```
 
