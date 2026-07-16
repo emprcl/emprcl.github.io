@@ -145,7 +145,7 @@ Maybe there's one file from the abandoned attempt you still want, without pullin
 spor pick @~4 config.yaml
 ```
 
-If you took a wrong turn, **spor undo** (and **spor redo**) step you back and forth one snapshot at a time, no `<ref>` needed. And once a direction is clearly done, **spor drop &lt;ref&gt;** permanently deletes it and everything after it, **spor trim &lt;ref&gt;** throws away everything before a point, and **spor fold &lt;a&gt; &lt;b&gt;** squashes a noisy run of snapshots into one, if you want to tidy up before sharing. If you ever want a clean slate, **spor forget** wipes Spor's history for the project, keeping your files exactly as they are.
+If you took a wrong turn, **spor undo** (and **spor redo**) step you back and forth one snapshot at a time, no `<ref>` needed. And once a direction is clearly done, **spor drop &lt;ref&gt;** permanently deletes it and everything after it, **spor trim &lt;ref&gt;** throws away everything before a point, **spor fold &lt;a&gt; &lt;b&gt;** squashes a noisy run of snapshots into one, and **spor thin** collapses every linear run at once, keeping only your tips, branch points, and named snapshots, if you want to tidy up before sharing. If you ever want a clean slate, **spor forget** wipes Spor's history for the project, keeping your files exactly as they are.
 
 ### Commands
 
@@ -172,6 +172,7 @@ If you took a wrong turn, **spor undo** (and **spor redo**) step you back and fo
 - **spor drop &lt;ref&gt;**: permanently delete a snapshot and everything after it
 - **spor trim &lt;ref&gt;**: permanently drop everything before a snapshot, keeping it and what follows
 - **spor fold &lt;a&gt; &lt;b&gt;**: squash the run of snapshots from `a` to `b` into one
+- **spor thin**: collapse linear runs across the whole history, keeping only tips, branch points, and named snapshots
 
 **Starting over**
 
