@@ -1,7 +1,7 @@
 +++
 title = "Spor"
 description = "a simple, automatic versioning tool for exploratory work, that runs in the terminal"
-weight = 3
+weight = 4
 [extra]
 release = "https://api.github.com/repos/emprcl/spor/releases/latest"
 download = "https://github.com/emprcl/spor/releases/latest"

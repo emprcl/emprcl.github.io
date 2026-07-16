@@ -1,7 +1,7 @@
 +++
 title = "Sektron"
 description = "a midi step sequencer, made with live performance in mind, that runs in the terminal"
-weight = 5
+weight = 3
 [extra]
 release = "https://api.github.com/repos/emprcl/sektron/releases/latest"
 download = "https://github.com/emprcl/sektron/releases/latest"
