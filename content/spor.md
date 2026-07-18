@@ -110,6 +110,8 @@ The same session, two ways: first inside the interactive view (**spor ui**), the
 
 #### In the interactive view
 
+<img src="https://raw.githubusercontent.com/emprcl/spor/refs/heads/main/docs/tui.png">
+
 Say you're starting work on a project. `cd` into it and open the interactive view:
 
 ```sh
@@ -216,7 +218,7 @@ That's the whole workflow: watch, work, and reach back into history whenever you
 
 **Interactive**
 
-- **spor ui**: open the interactive view; it offers to watch on startup, `w` toggles watching, and every command below has a key inside it (`?` lists them, `q` quits)
+- **spor ui**: open the interactive view; it offers to watch on startup (`--watch`/`--browse` picks the mode and skips the offer), `w` toggles watching, and every command below has a key inside it (`?` lists them, `q` quits)
 
 **Common**
 
