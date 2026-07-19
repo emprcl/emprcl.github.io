@@ -106,7 +106,7 @@ Run any command inside your project directory. There is nothing to set up: the f
 
 ### Walkthrough
 
-The same session, two ways: first inside the interactive view (**spor ui**), then with one-shot commands. Both work on the same history and mix freely — a command run from another terminal shows up in an open **spor ui** within a second.
+The same session, two ways: first inside the interactive view (**spor ui**), then with one-shot commands. Both work on the same history and mix freely, a command run from another terminal shows up in an open **spor ui** within a second.
 
 #### In the interactive view
 
