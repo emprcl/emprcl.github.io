@@ -12,7 +12,7 @@ A modest venture into crafting unconventional creative tools for the terminal.
  - [**signls**](/signls/): a non-linear, generative MIDI sequencer designed for music composition and live performances
  - [**runal**](/runal/): a text-based creative coding environment
  - [**sektron**](/sektron/): a midi step sequencer that mimics hardware workflows
- - [**spor**](/spor/): a simple, automatic versioning tool for exploratory work
+ - [**spor**](/spor/): infinite undo for your whole project
 
 <br/>
 

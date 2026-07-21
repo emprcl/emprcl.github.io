@@ -235,7 +235,7 @@ secondaryColor '
      \/__/                       \/__/         \|__|'
 echo ""
 echo ""
-fBlueLight 'Spor is a simple, automatic versioning tool for exploratory work, that runs in the terminal.'
+fBlueLight 'Spor is infinite undo for your whole project.'
 echo ""
 fBlue '> https://empr.cl/spor/'
 echo ""
