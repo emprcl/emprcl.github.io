@@ -60,6 +60,13 @@ brew trust emprcl/tap
 brew install runal
 ```
 
+### Scoop (Windows)
+
+```powershell
+scoop bucket add emprcl https://github.com/emprcl/scoop-bucket
+scoop install runal
+```
+
 ### Manual installation
 
 [Download the last release](https://github.com/emprcl/runal/releases) for your platform.

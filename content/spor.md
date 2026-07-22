@@ -58,6 +58,13 @@ brew trust emprcl/tap
 brew install spor
 ```
 
+### Scoop (Windows)
+
+```powershell
+scoop bucket add emprcl https://github.com/emprcl/scoop-bucket
+scoop install spor
+```
+
 ### Manual installation
 
 [Download the last release](https://github.com/emprcl/spor/releases) for your platform.
